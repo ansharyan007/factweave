@@ -1,0 +1,19 @@
+{
+  "video_seconds": 132.24,
+  "browser_errors": [],
+  "documents": 6,
+  "facts": 224,
+  "relationships": 23,
+  "issues": 4580,
+  "mobile_overflow": false,
+  "tested": [
+    "actual file upload",
+    "four cases",
+    "source modal",
+    "reasoning expansion",
+    "duplicate demo",
+    "search",
+    "filters",
+    "mobile layout"
+  ]
+}

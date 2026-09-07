@@ -1,0 +1,806 @@
+{
+  "documents": [
+    {
+      "id": "5977e0b2d0bc4bbd93dd3edb83319c1b",
+      "name": "01_annual_review.pdf",
+      "sha256": "73b8b36fd0c52ef35b1791cd79a6281560d9f9f75e6ed91a723aa385c589db94",
+      "status": "complete",
+      "pages": 1,
+      "processed_pages": 1,
+      "mode": "rules",
+      "error": null,
+      "created_at": "2026-09-07 11:05:09"
+    },
+    {
+      "id": "aec5e33646964cb99ae188f38f09f54a",
+      "name": "02_investor_update.pdf",
+      "sha256": "0be112cca99725a66e37a88465ed695088a0cd3c6a820fe799a2052a40908f43",
+      "status": "complete",
+      "pages": 1,
+      "processed_pages": 1,
+      "mode": "rules",
+      "error": null,
+      "created_at": "2026-09-07 11:05:16"
+    },
+    {
+      "id": "93aee891e57a47c89484c6a3173679d5",
+      "name": "03_context_and_scan.pdf",
+      "sha256": "e111a48c896f8d32416908a499fe3c37772ce5a51bfb76268687e2322e0e3067",
+      "status": "needs_review",
+      "pages": 2,
+      "processed_pages": 2,
+      "mode": "rules",
+      "error": null,
+      "created_at": "2026-09-07 11:05:17"
+    }
+  ],
+  "facts": [
+    {
+      "subject": "Aster Labs",
+      "subject_key": "aster labs",
+      "predicate": "revenue",
+      "raw_predicate": "revenue",
+      "raw_value": "USD 12 million",
+      "normalized": {
+        "kind": "number",
+        "value": "12000000",
+        "unit": "usd",
+        "resolution": "1000000",
+        "scaled": true,
+        "normalization": "USD 12 million \u2192 12000000 usd; decimal arithmetic, no currency conversion."
+      },
+      "context": {
+        "period": "FY2024",
+        "scope": null,
+        "periods": [
+          "FY2024"
+        ],
+        "ambiguous": false,
+        "approximate": false
+      },
+      "quote": "Aster Labs reported revenue of USD 12 million in FY2024.",
+      "method": "rules",
+      "confidence": 0.78,
+      "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score.",
+      "id": "6941e09e20fb4044bf109f8c7e64b293",
+      "document_id": "5977e0b2d0bc4bbd93dd3edb83319c1b",
+      "document_name": "01_annual_review.pdf",
+      "page": 1,
+      "bbox": [
+        48.0,
+        149.10000610351562,
+        357.46795654296875,
+        165.58799743652344
+      ],
+      "block_text": "Aster Labs reported revenue of USD 12 million in FY2024.",
+      "evidence_start": 0,
+      "evidence_end": 56
+    },
+    {
+      "subject": "Aster Labs",
+      "subject_key": "aster labs",
+      "predicate": "employees",
+      "raw_predicate": "employees",
+      "raw_value": "240 employees",
+      "normalized": {
+        "kind": "number",
+        "value": "240",
+        "unit": "count",
+        "resolution": "1",
+        "scaled": false,
+        "normalization": "240 employees \u2192 240 count; decimal arithmetic, no currency conversion."
+      },
+      "context": {
+        "period": "FY2024",
+        "scope": null,
+        "periods": [
+          "FY2024"
+        ],
+        "ambiguous": false,
+        "approximate": false
+      },
+      "quote": "Aster Labs employed 240 employees in FY2024.",
+      "method": "rules",
+      "confidence": 0.78,
+      "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score.",
+      "id": "1ebe27b6e46045a2b173e29c8bbe831c",
+      "document_id": "5977e0b2d0bc4bbd93dd3edb83319c1b",
+      "document_name": "01_annual_review.pdf",
+      "page": 1,
+      "bbox": [
+        48.0,
+        214.10000610351562,
+        306.7919616699219,
+        230.58799743652344
+      ],
+      "block_text": "Aster Labs employed 240 employees in FY2024.",
+      "evidence_start": 0,
+      "evidence_end": 44
+    },
+    {
+      "subject": "Aster Labs",
+      "subject_key": "aster labs",
+      "predicate": "address",
+      "raw_predicate": "registered address",
+      "raw_value": "18 Cedar Road, Pune",
+      "normalized": {
+        "kind": "text",
+        "value": "18 cedar road pune",
+        "unit": null,
+        "normalization": "Text normalization: 18 cedar road pune"
+      },
+      "context": {
+        "period": "FY2024",
+        "scope": null,
+        "periods": [
+          "FY2024"
+        ],
+        "ambiguous": false,
+        "approximate": false
+      },
+      "quote": "Aster Labs' registered address was 18 Cedar Road, Pune in FY2024.",
+      "method": "rules",
+      "confidence": 0.78,
+      "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score.",
+      "id": "a016e700fa234b47aaf3b73940f66ebd",
+      "document_id": "5977e0b2d0bc4bbd93dd3edb83319c1b",
+      "document_name": "01_annual_review.pdf",
+      "page": 1,
+      "bbox": [
+        48.0,
+        279.1000061035156,
+        415.7999267578125,
+        295.5880126953125
+      ],
+      "block_text": "Aster Labs' registered address was 18 Cedar Road, Pune in FY2024.",
+      "evidence_start": 0,
+      "evidence_end": 65
+    },
+    {
+      "subject": "Aster Labs",
+      "subject_key": "aster labs",
+      "predicate": "energy use",
+      "raw_predicate": "energy use",
+      "raw_value": "2 MWh",
+      "normalized": {
+        "kind": "number",
+        "value": "2000",
+        "unit": "kwh",
+        "resolution": "1000",
+        "scaled": false,
+        "normalization": "2 MWh \u2192 2000 kwh; decimal arithmetic, no currency conversion."
+      },
+      "context": {
+        "period": "FY2024",
+        "scope": null,
+        "periods": [
+          "FY2024"
+        ],
+        "ambiguous": false,
+        "approximate": false
+      },
+      "quote": "Aster Labs' energy use was 2 MWh in FY2024.",
+      "method": "rules",
+      "confidence": 0.78,
+      "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score.",
+      "id": "2ab38cacb43141cfbc05379344a39768",
+      "document_id": "5977e0b2d0bc4bbd93dd3edb83319c1b",
+      "document_name": "01_annual_review.pdf",
+      "page": 1,
+      "bbox": [
+        48.0,
+        344.1000061035156,
+        297.7319641113281,
+        360.5880126953125
+      ],
+      "block_text": "Aster Labs' energy use was 2 MWh in FY2024.",
+      "evidence_start": 0,
+      "evidence_end": 43
+    },
+    {
+      "subject": "Aster Labs",
+      "subject_key": "aster labs",
+      "predicate": "recycling rate",
+      "raw_predicate": "recycling rate",
+      "raw_value": "72 percent",
+      "normalized": {
+        "kind": "number",
+        "value": "72",
+        "unit": "%",
+        "resolution": "1",
+        "scaled": false,
+        "normalization": "72 percent \u2192 72 %; decimal arithmetic, no currency conversion."
+      },
+      "context": {
+        "period": "FY2024",
+        "scope": null,
+        "periods": [
+          "FY2024"
+        ],
+        "ambiguous": false,
+        "approximate": false
+      },
+      "quote": "Aster Labs' recycling rate was 72 percent in FY2024.",
+      "method": "rules",
+      "confidence": 0.78,
+      "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score.",
+      "id": "3f0e086fc8dc48b18bd22465392a2096",
+      "document_id": "5977e0b2d0bc4bbd93dd3edb83319c1b",
+      "document_name": "01_annual_review.pdf",
+      "page": 1,
+      "bbox": [
+        48.0,
+        409.1000061035156,
+        328.41595458984375,
+        425.5880126953125
+      ],
+      "block_text": "Aster Labs' recycling rate was 72 percent in FY2024.",
+      "evidence_start": 0,
+      "evidence_end": 52
+    },
+    {
+      "subject": "Aster Labs",
+      "subject_key": "aster labs",
+      "predicate": "revenue",
+      "raw_predicate": "sales",
+      "raw_value": "USD 12,000,000",
+      "normalized": {
+        "kind": "number",
+        "value": "12000000",
+        "unit": "usd",
+        "resolution": "1",
+        "scaled": false,
+        "normalization": "USD 12,000,000 \u2192 12000000 usd; decimal arithmetic, no currency conversion."
+      },
+      "context": {
+        "period": "FY2024",
+        "scope": null,
+        "periods": [
+          "FY2024"
+        ],
+        "ambiguous": false,
+        "approximate": false
+      },
+      "quote": "Aster Labs recorded sales of USD 12,000,000 in FY2024.",
+      "method": "rules",
+      "confidence": 0.78,
+      "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score.",
+      "id": "69bd0b93d0284c849e093fe654a36b2c",
+      "document_id": "aec5e33646964cb99ae188f38f09f54a",
+      "document_name": "02_investor_update.pdf",
+      "page": 1,
+      "bbox": [
+        48.0,
+        149.10000610351562,
+        354.15594482421875,
+        165.58799743652344
+      ],
+      "block_text": "Aster Labs recorded sales of USD 12,000,000 in FY2024.",
+      "evidence_start": 0,
+      "evidence_end": 54
+    },
+    {
+      "subject": "Aster Labs",
+      "subject_key": "aster labs",
+      "predicate": "employees",
+      "raw_predicate": "headcount",
+      "raw_value": "275",
+      "normalized": {
+        "kind": "number",
+        "value": "275",
+        "unit": "count",
+        "resolution": "1",
+        "scaled": false,
+        "normalization": "275 \u2192 275 count; decimal arithmetic, no currency conversion."
+      },
+      "context": {
+        "period": "FY2024",
+        "scope": null,
+        "periods": [
+          "FY2024"
+        ],
+        "ambiguous": false,
+        "approximate": false
+      },
+      "quote": "Aster Labs' headcount was 275 in FY2024.",
+      "method": "rules",
+      "confidence": 0.78,
+      "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score.",
+      "id": "0f42a6f36b2a452d94650da158db9647",
+      "document_id": "aec5e33646964cb99ae188f38f09f54a",
+      "document_name": "02_investor_update.pdf",
+      "page": 1,
+      "bbox": [
+        48.0,
+        214.10000610351562,
+        276.4199523925781,
+        230.58799743652344
+      ],
+      "block_text": "Aster Labs' headcount was 275 in FY2024.",
+      "evidence_start": 0,
+      "evidence_end": 40
+    },
+    {
+      "subject": "Aster Labs",
+      "subject_key": "aster labs",
+      "predicate": "address",
+      "raw_predicate": "registered office",
+      "raw_value": "18 Cedar Rd, Pune",
+      "normalized": {
+        "kind": "text",
+        "value": "18 cedar road pune",
+        "unit": null,
+        "normalization": "Text normalization: 18 cedar road pune"
+      },
+      "context": {
+        "period": "FY2024",
+        "scope": null,
+        "periods": [
+          "FY2024"
+        ],
+        "ambiguous": false,
+        "approximate": false
+      },
+      "quote": "Aster Labs' registered office was 18 Cedar Rd, Pune in FY2024.",
+      "method": "rules",
+      "confidence": 0.78,
+      "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score.",
+      "id": "9dd90682aa8c43c7a5f8a98aa554ea52",
+      "document_id": "aec5e33646964cb99ae188f38f09f54a",
+      "document_name": "02_investor_update.pdf",
+      "page": 1,
+      "bbox": [
+        48.0,
+        279.1000061035156,
+        388.4519348144531,
+        295.5880126953125
+      ],
+      "block_text": "Aster Labs' registered office was 18 Cedar Rd, Pune in FY2024.",
+      "evidence_start": 0,
+      "evidence_end": 62
+    },
+    {
+      "subject": "Aster Labs",
+      "subject_key": "aster labs",
+      "predicate": "energy use",
+      "raw_predicate": "energy use",
+      "raw_value": "2000 kWh",
+      "normalized": {
+        "kind": "number",
+        "value": "2000",
+        "unit": "kwh",
+        "resolution": "1",
+        "scaled": false,
+        "normalization": "2000 kWh \u2192 2000 kwh; decimal arithmetic, no currency conversion."
+      },
+      "context": {
+        "period": "FY2024",
+        "scope": null,
+        "periods": [
+          "FY2024"
+        ],
+        "ambiguous": false,
+        "approximate": false
+      },
+      "quote": "Aster Labs' energy use was 2000 kWh in FY2024.",
+      "method": "rules",
+      "confidence": 0.78,
+      "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score.",
+      "id": "daa81c009f844d4598a543b034276620",
+      "document_id": "aec5e33646964cb99ae188f38f09f54a",
+      "document_name": "02_investor_update.pdf",
+      "page": 1,
+      "bbox": [
+        48.0,
+        344.1000061035156,
+        313.751953125,
+        360.5880126953125
+      ],
+      "block_text": "Aster Labs' energy use was 2000 kWh in FY2024.",
+      "evidence_start": 0,
+      "evidence_end": 46
+    },
+    {
+      "subject": "Aster Labs",
+      "subject_key": "aster labs",
+      "predicate": "recycling rate",
+      "raw_predicate": "recycling rate",
+      "raw_value": "72%",
+      "normalized": {
+        "kind": "number",
+        "value": "72",
+        "unit": "%",
+        "resolution": "1",
+        "scaled": false,
+        "normalization": "72% \u2192 72 %; decimal arithmetic, no currency conversion."
+      },
+      "context": {
+        "period": "FY2024",
+        "scope": null,
+        "periods": [
+          "FY2024"
+        ],
+        "ambiguous": false,
+        "approximate": false
+      },
+      "quote": "Aster Labs' recycling rate was 72% in FY2024.",
+      "method": "rules",
+      "confidence": 0.78,
+      "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score.",
+      "id": "c85ae95b87ab438eaafc141bb76c6f67",
+      "document_id": "aec5e33646964cb99ae188f38f09f54a",
+      "document_name": "02_investor_update.pdf",
+      "page": 1,
+      "bbox": [
+        48.0,
+        409.1000061035156,
+        295.72796630859375,
+        425.5880126953125
+      ],
+      "block_text": "Aster Labs' recycling rate was 72% in FY2024.",
+      "evidence_start": 0,
+      "evidence_end": 45
+    },
+    {
+      "subject": "Aster Labs",
+      "subject_key": "aster labs",
+      "predicate": "revenue",
+      "raw_predicate": "revenue",
+      "raw_value": "USD 9 million",
+      "normalized": {
+        "kind": "number",
+        "value": "9000000",
+        "unit": "usd",
+        "resolution": "1000000",
+        "scaled": true,
+        "normalization": "USD 9 million \u2192 9000000 usd; decimal arithmetic, no currency conversion."
+      },
+      "context": {
+        "period": "FY2023",
+        "scope": null,
+        "periods": [
+          "FY2023"
+        ],
+        "ambiguous": false,
+        "approximate": false
+      },
+      "quote": "Aster Labs reported revenue of USD 9 million in FY2023.",
+      "method": "rules",
+      "confidence": 0.78,
+      "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score.",
+      "id": "50b63e2b56b54178bb7fb3c08242fa74",
+      "document_id": "93aee891e57a47c89484c6a3173679d5",
+      "document_name": "03_context_and_scan.pdf",
+      "page": 1,
+      "bbox": [
+        48.0,
+        149.10000610351562,
+        350.7959289550781,
+        165.58799743652344
+      ],
+      "block_text": "Aster Labs reported revenue of USD 9 million in FY2023.",
+      "evidence_start": 0,
+      "evidence_end": 55
+    },
+    {
+      "subject": "Aster Labs",
+      "subject_key": "aster labs",
+      "predicate": "revenue",
+      "raw_predicate": "revenue",
+      "raw_value": "USD 8 million",
+      "normalized": {
+        "kind": "number",
+        "value": "8000000",
+        "unit": "usd",
+        "resolution": "1000000",
+        "scaled": true,
+        "normalization": "USD 8 million \u2192 8000000 usd; decimal arithmetic, no currency conversion."
+      },
+      "context": {
+        "period": "FY2024",
+        "scope": "standalone",
+        "periods": [
+          "FY2024"
+        ],
+        "ambiguous": false,
+        "approximate": false
+      },
+      "quote": "Aster Labs reported standalone revenue of USD 8 million in FY2024.",
+      "method": "rules",
+      "confidence": 0.78,
+      "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score.",
+      "id": "6a1157b57bf645779d678b8c71f95e99",
+      "document_id": "93aee891e57a47c89484c6a3173679d5",
+      "document_name": "03_context_and_scan.pdf",
+      "page": 1,
+      "bbox": [
+        48.0,
+        214.10000610351562,
+        412.8359375,
+        230.58799743652344
+      ],
+      "block_text": "Aster Labs reported standalone revenue of USD 8 million in FY2024.",
+      "evidence_start": 0,
+      "evidence_end": 66
+    },
+    {
+      "subject": "Aster Labs",
+      "subject_key": "aster labs",
+      "predicate": "revenue",
+      "raw_predicate": "revenue",
+      "raw_value": "USD 12 million",
+      "normalized": {
+        "kind": "number",
+        "value": "12000000",
+        "unit": "usd",
+        "resolution": "1000000",
+        "scaled": true,
+        "normalization": "USD 12 million \u2192 12000000 usd; decimal arithmetic, no currency conversion."
+      },
+      "context": {
+        "period": "FY2024",
+        "scope": "consolidated",
+        "periods": [
+          "FY2024"
+        ],
+        "ambiguous": false,
+        "approximate": false
+      },
+      "quote": "Aster Labs reported consolidated revenue of USD 12 million in FY2024.",
+      "method": "rules",
+      "confidence": 0.78,
+      "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score.",
+      "id": "8fe62f7205934ac5abf84ae86c701c46",
+      "document_id": "93aee891e57a47c89484c6a3173679d5",
+      "document_name": "03_context_and_scan.pdf",
+      "page": 1,
+      "bbox": [
+        48.0,
+        279.1000061035156,
+        428.17193603515625,
+        295.5880126953125
+      ],
+      "block_text": "Aster Labs reported consolidated revenue of USD 12 million in FY2024.",
+      "evidence_start": 0,
+      "evidence_end": 69
+    }
+  ],
+  "relationships": [
+    {
+      "kind": "corroborates",
+      "reason": "Normalized values agree under the stated context. Unspecified context and shared upstream sources remain possible.",
+      "steps": [
+        "Same conservative entity key: aster labs.",
+        "Same normalized predicate: revenue.",
+        "USD 12 million \u2192 12000000 usd; decimal arithmetic, no currency conversion.",
+        "USD 12,000,000 \u2192 12000000 usd; decimal arithmetic, no currency conversion.",
+        "Period: FY2024 \u2194 FY2024.",
+        "Scope: unspecified \u2194 unspecified.",
+        "Normalized values agree under the stated context. Unspecified context and shared upstream sources remain possible."
+      ],
+      "confidence": 0.88,
+      "caveat": "A relationship between documented claims; not an independent verification of truth.",
+      "id": "adff74f0377c4ff190f44b133184d11c",
+      "left_id": "6941e09e20fb4044bf109f8c7e64b293",
+      "right_id": "69bd0b93d0284c849e093fe654a36b2c"
+    },
+    {
+      "kind": "contradicts",
+      "reason": "Likely contradiction: different values for the same entity, metric, explicit period and stated scope. Check omitted qualifiers and source errors.",
+      "steps": [
+        "Same conservative entity key: aster labs.",
+        "Same normalized predicate: employees.",
+        "240 employees \u2192 240 count; decimal arithmetic, no currency conversion.",
+        "275 \u2192 275 count; decimal arithmetic, no currency conversion.",
+        "Period: FY2024 \u2194 FY2024.",
+        "Scope: unspecified \u2194 unspecified.",
+        "Likely contradiction: different values for the same entity, metric, explicit period and stated scope. Check omitted qualifiers and source errors."
+      ],
+      "confidence": 0.82,
+      "caveat": "A relationship between documented claims; not an independent verification of truth.",
+      "id": "db246aa9f02948bfb02c6a6f66899b40",
+      "left_id": "1ebe27b6e46045a2b173e29c8bbe831c",
+      "right_id": "0f42a6f36b2a452d94650da158db9647"
+    },
+    {
+      "kind": "corroborates",
+      "reason": "Normalized values agree under the stated context. Unspecified context and shared upstream sources remain possible.",
+      "steps": [
+        "Same conservative entity key: aster labs.",
+        "Same normalized predicate: address.",
+        "Text normalization: 18 cedar road pune",
+        "Text normalization: 18 cedar road pune",
+        "Period: FY2024 \u2194 FY2024.",
+        "Scope: unspecified \u2194 unspecified.",
+        "Normalized values agree under the stated context. Unspecified context and shared upstream sources remain possible."
+      ],
+      "confidence": 0.88,
+      "caveat": "A relationship between documented claims; not an independent verification of truth.",
+      "id": "d7aab0fcfacc46adad477a0b95894cb9",
+      "left_id": "a016e700fa234b47aaf3b73940f66ebd",
+      "right_id": "9dd90682aa8c43c7a5f8a98aa554ea52"
+    },
+    {
+      "kind": "corroborates",
+      "reason": "Normalized values agree under the stated context. Unspecified context and shared upstream sources remain possible.",
+      "steps": [
+        "Same conservative entity key: aster labs.",
+        "Same normalized predicate: energy use.",
+        "2 MWh \u2192 2000 kwh; decimal arithmetic, no currency conversion.",
+        "2000 kWh \u2192 2000 kwh; decimal arithmetic, no currency conversion.",
+        "Period: FY2024 \u2194 FY2024.",
+        "Scope: unspecified \u2194 unspecified.",
+        "Normalized values agree under the stated context. Unspecified context and shared upstream sources remain possible."
+      ],
+      "confidence": 0.88,
+      "caveat": "A relationship between documented claims; not an independent verification of truth.",
+      "id": "ec4caa23bdbd42089b77dbf328608a9f",
+      "left_id": "2ab38cacb43141cfbc05379344a39768",
+      "right_id": "daa81c009f844d4598a543b034276620"
+    },
+    {
+      "kind": "corroborates",
+      "reason": "Normalized values agree under the stated context. Unspecified context and shared upstream sources remain possible.",
+      "steps": [
+        "Same conservative entity key: aster labs.",
+        "Same normalized predicate: recycling rate.",
+        "72 percent \u2192 72 %; decimal arithmetic, no currency conversion.",
+        "72% \u2192 72 %; decimal arithmetic, no currency conversion.",
+        "Period: FY2024 \u2194 FY2024.",
+        "Scope: unspecified \u2194 unspecified.",
+        "Normalized values agree under the stated context. Unspecified context and shared upstream sources remain possible."
+      ],
+      "confidence": 0.88,
+      "caveat": "A relationship between documented claims; not an independent verification of truth.",
+      "id": "2c8b2e00bf20476f9a2e8622d4bbe77c",
+      "left_id": "3f0e086fc8dc48b18bd22465392a2096",
+      "right_id": "c85ae95b87ab438eaafc141bb76c6f67"
+    },
+    {
+      "kind": "reconciled",
+      "reason": "Claims refer to different explicit period; they can coexist. This explains comparability, not the cause of the change.",
+      "steps": [
+        "Same conservative entity key: aster labs.",
+        "Same normalized predicate: revenue.",
+        "USD 12 million \u2192 12000000 usd; decimal arithmetic, no currency conversion.",
+        "USD 9 million \u2192 9000000 usd; decimal arithmetic, no currency conversion.",
+        "Period: FY2024 \u2194 FY2023.",
+        "Scope: unspecified \u2194 unspecified.",
+        "Claims refer to different explicit period; they can coexist. This explains comparability, not the cause of the change."
+      ],
+      "confidence": 0.85,
+      "caveat": "A relationship between documented claims; not an independent verification of truth.",
+      "id": "3295d8b721ed47ac8483df76585d4484",
+      "left_id": "6941e09e20fb4044bf109f8c7e64b293",
+      "right_id": "50b63e2b56b54178bb7fb3c08242fa74"
+    },
+    {
+      "kind": "reconciled",
+      "reason": "Claims refer to different explicit period; they can coexist. This explains comparability, not the cause of the change.",
+      "steps": [
+        "Same conservative entity key: aster labs.",
+        "Same normalized predicate: revenue.",
+        "USD 12,000,000 \u2192 12000000 usd; decimal arithmetic, no currency conversion.",
+        "USD 9 million \u2192 9000000 usd; decimal arithmetic, no currency conversion.",
+        "Period: FY2024 \u2194 FY2023.",
+        "Scope: unspecified \u2194 unspecified.",
+        "Claims refer to different explicit period; they can coexist. This explains comparability, not the cause of the change."
+      ],
+      "confidence": 0.85,
+      "caveat": "A relationship between documented claims; not an independent verification of truth.",
+      "id": "1a8f9bd9973d4e7aac00e01be7dd7173",
+      "left_id": "69bd0b93d0284c849e093fe654a36b2c",
+      "right_id": "50b63e2b56b54178bb7fb3c08242fa74"
+    },
+    {
+      "kind": "uncertain",
+      "reason": "One source omits scope; alignment cannot be established.",
+      "steps": [
+        "Same conservative entity key: aster labs.",
+        "Same normalized predicate: revenue.",
+        "USD 12 million \u2192 12000000 usd; decimal arithmetic, no currency conversion.",
+        "USD 8 million \u2192 8000000 usd; decimal arithmetic, no currency conversion.",
+        "Period: FY2024 \u2194 FY2024.",
+        "Scope: unspecified \u2194 standalone.",
+        "One source omits scope; alignment cannot be established."
+      ],
+      "confidence": 0.45,
+      "caveat": "A relationship between documented claims; not an independent verification of truth.",
+      "id": "a8aaf152a7bd4d4b80e86b419d813724",
+      "left_id": "6941e09e20fb4044bf109f8c7e64b293",
+      "right_id": "6a1157b57bf645779d678b8c71f95e99"
+    },
+    {
+      "kind": "uncertain",
+      "reason": "One source omits scope; alignment cannot be established.",
+      "steps": [
+        "Same conservative entity key: aster labs.",
+        "Same normalized predicate: revenue.",
+        "USD 12,000,000 \u2192 12000000 usd; decimal arithmetic, no currency conversion.",
+        "USD 8 million \u2192 8000000 usd; decimal arithmetic, no currency conversion.",
+        "Period: FY2024 \u2194 FY2024.",
+        "Scope: unspecified \u2194 standalone.",
+        "One source omits scope; alignment cannot be established."
+      ],
+      "confidence": 0.45,
+      "caveat": "A relationship between documented claims; not an independent verification of truth.",
+      "id": "99002a5148f7497ab89c147350bd20ae",
+      "left_id": "69bd0b93d0284c849e093fe654a36b2c",
+      "right_id": "6a1157b57bf645779d678b8c71f95e99"
+    },
+    {
+      "kind": "uncertain",
+      "reason": "One source omits scope; alignment cannot be established.",
+      "steps": [
+        "Same conservative entity key: aster labs.",
+        "Same normalized predicate: revenue.",
+        "USD 12 million \u2192 12000000 usd; decimal arithmetic, no currency conversion.",
+        "USD 12 million \u2192 12000000 usd; decimal arithmetic, no currency conversion.",
+        "Period: FY2024 \u2194 FY2024.",
+        "Scope: unspecified \u2194 consolidated.",
+        "One source omits scope; alignment cannot be established."
+      ],
+      "confidence": 0.45,
+      "caveat": "A relationship between documented claims; not an independent verification of truth.",
+      "id": "db32e2b4ffc54d9fba70915ef376e119",
+      "left_id": "6941e09e20fb4044bf109f8c7e64b293",
+      "right_id": "8fe62f7205934ac5abf84ae86c701c46"
+    },
+    {
+      "kind": "uncertain",
+      "reason": "One source omits scope; alignment cannot be established.",
+      "steps": [
+        "Same conservative entity key: aster labs.",
+        "Same normalized predicate: revenue.",
+        "USD 12,000,000 \u2192 12000000 usd; decimal arithmetic, no currency conversion.",
+        "USD 12 million \u2192 12000000 usd; decimal arithmetic, no currency conversion.",
+        "Period: FY2024 \u2194 FY2024.",
+        "Scope: unspecified \u2194 consolidated.",
+        "One source omits scope; alignment cannot be established."
+      ],
+      "confidence": 0.45,
+      "caveat": "A relationship between documented claims; not an independent verification of truth.",
+      "id": "af876ecbc3fb491e8c6ba3d294da549b",
+      "left_id": "69bd0b93d0284c849e093fe654a36b2c",
+      "right_id": "8fe62f7205934ac5abf84ae86c701c46"
+    }
+  ],
+  "issues": [
+    {
+      "kind": "ambiguous_statement",
+      "quote": "Aster Labs' revenue was USD 9 million and USD 12 million in FY2023 and FY2024 respectively.",
+      "reason": "Multiple periods, scopes, ranges, or aligned values need structured interpretation. No fact asserted.",
+      "bbox": [
+        48.0,
+        344.1000061035156,
+        557.8199462890625,
+        360.5880126953125
+      ],
+      "id": "f13c63e1f8a04929b04750344fc4c739",
+      "document_id": "93aee891e57a47c89484c6a3173679d5",
+      "document_name": "03_context_and_scan.pdf",
+      "page": 1
+    },
+    {
+      "kind": "no_extractable_text",
+      "quote": "",
+      "reason": "Page has little or no text. Likely scanned/image content; OCR is not enabled. No facts invented.",
+      "id": "ac7770f54ca74b73ab33884e4b76e67a",
+      "document_id": "93aee891e57a47c89484c6a3173679d5",
+      "document_name": "03_context_and_scan.pdf",
+      "page": 2
+    }
+  ],
+  "predicates": [
+    "address",
+    "employees",
+    "energy use",
+    "recycling rate",
+    "revenue"
+  ],
+  "metadata": {
+    "extractor_version": "1.0.0",
+    "evidence": "Whitespace-normalized exact source spans; enclosing block rectangles.",
+    "disclaimer": "Claims and heuristic relationships, not verified real-world truth."
+  }
+}

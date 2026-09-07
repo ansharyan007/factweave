@@ -6,3 +6,6 @@ tmp/
 .env
 *.log
 .DS_Store
+
+# Supplied source PDFs remain local; provenance and evaluation output are documented.
+starter-datasets/

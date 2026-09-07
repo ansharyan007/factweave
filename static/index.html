@@ -1,25 +1,183 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FactWeave · Evidence connected</title><link rel="stylesheet" href="/static/style.css"></head>
-<body>
-<aside class="sidebar">
-  <a class="brand" href="/"><span class="brand-icon">⌘</span> FactWeave<span class="beta">LAB</span></a>
-  <div class="workspace-label">YOUR KNOWLEDGE LAYER</div>
-  <nav aria-label="Main navigation"><button class="nav-item active" data-view="overview">◈ <span>Overview</span></button><button class="nav-item" data-view="facts">≡ <span>Fact explorer</span></button><button class="nav-item" data-view="relations">⇄ <span>Relationships</span></button><button class="nav-item" data-view="issues">⚑ <span>Review queue</span><span id="issue-count" class="count">0</span></button></nav>
-  <div class="sidebar-note"><span class="live-dot"></span> Local by default<p>Your documents stay on this machine. Optional model extraction uses your configured Ollama endpoint.</p><a href="/docs" target="_blank" rel="noreferrer">Explore the API ↗</a></div>
-  <div class="sidebar-footer">Built for curiosity.<br>Grounded in evidence.</div>
-</aside>
-<main>
-  <header><div class="breadcrumb">Workspace <span>/</span> <strong id="view-label">Overview</strong></div><a class="export" href="/api/export">↓ Export knowledge</a></header>
-  <section class="page-intro"><div><div class="eyebrow">FROM DOCUMENTS TO UNDERSTANDING</div><h1 id="page-title">Connect the facts.<br><span>Keep the evidence.</span></h1><p id="page-description">Discover what your documents agree on, where they differ,<br>and the context that makes the difference.</p></div><div class="intro-art" aria-hidden="true"><div class="art-line l1"></div><div class="art-line l2"></div><div class="art-line l3"></div><div class="art-node n1">PDF</div><div class="art-node n2">✓</div><div class="art-node n3">≠</div><div class="art-center">f<span>act</span></div></div></section>
-  <div id="notice" role="status" aria-live="polite" hidden></div>
-  <section id="upload-panel" class="upload-panel"><div class="upload-symbol">↥</div><div><h2>Add a new perspective</h2><p>Drop PDFs here, or choose files. Up to 30 MB and 1,000 pages each.</p><small>Text PDFs work best. Scanned pages are flagged for review.</small></div><div class="upload-actions"><select id="mode" aria-label="Extraction mode"><option value="rules">Offline · conservative</option><option value="ollama">Local model · Ollama</option></select><button id="upload-button" class="primary">+ Upload PDFs</button><input id="file-input" type="file" accept="application/pdf,.pdf" multiple hidden></div></section>
-  <section class="stats" aria-label="Knowledge summary"><div><span>Source documents</span><strong id="stat-documents">0</strong><small>Distinct perspectives</small></div><div><span>Grounded facts</span><strong id="stat-facts">0</strong><small>Every claim has a source</small></div><div><span>Connections found</span><strong id="stat-relations">0</strong><small>Explained, not just linked</small></div><div><span>Needs your attention</span><strong id="stat-issues">0</strong><small>Uncertainty stays visible</small></div></section>
-  <section id="demo-banner" class="demo-banner"><span class="demo-label">TRY IT OUT</span><div><strong>A small dataset. Four revealing cases.</strong><p>Explore corroboration, conflict, context, and an extraction failure with synthetic PDFs.</p></div><button id="demo-button" class="secondary">Load demo dataset ↗</button></section>
-  <section id="documents-section"><div class="section-heading"><h2>Source library <span id="library-count">0</span></h2><span class="muted">Incremental processing · evidence preserved</span></div><div id="document-list" class="document-list"></div></section>
-  <section id="results-section"><div class="section-heading"><h2 id="results-title">Across your documents</h2><div class="search-wrap"><input id="search" aria-label="Search facts and evidence" placeholder="Search facts, entities, evidence…"></div></div><div class="toolbar"><div id="filters" class="filters"><button class="filter active" data-kind="all">All connections</button><button class="filter" data-kind="corroborates">● Corroboration</button><button class="filter" data-kind="contradicts">● Contradiction</button><button class="filter" data-kind="reconciled">● Context</button><button class="filter" data-kind="uncertain">● Uncertain</button></div><select id="predicate-filter" aria-label="Filter by fact type"><option value="">All fact types</option></select></div><div id="results" class="results"></div><button id="more" class="secondary" hidden>Show more</button></section>
-  <footer>FactWeave links documented claims. Agreement is not proof; confidence scores are heuristic.</footer>
-</main>
-<dialog id="evidence-dialog"><div class="dialog-header"><div><div class="eyebrow">FOLLOW THE EVIDENCE</div><h2 id="evidence-title">Source evidence</h2></div><button id="close-evidence" class="icon-button" aria-label="Close evidence">×</button></div><div id="evidence-body"></div></dialog>
-<script src="/static/app.js" defer></script>
-</body></html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>FactWeave · Evidence connected</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <aside class="sidebar">
+      <a class="brand" href="/"
+        ><span class="brand-icon">⌘</span> FactWeave<span class="beta"
+          >LAB</span
+        ></a
+      >
+      <div class="workspace-label">YOUR KNOWLEDGE LAYER</div>
+      <nav aria-label="Main navigation">
+        <button class="nav-item active" data-view="overview">
+          ◈ <span>Overview</span></button
+        ><button class="nav-item" data-view="facts">
+          ≡ <span>Fact explorer</span></button
+        ><button class="nav-item" data-view="relations">
+          ⇄ <span>Relationships</span></button
+        ><button class="nav-item" data-view="issues">
+          ⚑ <span>Review queue</span
+          ><span id="issue-count" class="count">0</span>
+        </button>
+      </nav>
+      <div class="sidebar-note">
+        <span class="live-dot"></span> Local by default
+        <p>
+          Your documents stay on this machine. Optional model extraction uses
+          your configured Ollama endpoint.
+        </p>
+        <a href="/docs" target="_blank" rel="noreferrer">Explore the API ↗</a>
+      </div>
+      <div class="sidebar-footer">
+        Built for curiosity.<br />Grounded in evidence.
+      </div>
+    </aside>
+    <main>
+      <header>
+        <div class="breadcrumb">
+          Workspace <span>/</span> <strong id="view-label">Overview</strong>
+        </div>
+        <a class="export" href="/api/export">↓ Export knowledge</a>
+      </header>
+      <section class="page-intro">
+        <div>
+          <div class="eyebrow">FROM DOCUMENTS TO UNDERSTANDING</div>
+          <h1 id="page-title">
+            Connect the facts.<br /><span>Keep the evidence.</span>
+          </h1>
+          <p id="page-description">
+            Discover what your documents agree on, where they differ,<br />and
+            the context that makes the difference.
+          </p>
+        </div>
+        <div class="intro-art" aria-hidden="true">
+          <div class="art-line l1"></div>
+          <div class="art-line l2"></div>
+          <div class="art-line l3"></div>
+          <div class="art-node n1">PDF</div>
+          <div class="art-node n2">✓</div>
+          <div class="art-node n3">≠</div>
+          <div class="art-center">f<span>act</span></div>
+        </div>
+      </section>
+      <div id="notice" role="status" aria-live="polite" hidden></div>
+      <section id="upload-panel" class="upload-panel">
+        <div class="upload-symbol">↥</div>
+        <div>
+          <h2>Add a new perspective</h2>
+          <p>
+            Drop PDFs here, or choose files. Up to 30 MB and 1,000 pages each.
+          </p>
+          <small
+            >Text PDFs work best. Scanned pages are flagged for review.</small
+          >
+        </div>
+        <div class="upload-actions">
+          <select id="mode" aria-label="Extraction mode">
+            <option value="rules">Offline · conservative</option>
+            <option value="ollama">Local model · Ollama</option></select
+          ><button id="upload-button" class="primary">+ Upload PDFs</button
+          ><input
+            id="file-input"
+            type="file"
+            accept="application/pdf,.pdf"
+            multiple
+            hidden
+          />
+        </div>
+      </section>
+      <section class="stats" aria-label="Knowledge summary">
+        <div>
+          <span>Source documents</span><strong id="stat-documents">0</strong
+          ><small>Distinct perspectives</small>
+        </div>
+        <div>
+          <span>Grounded facts</span><strong id="stat-facts">0</strong
+          ><small>Every claim has a source</small>
+        </div>
+        <div>
+          <span>Connections found</span><strong id="stat-relations">0</strong
+          ><small>Explained, not just linked</small>
+        </div>
+        <div>
+          <span>Needs your attention</span><strong id="stat-issues">0</strong
+          ><small>Uncertainty stays visible</small>
+        </div>
+      </section>
+      <section id="demo-banner" class="demo-banner">
+        <span class="demo-label">TRY IT OUT</span>
+        <div>
+          <strong>A small dataset. Four revealing cases.</strong>
+          <p>
+            Explore corroboration, conflict, context, and an extraction failure
+            with synthetic PDFs.
+          </p>
+        </div>
+        <button id="demo-button" class="secondary">Load demo dataset ↗</button>
+      </section>
+      <section id="documents-section">
+        <div class="section-heading">
+          <h2>Source library <span id="library-count">0</span></h2>
+          <span class="muted">Incremental processing · evidence preserved</span>
+        </div>
+        <div id="document-list" class="document-list"></div>
+      </section>
+      <section id="results-section">
+        <div class="section-heading">
+          <h2 id="results-title">Across your documents</h2>
+          <div class="search-wrap">
+            <input
+              id="search"
+              aria-label="Search facts and evidence"
+              placeholder="Search facts, entities, evidence…"
+            />
+          </div>
+        </div>
+        <div class="toolbar">
+          <div id="filters" class="filters">
+            <button class="filter active" data-kind="all">
+              All connections</button
+            ><button class="filter" data-kind="corroborates">
+              ● Corroboration</button
+            ><button class="filter" data-kind="contradicts">
+              ● Contradiction</button
+            ><button class="filter" data-kind="reconciled">● Context</button
+            ><button class="filter" data-kind="uncertain">● Uncertain</button>
+          </div>
+          <select id="predicate-filter" aria-label="Filter by fact type">
+            <option value="">All fact types</option>
+          </select>
+        </div>
+        <div id="results" class="results"></div>
+        <button id="more" class="secondary" hidden>Show more</button>
+      </section>
+      <footer>
+        FactWeave links documented claims. Agreement is not proof; confidence
+        scores are heuristic.
+      </footer>
+    </main>
+    <dialog id="evidence-dialog">
+      <div class="dialog-header">
+        <div>
+          <div class="eyebrow">FOLLOW THE EVIDENCE</div>
+          <h2 id="evidence-title">Source evidence</h2>
+        </div>
+        <button
+          id="close-evidence"
+          class="icon-button"
+          aria-label="Close evidence"
+        >
+          ×
+        </button>
+      </div>
+      <div id="evidence-body"></div>
+    </dialog>
+    <script src="/static/app.js" defer></script>
+  </body>
+</html>

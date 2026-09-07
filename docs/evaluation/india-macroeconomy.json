@@ -1,0 +1,991 @@
+{
+  "documents": [
+    {
+      "id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "sha256": "86f2e79a3b7b4a3698907897297b9e17fe06d39c074d52e68303066d18a2cf71",
+      "status": "needs_review",
+      "pages": 89,
+      "processed_pages": 89,
+      "mode": "rules",
+      "error": null,
+      "created_at": "2026-09-07 11:01:34"
+    },
+    {
+      "id": "a98fe017039a4e0590ef1d4f9275bd6a",
+      "name": "02-rbi-annual-report-2024-25-excerpt.pdf",
+      "sha256": "73209a2caa2f5671f2feae065d01602302daaaac9e8230c9c471d99243fd079e",
+      "status": "needs_review",
+      "pages": 100,
+      "processed_pages": 100,
+      "mode": "rules",
+      "error": null,
+      "created_at": "2026-09-07 11:01:35"
+    },
+    {
+      "id": "16e3c71b7ebf439d82b590fb5f3e9528",
+      "name": "03-imf-india-2025-article-iv-excerpt.pdf",
+      "sha256": "f6d3cfecafd9548920349b29b1137d645c20073434d0ac66485ead9738a0ea4d",
+      "status": "needs_review",
+      "pages": 95,
+      "processed_pages": 95,
+      "mode": "rules",
+      "error": null,
+      "created_at": "2026-09-07 11:01:35"
+    }
+  ],
+  "facts": [
+    {
+      "subject": "India",
+      "subject_key": "india",
+      "predicate": "the strongest expansion",
+      "raw_predicate": "the strongest expansion",
+      "raw_value": "output",
+      "normalized": {
+        "kind": "text",
+        "value": "output",
+        "unit": null,
+        "normalization": "Text normalization: output"
+      },
+      "context": {
+        "period": null,
+        "scope": null,
+        "periods": [],
+        "ambiguous": false,
+        "approximate": false
+      },
+      "quote": "India reported the strongest expansion of output.",
+      "method": "rules",
+      "confidence": 0.78,
+      "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score.",
+      "id": "01368f89cf83486eb710962690d67e1b",
+      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 8,
+      "bbox": [
+        59.99760055541992,
+        300.69219970703125,
+        518.8717041015625,
+        414.7281799316406
+      ],
+      "block_text": "1.10 Production trends varied widely across regions in December (Chart I.6 and I.7). Production rose in 13 of the 30 nations for which December PMI data were available. The Eurozone saw the steepest contractions, led by France, Germany, and Austria. North America showed mixed results, with Canada\u2019s growth offset by declines in the US and Mexico. India reported the strongest expansion of output. The outlook for global manufacturing also remained subdued in December, with business sentiment dipping to a three-month low.9",
+      "evidence_start": 348,
+      "evidence_end": 397
+    },
+    {
+      "subject": "India",
+      "subject_key": "india",
+      "predicate": "external position",
+      "raw_predicate": "external position",
+      "raw_value": "moderately stronger than that implied by medium-term fundamentals and desirable policies",
+      "normalized": {
+        "kind": "text",
+        "value": "moderately stronger than that implied by medium term fundamentals and desirable policies",
+        "unit": null,
+        "normalization": "Text normalization: moderately stronger than that implied by medium term fundamentals and desirable policies"
+      },
+      "context": {
+        "period": null,
+        "scope": null,
+        "periods": [],
+        "ambiguous": false,
+        "approximate": false
+      },
+      "quote": "India\u2019s external position is moderately stronger than that implied by medium-term fundamentals and desirable policies.",
+      "method": "rules",
+      "confidence": 0.78,
+      "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score.",
+      "id": "e8821cfddd9a481497ff010d7698c0e8",
+      "document_id": "16e3c71b7ebf439d82b590fb5f3e9528",
+      "document_name": "03-imf-india-2025-article-iv-excerpt.pdf",
+      "page": 32,
+      "bbox": [
+        73.46399688720703,
+        383.5257873535156,
+        536.0440063476562,
+        519.5201416015625
+      ],
+      "block_text": "58. Despite external headwinds and elevated uncertainty, India\u2019s economy remains resilient, supported by favorable domestic conditions. Building on strong momentum in the June quarter, growth is expected to remain firm this year, supported in part by the GST reduction. The imposition of the 50 percent U.S. tariffs in August will weigh on the outlook, but the magnitude is expected to remain manageable as India has relatively limited exposure to merchandise exports. Headline inflation has significantly declined, primarily on lower food prices, and is expected to remain subdued in the period ahead. India\u2019s external position is moderately stronger than that implied by medium-term fundamentals and desirable policies. The economic outlook is subject to high uncertainty, with upside risks stemming from a potential reversal of the 50-percent tariffs.",
+      "evidence_start": 603,
+      "evidence_end": 721
+    },
+    {
+      "subject": "India",
+      "subject_key": "india",
+      "predicate": "data",
+      "raw_predicate": "data",
+      "raw_value": "broadly adequate for surveillance, with room for improvement in some areas",
+      "normalized": {
+        "kind": "text",
+        "value": "broadly adequate for surveillance with room for improvement in some areas",
+        "unit": null,
+        "normalization": "Text normalization: broadly adequate for surveillance with room for improvement in some areas"
+      },
+      "context": {
+        "period": null,
+        "scope": null,
+        "periods": [],
+        "ambiguous": false,
+        "approximate": false
+      },
+      "quote": "India\u2019s data are broadly adequate for surveillance, with room for improvement in some areas.",
+      "method": "rules",
+      "confidence": 0.78,
+      "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score.",
+      "id": "7687a40c01824c7f88050a44c3416168",
+      "document_id": "16e3c71b7ebf439d82b590fb5f3e9528",
+      "document_name": "03-imf-india-2025-article-iv-excerpt.pdf",
+      "page": 34,
+      "bbox": [
+        73.46399688720703,
+        219.55577087402344,
+        524.1983032226562,
+        295.5601501464844
+      ],
+      "block_text": "65. Enhancing the quality, availability, and timeliness of macroeconomic and financial statistics would support policy formulation. India\u2019s data are broadly adequate for surveillance, with room for improvement in some areas. Significant efforts underway to improve data quality, particularly in the national accounts, are welcome, as they will enhance data transparency and support policy making.",
+      "evidence_start": 132,
+      "evidence_end": 224
+    },
+    {
+      "subject": "India",
+      "subject_key": "india",
+      "predicate": "external debt",
+      "raw_predicate": "external debt",
+      "raw_value": "relatively low compared to peers",
+      "normalized": {
+        "kind": "text",
+        "value": "relatively low compared to peers",
+        "unit": null,
+        "normalization": "Text normalization: relatively low compared to peers"
+      },
+      "context": {
+        "period": null,
+        "scope": null,
+        "periods": [],
+        "ambiguous": false,
+        "approximate": false
+      },
+      "quote": "India\u2019s external debt is relatively low compared to peers.",
+      "method": "rules",
+      "confidence": 0.78,
+      "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score.",
+      "id": "f63f3f9d7fa94169af2eb12768cf8f37",
+      "document_id": "16e3c71b7ebf439d82b590fb5f3e9528",
+      "document_name": "03-imf-india-2025-article-iv-excerpt.pdf",
+      "page": 37,
+      "bbox": [
+        78.50399780273438,
+        478.69952392578125,
+        536.7279663085938,
+        515.1752319335938
+      ],
+      "block_text": "India\u2019s external debt is relatively low compared to peers.",
+      "evidence_start": 0,
+      "evidence_end": 58
+    },
+    {
+      "subject": "India",
+      "subject_key": "india",
+      "predicate": "manufacturing sector",
+      "raw_predicate": "manufacturing sector",
+      "raw_value": "dominated by small firms with low productivity",
+      "normalized": {
+        "kind": "text",
+        "value": "dominated by small firms with low productivity",
+        "unit": null,
+        "normalization": "Text normalization: dominated by small firms with low productivity"
+      },
+      "context": {
+        "period": null,
+        "scope": null,
+        "periods": [],
+        "ambiguous": false,
+        "approximate": false
+      },
+      "quote": "India\u2019s manufacturing sector is dominated by small firms with low productivity.",
+      "method": "rules",
+      "confidence": 0.78,
+      "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score.",
+      "id": "1f14628433ab4148b0eece29b6a93f19",
+      "document_id": "16e3c71b7ebf439d82b590fb5f3e9528",
+      "document_name": "03-imf-india-2025-article-iv-excerpt.pdf",
+      "page": 92,
+      "bbox": [
+        73.46399688720703,
+        458.0331115722656,
+        537.1572875976562,
+        536.3501586914062
+      ],
+      "block_text": "\u2022 Let Firms Grow. India\u2019s manufacturing sector is dominated by small firms with low productivity. While initiatives such as the Startup India program and state-level innovation missions aim to support entrepreneurship, more is needed to help firms scale up. Easing labor regulations, simplifying product market rules, providing stable policy frameworks, and reducing compliance burdens would enable firms to grow and innovate.",
+      "evidence_start": 18,
+      "evidence_end": 97
+    }
+  ],
+  "relationships": [],
+  "issues": [
+    {
+      "kind": "unparsed_statement",
+      "quote": "1 STATE OF THE ECONOMY: GETTING BACK INTO THE FAST LANE",
+      "reason": "Offline grammar could not safely recover an explicit subject, predicate and value. Try local-model mode or review manually.",
+      "bbox": [
+        60.00090026855469,
+        235.1625518798828,
+        503.32098388671875,
+        260.0825500488281
+      ],
+      "id": "0a03c86398504c2ab6c7ba66139ca32a",
+      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 1
+    },
+    {
+      "kind": "unparsed_statement",
+      "quote": "2 Introduction",
+      "reason": "Offline grammar could not safely recover an explicit subject, predicate and value. Try local-model mode or review manually.",
+      "bbox": [
+        85.00090026855469,
+        263.52252197265625,
+        244.4608917236328,
+        276.0525207519531
+      ],
+      "id": "407a791ea0f64a8992db761ae1b7c689",
+      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 1
+    },
+    {
+      "kind": "unparsed_statement",
+      "quote": "2 Global Economic Scenario",
+      "reason": "Offline grammar could not safely recover an explicit subject, predicate and value. Try local-model mode or review manually.",
+      "bbox": [
+        85.00090026855469,
+        279.4925231933594,
+        304.2109069824219,
+        292.02252197265625
+      ],
+      "id": "e1e53682820d4e6cb786e1b8e99f0b31",
+      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 1
+    },
+    {
+      "kind": "ambiguous_statement",
+      "quote": "11 Domestic Economy Remains Steady Amidst Global Uncertainties",
+      "reason": "Multiple periods, scopes, ranges, or aligned values need structured interpretation. No fact asserted.",
+      "bbox": [
+        85.00090026855469,
+        295.4625244140625,
+        474.92095947265625,
+        307.9925231933594
+      ],
+      "id": "4329ebc0054c4d448b7c0879df5b909d",
+      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 1
+    },
+    {
+      "kind": "unparsed_statement",
+      "quote": "20 Economy Characterised by Stability and Inclusivity on Multiple Fronts",
+      "reason": "Offline grammar could not safely recover an explicit subject, predicate and value. Try local-model mode or review manually.",
+      "bbox": [
+        85.00090026855469,
+        311.4325256347656,
+        498.5309753417969,
+        323.9625244140625
+      ],
+      "id": "7200adb91df942a5a9407aec0e2881ff",
+      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 1
+    },
+    {
+      "kind": "unparsed_statement",
+      "quote": "32 Outlook and Way Forward",
+      "reason": "Offline grammar could not safely recover an explicit subject, predicate and value. Try local-model mode or review manually.",
+      "bbox": [
+        85.00090026855469,
+        327.40252685546875,
+        305.01092529296875,
+        339.9325256347656
+      ],
+      "id": "1014f374a6064271aeba4beae11685bd",
+      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 1
+    },
+    {
+      "kind": "unparsed_statement",
+      "quote": "2 MONETARY AND FINANCIAL SECTOR DEVELOPMENTS : THE CART AND THE HORSE",
+      "reason": "Offline grammar could not safely recover an explicit subject, predicate and value. Try local-model mode or review manually.",
+      "bbox": [
+        60.00090026855469,
+        358.9525146484375,
+        494.6009216308594,
+        383.8725280761719
+      ],
+      "id": "7eed03df408e4777b79b19262a57718f",
+      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 1
+    },
+    {
+      "kind": "unparsed_statement",
+      "quote": "36 Introduction 36 Monetary Developments 38 Financial Intermediation 73 Risks Pertaining to India\u2019s Financial Sector 76 Outlook",
+      "reason": "Offline grammar could not safely recover an explicit subject, predicate and value. Try local-model mode or review manually.",
+      "bbox": [
+        60.00091552734375,
+        386.8125305175781,
+        378.3110046386719,
+        455.4224853515625
+      ],
+      "id": "49754bb03780452cb487c2083119b31e",
+      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 1
+    },
+    {
+      "kind": "unparsed_statement",
+      "quote": "3 EXTERNAL SECTOR: GETTING FDI RIGHT 80 Introduction 82 Global Trade Dynamics 92 Trend in India\u2019s Trade Performance 103 Ease of Doing Business Initiatives for Exporters 104 Balance of Payments: Resilience Amid Challenges 116 Outlook",
+      "reason": "Offline grammar could not safely recover an explicit subject, predicate and value. Try local-model mode or review manually.",
+      "bbox": [
+        60.00091552734375,
+        470.54248046875,
+        411.700927734375,
+        567.58251953125
+      ],
+      "id": "bb72ba84301b4878bb1081a909f27bc1",
+      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 1
+    },
+    {
+      "kind": "ambiguous_statement",
+      "quote": "4 PRICES AND INFLATION : UNDERSTANDING THE DYNAMICS 118 Introduction 118 Global Inflation 120 Domestic Inflation 129 Outlook and Way Forward",
+      "reason": "Multiple periods, scopes, ranges, or aligned values need structured interpretation. No fact asserted.",
+      "bbox": [
+        60.00091552734375,
+        582.7024536132812,
+        515.3409423828125,
+        651.7025146484375
+      ],
+      "id": "1682b09c8e5f4a2ea970a492bf82fbe5",
+      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 1
+    },
+    {
+      "kind": "unparsed_statement",
+      "quote": "5 \u0007MEDIUM TERM OUTLOOK : DEREGULATION DRIVES GROWTH 133 India\u2019s Medium-term Outlook 135 Geo-Economic Fragmentation \u2013 This Time May be Different 138 The Elephant and The Dragon in the Room",
+      "reason": "Offline grammar could not safely recover an explicit subject, predicate and value. Try local-model mode or review manually.",
+      "bbox": [
+        60.00091552734375,
+        666.8224487304688,
+        515.6799926757812,
+        721.802490234375
+      ],
+      "id": "aad3ce5ff7a9472a8289c70a6bd37464",
+      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 1
+    },
+    {
+      "kind": "unparsed_statement",
+      "quote": "141 Climate Transition, China and Geopolitics 147 Implications for India\u2019s Growth Prospects 149 Reinvigorating the Internal Engines of Growth \u2013 Enhancing Economic Freedom through Deregulation",
+      "reason": "Offline grammar could not safely recover an explicit subject, predicate and value. Try local-model mode or review manually.",
+      "bbox": [
+        60.00090026855469,
+        58.06451416015625,
+        503.5209045410156,
+        110.13455200195312
+      ],
+      "id": "a583483b74e54ba0aea07ca8da0123b5",
+      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 2
+    },
+    {
+      "kind": "unparsed_statement",
+      "quote": "6 \u0007INVESTMENT AND INFRASTRUCTURE : KEEPING IT GOING 163 Introduction 164 Infrastructure Capex Improves Post-Election 165 Physical Connectivity 173 Power Sector 176 \u0007Digital Connectivity 178 Rural Infrastructure 181 Urban Infrastructure 186 Tourism Infrastructure 187 Space Infrastructure 188 Conclusions and Way Forward",
+      "reason": "Offline grammar could not safely recover an explicit subject, predicate and value. Try local-model mode or review manually.",
+      "bbox": [
+        60.00091552734375,
+        125.25453186035156,
+        510.1509094238281,
+        278.3747253417969
+      ],
+      "id": "98e71850a7c84300a7dd33af38632393",
+      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 2
+    },
+    {
+      "kind": "ambiguous_statement",
+      "quote": "7 \u0007INDUSTRY: ALL ABOUT BUSINESS REFORMS 191 Global Background 193 Recent Domestic Developments 194 Core Input Industries 197 Performance of Capital Goods and Consumer Goods Industries 202 Flourishing Innovations Amidst Aspirations of Enhanced R&D 207 Micro Small and Medium Enterprises 210 Appropriate Policies Likely to Bring in Greater Equity in State-Wise Patterns in Industrial Production 217 Conclusion and Outlook",
+      "reason": "Multiple periods, scopes, ranges, or aligned values need structured interpretation. No fact asserted.",
+      "bbox": [
+        60.00091552734375,
+        293.4947204589844,
+        490.9009094238281,
+        430.07464599609375
+      ],
+      "id": "ff7d38bf5369412eb8a9f17e90462317",
+      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 2
+    },
+    {
+      "kind": "unparsed_statement",
+      "quote": "8 SERVICES: NEW CHALLENGES FOR THE OLD WAR HORSE 219 Introduction 221 Services Sector Performance in India 223 Sources of Financing: Bank Credit and FDI 226 Progress in Logistics and Physical Connectivity-Based Services 230 Other Services 232 Business Services 237 State Wise Analysis of Service Sector Performance 243 Conclusion and Way Forward",
+      "reason": "Offline grammar could not safely recover an explicit subject, predicate and value. Try local-model mode or review manually.",
+      "bbox": [
+        60.00090026855469,
+        445.19439697265625,
+        485.2526550292969,
+        570.2744750976562
+      ],
+      "id": "ed69b350950d4c9f9914a522ed184b68",
+      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 2
+    },
+    {
+      "kind": "unparsed_statement",
+      "quote": "9 \u0007AGRICULTURE AND FOOD MANAGEMENT: SECTOR OF THE FUTURE 245 Introduction 250 Crop Production: Incentivising Productivity Increase, Crop Diversification and Efficiency in the Use of Inputs 251 Seeds-Quality and Use of Fertilisers: The Critical Differentiator 251 Rainfall and Irrigation System: Building Efficiency and Extending Coverage 257 Agriculture Credit: A Critical Input 260 Agriculture Mechanisation: Facilitating Access 261 Agriculture Extension: The Enabler",
+      "reason": "Offline grammar could not safely recover an explicit subject, predicate and value. Try local-model mode or review manually.",
+      "bbox": [
+        60.00090026855469,
+        585.3944091796875,
+        517.260986328125,
+        719.4544677734375
+      ],
+      "id": "e2cef70fba694e27864f76c5d3369c33",
+      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 2
+    },
+    {
+      "kind": "unparsed_statement",
+      "quote": "261 Improvement in Agriculture Marketing Infrastructure 263 Climate Action In Agriculture 264 Allied Sectors: Potential to Build Resilience 266 Cooperative Societies: Strengthening the Institution to serve better 267 Food Processing Industries: Critical for the Economy 267 Food Management: Enabling Food Security 269 Conclusion 10 CLIMATE AND ENVIRONMENT: ADAPTATION MATTERS 271 Introduction 274 Bringing Adaptation to the Forefront 279 Energy Transition - Learning from the Experience of Developed Countries and Weighing the options 286 Progress Made on India\u2019s Energy Transition 293 Optimising Lifestyles for Sustainable Development 297 Air Pollution 298 Conclusion",
+      "reason": "Offline grammar could not safely recover an explicit subject, predicate and value. Try local-model mode or review manually.",
+      "bbox": [
+        60.000885009765625,
+        58.06451416015625,
+        516.5408935546875,
+        279.3747863769531
+      ],
+      "id": "43c0ba59bbe94115b934e38220a48697",
+      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 3
+    },
+    {
+      "kind": "unparsed_statement",
+      "quote": "11 SOCIAL SECTOR: EXTENDING REACH AND DRIVING EMPOWERMENT 301 Introduction 308 Education: Treading New Pathways 327 Towards A Healthy Nation 348 Rural Economy 358 Outlook",
+      "reason": "Offline grammar could not safely recover an explicit subject, predicate and value. Try local-model mode or review manually.",
+      "bbox": [
+        60.000885009765625,
+        294.4947814941406,
+        473.74090576171875,
+        389.0147399902344
+      ],
+      "id": "e2fac79b240544a7adf4606c5ce0fbe4",
+      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 3
+    },
+    {
+      "kind": "unparsed_statement",
+      "quote": "12 EMPLOYMENT AND SKILL DEVELOPMENT: EXISTENTIAL PRIORITIES 361 Introduction 364 State of Employment 386 Job Creation: Action Towards Enhanced Employment Opportunities 397 Skill Development: Upskilling, Reskilling and New Skilling for a Changing World 410 Conclusion",
+      "reason": "Offline grammar could not safely recover an explicit subject, predicate and value. Try local-model mode or review manually.",
+      "bbox": [
+        60.00091552734375,
+        404.1347351074219,
+        490.3710021972656,
+        510.1546936035156
+      ],
+      "id": "38db55f287684ce592410d0db537ed82",
+      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 3
+    },
+    {
+      "kind": "uncertain_subject",
+      "quote": "13 \u0007LABOUR IN THE AI ERA: CRISIS OR CATALYST? 411 Introduction 414 Revolutions and Ripples 417 \u0007The Need for Robust Institutions 419 Vision to Viability: AI\u2019s Real World Challenges 424 AI and India: Are There Opportunities? 427 The Labour Market Evolution 429 Augmenting India\u2019s Services Sector 434 Conclusion",
+      "reason": "Subject or predicate is not an explicit atomic named-entity assertion.",
+      "bbox": [
+        60.00091552734375,
+        525.274658203125,
+        442.120849609375,
+        650.354736328125
+      ],
+      "id": "91d914bd24614630a5cc3ebb32cefabb",
+      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 3
+    },
+    {
+      "kind": "unparsed_statement",
+      "quote": "The global economy exhibited steady yet uneven growth across regions in 2024.",
+      "reason": "Offline grammar could not safely recover an explicit subject, predicate and value. Try local-model mode or review manually.",
+      "bbox": [
+        74.99520111083984,
+        208.63479614257812,
+        503.92193603515625,
+        394.52685546875
+      ],
+      "id": "b5ecd3416bd5440a842c65bfe2c59fc0",
+      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 4
+    },
+    {
+      "kind": "unparsed_statement",
+      "quote": "A notable trend was the slowdown in global manufacturing, especially in Europe and parts of Asia, due to supply chain disruptions and weak external demand.",
+      "reason": "Offline grammar could not safely recover an explicit subject, predicate and value. Try local-model mode or review manually.",
+      "bbox": [
+        74.99520111083984,
+        208.63479614257812,
+        503.92193603515625,
+        394.52685546875
+      ],
+      "id": "f873ca03a5d943deb2dfe51be3ebaddc",
+      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 4
+    },
+    {
+      "kind": "uncertain_subject",
+      "quote": "As per the first advance estimates of national accounts, India\u2019s real GDP is estimated to grow by 6.4 per cent in FY25.",
+      "reason": "Subject or predicate is not an explicit atomic named-entity assertion.",
+      "bbox": [
+        74.99520111083984,
+        403.2748718261719,
+        503.8992004394531,
+        573.662841796875
+      ],
+      "id": "c29e1bee3aca45c58f9c1987fcb1428f",
+      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 4
+    },
+    {
+      "kind": "unparsed_statement",
+      "quote": "Growth in the first half of FY25 was supported by agriculture and services, with rural demand improving on the back of record Kharif production and favourable agricultural conditions.",
+      "reason": "Offline grammar could not safely recover an explicit subject, predicate and value. Try local-model mode or review manually.",
+      "bbox": [
+        74.99520111083984,
+        403.2748718261719,
+        503.8992004394531,
+        573.662841796875
+      ],
+      "id": "c04a8906883148ddad3db8487fedf765",
+      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 4
+    },
+    {
+      "kind": "ambiguous_statement",
+      "quote": "The manufacturing sector faced pressures due to weak global demand and domestic seasonal conditions.",
+      "reason": "Multiple periods, scopes, ranges, or aligned values need structured interpretation. No fact asserted.",
+      "bbox": [
+        74.99520111083984,
+        403.2748718261719,
+        503.8992004394531,
+        573.662841796875
+      ],
+      "id": "486f8986713544dd95eea069aca51c95",
+      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 4
+    },
+    {
+      "kind": "uncertain_subject",
+      "quote": "Looking ahead, India\u2019s economic prospects for FY26 are balanced.",
+      "reason": "Subject or predicate is not an explicit atomic named-entity assertion.",
+      "bbox": [
+        74.99520111083984,
+        582.410888671875,
+        503.91131591796875,
+        737.2947998046875
+      ],
+      "id": "27d29e9f122f488f8db395c0967bd6d6",
+      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 4
+    },
+    {
+      "kind": "unparsed_statement",
+      "quote": "Economic Survey 2024-25",
+      "reason": "Offline grammar could not safely recover an explicit subject, predicate and value. Try local-model mode or review manually.",
+      "bbox": [
+        60.47999954223633,
+        35.36982345581055,
+        180.8658905029297,
+        49.15282440185547
+      ],
+      "id": "29a8bf9872904c61a059d941f7bdc122",
+      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 5
+    },
+    {
+      "kind": "ambiguous_statement",
+      "quote": "1.1 Global economic conditions are shaped by changing growth dynamics, fluctuating commodity prices, and evolving monetary policies, which influence domestic inflation, trade balances, and capital flows.",
+      "reason": "Multiple periods, scopes, ranges, or aligned values need structured interpretation. No fact asserted.",
+      "bbox": [
+        59.99760055541992,
+        94.72042083740234,
+        518.8871459960938,
+        291.25640869140625
+      ],
+      "id": "5870964ebd5a4a34bb2d2e23ccf767b2",
+      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 5
+    },
+    {
+      "kind": "unparsed_statement",
+      "quote": "At present, this interconnectedness is complicated by unusual levels of geopolitical tensions, supply chain disruptions, and climate-related shocks.",
+      "reason": "Offline grammar could not safely recover an explicit subject, predicate and value. Try local-model mode or review manually.",
+      "bbox": [
+        59.99760055541992,
+        94.72042083740234,
+        518.8871459960938,
+        291.25640869140625
+      ],
+      "id": "a7c7304cc39443fe8c18ce625c0c68c5",
+      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 5
+    },
+    {
+      "kind": "unparsed_statement",
+      "quote": "Against this background, this chapter is organised broadly into four sections.",
+      "reason": "Offline grammar could not safely recover an explicit subject, predicate and value. Try local-model mode or review manually.",
+      "bbox": [
+        59.99760055541992,
+        94.72042083740234,
+        518.8871459960938,
+        291.25640869140625
+      ],
+      "id": "d5834773da424b56801b656a60dcf3e1",
+      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 5
+    },
+    {
+      "kind": "ambiguous_statement",
+      "quote": "The concluding section presents the prospects and outlook for growth in the presence of global headwinds while capitalising on domestic growth drivers.",
+      "reason": "Multiple periods, scopes, ranges, or aligned values need structured interpretation. No fact asserted.",
+      "bbox": [
+        59.99760055541992,
+        94.72042083740234,
+        518.8871459960938,
+        291.25640869140625
+      ],
+      "id": "9b4859f6e2864fc8aad824b7bade6cae",
+      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 5
+    },
+    {
+      "kind": "unparsed_statement",
+      "quote": "1.2 Globally, 2024 has been an eventful year.",
+      "reason": "Offline grammar could not safely recover an explicit subject, predicate and value. Try local-model mode or review manually.",
+      "bbox": [
+        59.99760055541992,
+        373.5202941894531,
+        518.8944091796875,
+        537.0562744140625
+      ],
+      "id": "2602d4801ec041f1ac7274137cf999b3",
+      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 5
+    },
+    {
+      "kind": "unparsed_statement",
+      "quote": "Cyberattacks also became more frequent and severe, with growing human and financial consequences due to the increasing digitisation of critical infrastructure.1 Geopolitical tensions, have reshaped global trade.",
+      "reason": "Offline grammar could not safely recover an explicit subject, predicate and value. Try local-model mode or review manually.",
+      "bbox": [
+        59.99760055541992,
+        373.5202941894531,
+        518.8944091796875,
+        537.0562744140625
+      ],
+      "id": "6416c91f9cb94f4d82136859044fc8da",
+      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 5
+    },
+    {
+      "kind": "unparsed_statement",
+      "quote": "Geopolitical risks and policy uncertainty, especially around trade policies, have also contributed to increased volatility in global financial markets.2",
+      "reason": "Offline grammar could not safely recover an explicit subject, predicate and value. Try local-model mode or review manually.",
+      "bbox": [
+        59.99760055541992,
+        373.5202941894531,
+        518.8944091796875,
+        537.0562744140625
+      ],
+      "id": "ff537ef1ceaf4bfa9244ee28ac6193c4",
+      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 5
+    },
+    {
+      "kind": "unparsed_statement",
+      "quote": "1.3 Nonetheless, global economic growth has remained fairly moderate.",
+      "reason": "Offline grammar could not safely recover an explicit subject, predicate and value. Try local-model mode or review manually.",
+      "bbox": [
+        59.99769973754883,
+        553.520263671875,
+        518.8910522460938,
+        651.0562744140625
+      ],
+      "id": "7195f1099b5b4fe28ae53cebbbd8de24",
+      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 5
+    },
+    {
+      "kind": "unparsed_statement",
+      "quote": "The global economy grew by 3.3 per cent in 2023.",
+      "reason": "Offline grammar could not safely recover an explicit subject, predicate and value. Try local-model mode or review manually.",
+      "bbox": [
+        59.99769973754883,
+        553.520263671875,
+        518.8910522460938,
+        651.0562744140625
+      ],
+      "id": "6f4fc15e0d3d4550b976d32d5a814688",
+      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 5
+    },
+    {
+      "kind": "ambiguous_statement",
+      "quote": "The International Monetary Fund (IMF) has projected growth of 3.2 per cent and 3.3 per cent for 2024 and 2025, respectively.",
+      "reason": "Multiple periods, scopes, ranges, or aligned values need structured interpretation. No fact asserted.",
+      "bbox": [
+        59.99769973754883,
+        553.520263671875,
+        518.8910522460938,
+        651.0562744140625
+      ],
+      "id": "ac80cbfd4c5c4ffda093a63b083c68d5",
+      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 5
+    },
+    {
+      "kind": "unparsed_statement",
+      "quote": "Over the next five years, global growth is expected to average around 3.2 per cent, which is modest by historical standards.",
+      "reason": "Offline grammar could not safely recover an explicit subject, predicate and value. Try local-model mode or review manually.",
+      "bbox": [
+        59.99769973754883,
+        553.520263671875,
+        518.8910522460938,
+        651.0562744140625
+      ],
+      "id": "9c4e023e29d14e4a932e23a3d85edea1",
+      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 5
+    },
+    {
+      "kind": "unparsed_statement",
+      "quote": "1 S&P Global. (n.d.).",
+      "reason": "Offline grammar could not safely recover an explicit subject, predicate and value. Try local-model mode or review manually.",
+      "bbox": [
+        59.99769973754883,
+        698.3489379882812,
+        394.302734375,
+        709.6259155273438
+      ],
+      "id": "10f6185e04be4d6fa8893c87a530c35d",
+      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 5
+    },
+    {
+      "kind": "unparsed_statement",
+      "quote": "S&P Global. https://tinyurl.com/2yrnnmsp.",
+      "reason": "Offline grammar could not safely recover an explicit subject, predicate and value. Try local-model mode or review manually.",
+      "bbox": [
+        59.99769973754883,
+        698.3489379882812,
+        394.302734375,
+        709.6259155273438
+      ],
+      "id": "7045a56022fc471182264cea274e72c1",
+      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 5
+    },
+    {
+      "kind": "unparsed_statement",
+      "quote": "2 Reserve Bank of India. (2024).",
+      "reason": "Offline grammar could not safely recover an explicit subject, predicate and value. Try local-model mode or review manually.",
+      "bbox": [
+        59.99769592285156,
+        712.64990234375,
+        518.1715698242188,
+        734.7268676757812
+      ],
+      "id": "e1867381f81d40499084ea0bfcabf09c",
+      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 5
+    },
+    {
+      "kind": "unparsed_statement",
+      "quote": "Press release: Minutes of the Monetary Policy Committee Meeting, December 4 to 6, 2024. https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=59347.",
+      "reason": "Offline grammar could not safely recover an explicit subject, predicate and value. Try local-model mode or review manually.",
+      "bbox": [
+        59.99769592285156,
+        712.64990234375,
+        518.1715698242188,
+        734.7268676757812
+      ],
+      "id": "59436e95c0fc4baa843526cf3d9344a9",
+      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 5
+    },
+    {
+      "kind": "unparsed_statement",
+      "quote": "Chart I.1: Resilient global growth",
+      "reason": "Offline grammar could not safely recover an explicit subject, predicate and value. Try local-model mode or review manually.",
+      "bbox": [
+        85.58450317382812,
+        71.97232055664062,
+        274.9825439453125,
+        86.18431854248047
+      ],
+      "id": "1051a439b8914b209acd6bfd04056f4a",
+      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 6
+    },
+    {
+      "kind": "unparsed_statement",
+      "quote": "Chart I.2: Steady growth outlook",
+      "reason": "Offline grammar could not safely recover an explicit subject, predicate and value. Try local-model mode or review manually.",
+      "bbox": [
+        309.81951904296875,
+        71.97232055664062,
+        496.9845886230469,
+        86.18431854248047
+      ],
+      "id": "824dfd1041f34014911f9fd6e661fac3",
+      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 6
+    },
+    {
+      "kind": "unparsed_statement",
+      "quote": "trends in 2024",
+      "reason": "Offline grammar could not safely recover an explicit subject, predicate and value. Try local-model mode or review manually.",
+      "bbox": [
+        137.57049560546875,
+        84.97433471679688,
+        220.16952514648438,
+        99.18633270263672
+      ],
+      "id": "5b209bdcc7bb487683cd27a50340d9ac",
+      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 6
+    },
+    {
+      "kind": "unparsed_statement",
+      "quote": "2023 2024 2025",
+      "reason": "Offline grammar could not safely recover an explicit subject, predicate and value. Try local-model mode or review manually.",
+      "bbox": [
+        329.5711975097656,
+        122.87936401367188,
+        427.6005554199219,
+        133.93194580078125
+      ],
+      "id": "aeba166f8092486384bd0ddc8bd18cdf",
+      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 6
+    },
+    {
+      "kind": "unparsed_statement",
+      "quote": "3.3 3.1 3.2",
+      "reason": "Offline grammar could not safely recover an explicit subject, predicate and value. Try local-model mode or review manually.",
+      "bbox": [
+        228.37539672851562,
+        154.19151306152344,
+        272.3286437988281,
+        170.09483337402344
+      ],
+      "id": "4e7ba4b7bf5e425ab70c17624adeb396",
+      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 6
+    },
+    {
+      "kind": "unparsed_statement",
+      "quote": "Source: OECD Economic Outlook, Volume 2024 Issue 2.",
+      "reason": "Offline grammar could not safely recover an explicit subject, predicate and value. Try local-model mode or review manually.",
+      "bbox": [
+        68.87379455566406,
+        298.596923828125,
+        264.8667907714844,
+        320.67388916015625
+      ],
+      "id": "7346d9947e1545858b046c4ae9bfb2b6",
+      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 6
+    },
+    {
+      "kind": "unparsed_statement",
+      "quote": "Source: IMF WEO (January 2025) Note: AEs- Advanced Economies, EMDEs- Emerging market and developing economies",
+      "reason": "Offline grammar could not safely recover an explicit subject, predicate and value. Try local-model mode or review manually.",
+      "bbox": [
+        296.8797912597656,
+        292.1979064941406,
+        509.29144287109375,
+        327.0728759765625
+      ],
+      "id": "db5452acdc9e4507b9ff30866b7acab9",
+      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 6
+    },
+    {
+      "kind": "unparsed_statement",
+      "quote": "1.4 Despite higher interest rates, advanced economies (AEs) witnessed stable growth in the first half of 2024.",
+      "reason": "Offline grammar could not safely recover an explicit subject, predicate and value. Try local-model mode or review manually.",
+      "bbox": [
+        59.997501373291016,
+        337.9469909667969,
+        518.8826293945312,
+        435.48297119140625
+      ],
+      "id": "bf4bee0889784c81b53a6d9981df612c",
+      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 6
+    }
+  ],
+  "predicates": [
+    "data",
+    "external debt",
+    "external position",
+    "manufacturing sector",
+    "the strongest expansion"
+  ],
+  "metadata": {
+    "extractor_version": "1.0.0",
+    "evidence": "Whitespace-normalized exact source spans; enclosing block rectangles.",
+    "disclaimer": "Claims and heuristic relationships, not verified real-world truth."
+  },
+  "issue_count": 5103,
+  "issues_truncated": true
+}
