@@ -41,19 +41,20 @@ ALIASES = {
 
 def predicate_key(text: str) -> str:
     value = canonical(text)
+    value = " ".join({"parcels": "parcel", "shipped": "shipments"}.get(w,w) for w in value.split())
     return ALIASES.get(value, value)
 
 
 NUMBER = re.compile(
     r"^(?P<currency>USD|EUR|GBP|INR|\$|€|£|₹)?\s*"
     r"(?P<number>-?\d[\d,]*(?:\.\d+)?)\s*"
-    r"(?P<scale>billion|million|thousand|crore|lakh|bn|mn|[kmb])?\s*"
+    r"(?P<scale>billion|million|thousand|crore|lakh|cr|bn|mn|[kmb])?\s*"
     r"(?P<unit>%|percent|USD|EUR|GBP|INR|employees?|people|staff|kg|kilograms?|g|grams?|km|kilometers?|m|meters?|tonnes?|tons?|kwh|mwh|gwh)?$",
     re.I,
 )
 SCALES = {"billion": "1000000000", "bn": "1000000000", "b": "1000000000",
           "million": "1000000", "mn": "1000000", "m": "1000000",
-          "thousand": "1000", "k": "1000", "crore": "10000000", "lakh": "100000"}
+          "thousand": "1000", "k": "1000", "cr": "10000000", "crore": "10000000", "lakh": "100000"}
 UNITS = {"percent": "%", "kilogram": "kg", "kilograms": "kg", "g": "g", "grams": "g",
          "gram": "g", "kilometers": "km", "kilometer": "km", "meters": "m", "meter": "m",
          "employee": "count", "employees": "count", "people": "count", "staff": "count",
@@ -77,7 +78,9 @@ def normalize_value(raw: str, predicate: str) -> dict:
     # A bare 'm' with no currency is ambiguous (meters or million), so abstain.
     if scale and scale.lower() == "m" and not currency and not unit:
         return {"kind": "ambiguous", "value": raw, "unit": None, "normalization": "Bare m could mean meters or million."}
-    value *= Decimal(SCALES.get((scale or "").lower(), "1"))
+    multiplier = Decimal(SCALES.get((scale or "").lower(), "1"))
+    resolution = multiplier * Decimal(10) ** (-len(number.split(".")[1]) if "." in number else 0)
+    value *= multiplier
     unit = (currency or unit or ("count" if predicate == "employees" else "number")).lower()
     unit = UNITS.get(unit, unit)
     # $ does not imply USD. A currency symbol can be ambiguous across countries.
@@ -87,16 +90,18 @@ def normalize_value(raw: str, predicate: str) -> dict:
     if unit in conversion:
         unit, factor = conversion[unit]
         value *= Decimal(factor)
+        resolution *= Decimal(factor)
     normalized = format(value.normalize(), "f")
     return {"kind": "number", "value": normalized, "unit": unit,
+            "resolution": str(resolution), "scaled": bool(scale),
             "normalization": f"{raw} → {normalized} {unit}; decimal arithmetic, no currency conversion."}
 
 
 def context(text: str) -> dict:
-    periods = re.findall(r"\b(?:(?:FY|CY)\s*\d{4}(?:[-/]\d{2,4})?|Q[1-4]\s*\d{4})\b", text, re.I)
+    periods = re.findall(r"\b(?:(?:Q[1-4]\s*)?(?:FY|CY)\s*\d{2,4}(?:[-/]\d{2,4})?|Q[1-4]\s*\d{4})\b", text, re.I)
     # A four-digit quantity (e.g. 2000 kWh) is not a year without temporal grammar.
     periods += re.findall(r"\b(?:in|for|during|year|as of)\s+((?:19|20)\d{2})\b", text, re.I)
-    periods = list(dict.fromkeys(re.sub(r"\s+", "", p).upper() for p in periods))
+    periods = list(dict.fromkeys(re.sub(r"(FY|CY)(\d{2})$", r"\g<1>20\2", re.sub(r"\s+", "", p).upper()) for p in periods))
     scopes = re.findall(r"\b(consolidated|standalone|domestic|international|global)\b", text, re.I)
     return {"period": periods[0] if len(periods) == 1 else None,
             "scope": scopes[0].lower() if len(set(s.lower() for s in scopes)) == 1 else None,
@@ -116,6 +121,16 @@ def make_fact(subject: str, predicate: str, raw_value: str, quote: str, method="
 
 def trim_value(value: str) -> str:
     return re.split(r"\s+(?:in|for|during|as of|on a)\s+(?:(?:the\s+)?(?:FY|CY|Q[1-4]|year|consolidated|standalone)|(?:19|20)\d{2})", value, maxsplit=1, flags=re.I)[0].strip().rstrip(".")
+
+
+def valid_subject(subject: str) -> bool:
+    words = clean(subject).split()
+    return bool(words) and len(words) <= 7 and all(
+        word[:1].isupper() or word in {"of", "and", "the", "&"}
+        for word in words
+    ) and not any(char in subject for char in ",;:") and clean(subject).lower() not in {
+        "the company", "company", "the group", "group", "the authorities", "staff"
+    }
 
 
 def extract_rules(text: str) -> tuple[list[dict], list[dict]]:
@@ -151,6 +166,9 @@ def extract_rules(text: str) -> tuple[list[dict], list[dict]]:
         if re.search(r"\b(not|no longer|may|might|expected|forecast|projected|about|approximately|roughly|nearly|at least|up to|more than|less than)\b", sentence, re.I):
             issues.append({"kind": "qualified_statement", "quote": sentence,
                            "reason": "Negation, forecasts, bounds or approximation are not treated as exact observed facts."})
+            continue
+        if not valid_subject(subject) or re.search(r"\b(and|which|who|that|we)\b|[,;]", predicate, re.I):
+            issues.append({"kind": "uncertain_subject", "quote": sentence, "reason": "Subject or predicate is not an explicit atomic named-entity assertion."})
             continue
         value = trim_value(value)
         if len(subject.split()) > 10 or len(predicate.split()) > 8 or not value:

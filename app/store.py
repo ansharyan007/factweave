@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+from contextlib import contextmanager
 import os
 import sqlite3
 from pathlib import Path
@@ -12,11 +13,16 @@ def data_dir() -> Path:
     return root
 
 
+@contextmanager
 def connect():
     connection = sqlite3.connect(data_dir() / "knowledge.sqlite3", timeout=30)
     connection.row_factory = sqlite3.Row
     connection.execute("PRAGMA foreign_keys=ON")
-    return connection
+    try:
+        with connection:
+            yield connection
+    finally:
+        connection.close()
 
 
 def initialize():

@@ -14,6 +14,10 @@ def compare(left: dict, right: dict) -> dict | None:
         return {"kind": kind, "reason": reason, "steps": steps + [reason], "confidence": confidence,
                 "caveat": "A relationship between documented claims; not an independent verification of truth."}
 
+    if ca.get("unit_unresolved") or cb.get("unit_unresolved"):
+        return result("uncertain", "Table-wide units have not been resolved from the row; numerical comparability needs review.", 0.4)
+    if ca.get("qualifier_unresolved") or cb.get("qualifier_unresolved"):
+        return result("uncertain", "A table footnote qualifies at least one metric; its definition needs review before scope alignment.", 0.4)
     if a["kind"] != b["kind"] or "ambiguous" in (a["kind"], b["kind"]):
         return result("uncertain", "Value types are incompatible or ambiguous; review the source.", 0.35)
     if a["unit"] != b["unit"]:
@@ -41,6 +45,8 @@ def compare(left: dict, right: dict) -> dict | None:
         return result("uncertain", "One source omits " + " and ".join(missing) + "; alignment cannot be established.", 0.45)
     if equal:
         return result("corroborates", "Normalized values agree under the stated context. Unspecified context and shared upstream sources remain possible.", 0.88)
+    if a["kind"] == "number" and (a.get("scaled") or b.get("scaled")) and abs(Decimal(a["value"])-Decimal(b["value"])) < (Decimal(a.get("resolution", "0"))+Decimal(b.get("resolution", "0")))/2:
+        return result("reconciled", "Values differ but their displayed-precision intervals overlap after unit conversion. Rounding can explain the difference; inspect the source conventions.", 0.7)
     if a["kind"] == "text" and left["predicate"] != "address":
         return result("uncertain", "Different text values may be compatible descriptions or multiple valid values; no exclusivity is assumed.", 0.45)
     if not ca["period"]:

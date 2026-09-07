@@ -8,6 +8,7 @@ import pymupdf
 
 from . import store
 from .comparison import compare
+from .layout import document_subject, extract_layout
 from .extraction import clean, extract_model, extract_rules
 
 WORKER = ThreadPoolExecutor(max_workers=1, thread_name_prefix="pdf-worker")
@@ -23,6 +24,7 @@ def process(document_id: str):
             document = dict(db.execute("SELECT * FROM documents WHERE id=?", (document_id,)).fetchone())
             db.execute("UPDATE documents SET status='processing',error=NULL WHERE id=?", (document_id,))
         with pymupdf.open(store.data_dir() / f"{document_id}.pdf") as pdf:
+            subject = document_subject(pdf) if document["mode"] == "rules" else None
             for index in range(len(pdf)):
                 page = pdf[index]
                 blocks = [b for b in page.get_text("blocks", sort=True) if b[6] == 0]
@@ -56,6 +58,11 @@ def process(document_id: str):
                     for issue in issues:
                         issue["bbox"] = bbox
                     page_issues.extend(issues)
+                for fact in extract_layout(page, index + 1, subject):
+                    fact.update(id=identifier(), document_id=document_id, document_name=document["name"], page=index+1)
+                    for part in fact["evidence_parts"]:
+                        part["document_id"] = document_id
+                    page_facts.append(fact)
                 with store.connect() as db:
                     db.execute("INSERT INTO pages VALUES(?,?,?,?,?)", (document_id, index + 1, page_text, page.rect.width, page.rect.height))
                     for fact in page_facts:
