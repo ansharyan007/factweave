@@ -50,23 +50,30 @@ def initialize():
         db.execute("UPDATE documents SET status='failed', error='Server restarted during processing. Retry this document.' WHERE status IN ('queued','processing')")
 
 
-def rows(table: str) -> list[dict]:
+def read_rows(db, table: str) -> list[dict]:
     assert table in {"facts", "relationships", "issues", "documents"}
-    with connect() as db:
-        values = db.execute(f"SELECT * FROM {table} ORDER BY rowid").fetchall()
+    values = db.execute(f"SELECT * FROM {table} ORDER BY rowid").fetchall()
     if table == "documents":
         return [dict(row) for row in values]
     return [json.loads(row["payload"]) for row in values]
 
 
+def rows(table: str) -> list[dict]:
+    with connect() as db:
+        return read_rows(db, table)
+
+
 def snapshot() -> dict:
-    documents = rows("documents")
+    with connect() as db:
+        db.execute("BEGIN")
+        documents, all_facts, all_relationships, all_issues = (
+            read_rows(db, table) for table in ("documents", "facts", "relationships", "issues"))
     complete = {d["id"] for d in documents if d["status"] in ("complete", "needs_review")}
-    facts = [f for f in rows("facts") if f["document_id"] in complete]
+    facts = [f for f in all_facts if f["document_id"] in complete]
     ids = {f["id"] for f in facts}
-    relationships = [r for r in rows("relationships") if r["left_id"] in ids and r["right_id"] in ids]
+    relationships = [r for r in all_relationships if r["left_id"] in ids and r["right_id"] in ids]
     return {"documents": documents, "facts": facts, "relationships": relationships,
-            "issues": [i for i in rows("issues") if i["document_id"] in complete],
+            "issues": [i for i in all_issues if i["document_id"] in complete],
             "predicates": sorted({f["predicate"] for f in facts}),
             "metadata": {"extractor_version": "1.0.0", "evidence": "Whitespace-normalized exact source spans; enclosing block rectangles.",
                          "disclaimer": "Claims and heuristic relationships, not verified real-world truth."}}

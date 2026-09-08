@@ -64,6 +64,9 @@ def process(document_id: str):
                         part["document_id"] = document_id
                     page_facts.append(fact)
                 with store.connect() as db:
+                    # Serialize candidate reads with document deletion/replacement
+                    # so a referenced fact cannot disappear before its new edge.
+                    db.execute("BEGIN IMMEDIATE")
                     db.execute("INSERT INTO pages VALUES(?,?,?,?,?)", (document_id, index + 1, page_text, page.rect.width, page.rect.height))
                     for fact in page_facts:
                         # Only compare indexed candidates; no global all-pairs rebuild.

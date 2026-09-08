@@ -127,6 +127,21 @@
           <span class="muted">Incremental processing · evidence preserved</span>
         </div>
         <div id="document-list" class="document-list"></div>
+        <div class="collection-actions">
+          <p>
+            Replace a PDF to rebuild its facts and links, or clear the
+            collection to start with new documents.
+          </p>
+          <button id="reset-collection" class="secondary danger" disabled>
+            Clear collection
+          </button>
+        </div>
+        <input
+          id="replacement-input"
+          type="file"
+          accept="application/pdf,.pdf"
+          hidden
+        />
       </section>
       <section id="results-section">
         <div class="section-heading">

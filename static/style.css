@@ -914,3 +914,45 @@ button:disabled {
 [hidden] {
   display: none !important;
 }
+.doc-info {
+  flex: 1;
+  min-width: 0;
+}
+.document-actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.danger {
+  color: #a64843;
+  border-color: #e7cfc7;
+}
+.collection-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+}
+.collection-actions p {
+  color: var(--muted);
+  font-size: 11px;
+}
+@media (max-width: 750px) {
+  .document-row {
+    flex-wrap: wrap;
+  }
+  .doc-info {
+    flex-basis: calc(100% - 65px);
+  }
+  .doc-state {
+    margin-left: 0;
+  }
+  .document-actions {
+    margin-left: auto;
+  }
+  .collection-actions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

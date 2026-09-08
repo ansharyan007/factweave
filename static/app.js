@@ -19,6 +19,9 @@ let view = "overview",
   limit = 24,
   busy = false,
   signature = "";
+let replacementId = null,
+  refreshVersion = 0,
+  evidenceDocumentId = null;
 const labels = {
   corroborates: "Corroboration",
   contradicts: "Likely contradiction",
@@ -49,12 +52,21 @@ async function request(url, options = {}) {
   return response.json();
 }
 async function refresh() {
+  const version = ++refreshVersion;
   try {
     const next = await request("/api/knowledge");
+    if (version !== refreshVersion) return;
     const nextSignature = JSON.stringify(next);
     if (nextSignature !== signature) {
       state = next;
       signature = nextSignature;
+      if (
+        evidenceDocumentId &&
+        !state.documents.some((d) => d.id === evidenceDocumentId)
+      ) {
+        $("#evidence-dialog").close();
+        evidenceDocumentId = null;
+      }
       render();
     }
   } catch (error) {
@@ -114,7 +126,7 @@ function render() {
     ? state.documents
         .map(
           (doc) =>
-            `<div class="document-row"><span class="pdf-icon">PDF</span><div><div class="doc-name">${esc(doc.name)}</div><div class="doc-meta">${doc.pages} page${doc.pages === 1 ? "" : "s"} · ${esc(doc.mode)} · ${doc.processed_pages}/${doc.pages} processed${doc.error ? " · " + esc(doc.error) : ""}</div></div><span class="doc-state ${doc.status}">${esc(doc.status.replaceAll("_", " "))}</span>${doc.status === "failed" ? `<button class="secondary" data-retry="${doc.id}">Retry</button>` : ""}</div>`,
+            `<div class="document-row"><span class="pdf-icon">PDF</span><div class="doc-info"><div class="doc-name">${esc(doc.name)}</div><div class="doc-meta">${doc.pages} page${doc.pages === 1 ? "" : "s"} · ${esc(doc.mode)} · ${doc.processed_pages}/${doc.pages} processed${doc.error ? " · " + esc(doc.error) : ""}</div></div><span class="doc-state ${doc.status}">${esc(doc.status.replaceAll("_", " "))}</span><div class="document-actions">${doc.status === "failed" ? `<button class="secondary" data-retry="${doc.id}">Retry</button>` : ""}<button class="secondary" data-replace="${doc.id}" aria-label="Replace ${esc(doc.name)}" ${busy || ["queued", "processing"].includes(doc.status) ? 'disabled title="Wait for processing to finish"' : ""}>Replace</button><button class="secondary danger" data-delete="${doc.id}" aria-label="Delete ${esc(doc.name)}" ${busy || ["queued", "processing"].includes(doc.status) ? 'disabled title="Wait for processing to finish"' : ""}>Delete</button></div></div>`,
         )
         .join("")
     : '<div class="empty"><strong>Your source library starts here</strong>Upload PDFs or load the synthetic demo to follow a claim back to its evidence.</div>';
@@ -125,7 +137,43 @@ function render() {
       .map((p) => `<option value="${esc(p)}">${esc(p)}</option>`)
       .join("");
   $("#predicate-filter").value = previous;
+  syncControls();
   renderResults();
+}
+function syncControls() {
+  $("#upload-button").disabled = busy;
+  $("#demo-button").disabled = busy;
+  const active = state.documents.some((d) =>
+    ["queued", "processing"].includes(d.status),
+  );
+  $("#reset-collection").disabled = busy || active || !state.documents.length;
+  $("#reset-collection").title = active
+    ? "Wait for all PDFs to finish processing"
+    : "";
+  document
+    .querySelectorAll("[data-delete], [data-replace], [data-retry]")
+    .forEach((button) => {
+      const id =
+        button.dataset.delete || button.dataset.replace || button.dataset.retry;
+      const doc = state.documents.find((d) => d.id === id);
+      button.disabled =
+        busy || !doc || ["queued", "processing"].includes(doc.status);
+    });
+}
+async function changeCollection(action) {
+  if (busy) return;
+  busy = true;
+  syncControls();
+  try {
+    await action();
+    await refresh();
+  } catch (error) {
+    notice(error.message, true);
+    await refresh();
+  } finally {
+    busy = false;
+    syncControls();
+  }
 }
 function renderResults() {
   const search = $("#search").value.toLowerCase(),
@@ -161,7 +209,7 @@ function renderResults() {
 async function uploadFiles(files) {
   if (busy) return;
   busy = true;
-  $("#upload-button").disabled = true;
+  syncControls();
   try {
     for (const file of files) {
       notice(`Uploading ${file.name}…`);
@@ -180,7 +228,7 @@ async function uploadFiles(files) {
     notice(error.message, true);
   } finally {
     busy = false;
-    $("#upload-button").disabled = false;
+    syncControls();
     $("#file-input").value = "";
   }
 }
@@ -189,6 +237,7 @@ async function showEvidence(id) {
     state.facts.find((f) => f.id === id) ||
     state.issues.find((i) => i.id === id);
   if (!fact) return;
+  evidenceDocumentId = fact.document_id;
   $("#evidence-title").textContent =
     `${fact.document_name} · page ${fact.page}`;
   $("#evidence-body").textContent = "Loading source page…";
@@ -236,36 +285,105 @@ $("#file-input").addEventListener("change", (event) =>
   uploadFiles(event.target.files),
 );
 $("#demo-button").addEventListener("click", async () => {
-  const button = $("#demo-button");
-  button.disabled = true;
-  try {
+  await changeCollection(async () => {
     await request("/api/demo", { method: "POST" });
     notice(
       "Synthetic demo PDFs queued. These are fictional examples, not the assignment starter documents.",
     );
-    await refresh();
-  } catch (error) {
-    notice(error.message, true);
-  } finally {
-    button.disabled = false;
-  }
+  });
 });
 $("#results").addEventListener("click", (event) => {
   const button = event.target.closest("[data-evidence]");
   if (button) showEvidence(button.dataset.evidence);
 });
 $("#document-list").addEventListener("click", async (event) => {
+  if (busy) return;
+  const remove = event.target.closest("[data-delete]");
+  if (remove) {
+    const doc = state.documents.find((d) => d.id === remove.dataset.delete);
+    if (
+      !doc ||
+      !window.confirm(
+        `Delete "${doc.name}"? Its uploaded copy, facts, evidence, review findings and links will be removed. You can upload it again later.`,
+      )
+    )
+      return;
+    await changeCollection(async () => {
+      await request(`/api/documents/${doc.id}`, { method: "DELETE" });
+      notice(`Deleted ${doc.name} and its facts and links.`);
+    });
+    return;
+  }
+  const replace = event.target.closest("[data-replace]");
+  if (replace) {
+    replacementId = replace.dataset.replace;
+    $("#replacement-input").value = "";
+    $("#replacement-input").click();
+    return;
+  }
   const button = event.target.closest("[data-retry]");
   if (button) {
-    try {
+    await changeCollection(async () => {
       await request(`/api/documents/${button.dataset.retry}/retry`, {
         method: "POST",
       });
-      await refresh();
-    } catch (error) {
-      notice(error.message, true);
-    }
+    });
   }
+});
+$("#replacement-input").addEventListener("change", async (event) => {
+  const file = event.target.files[0];
+  const doc = state.documents.find((d) => d.id === replacementId);
+  replacementId = null;
+  if (
+    !file ||
+    !doc ||
+    !window.confirm(
+      `Replace "${doc.name}" with "${file.name}"? Its old facts and links will be removed and rebuilt using the selected extraction mode. Invalid files leave the original intact.`,
+    )
+  )
+    return;
+  await changeCollection(async () => {
+    const body = new FormData();
+    body.append("file", file);
+    body.append("mode", $("#mode").value);
+    const result = await request(`/api/documents/${doc.id}`, {
+      method: "PUT",
+      body,
+    });
+    notice(
+      result.duplicate
+        ? "This PDF and extraction mode are unchanged; existing facts were kept."
+        : `Replaced ${doc.name} with ${file.name}. Processing new facts and links…`,
+    );
+  });
+  event.target.value = "";
+});
+$("#reset-collection").addEventListener("click", async () => {
+  if (
+    !window.confirm(
+      `Clear all ${state.documents.length} uploaded PDFs and their facts, evidence, review findings and links? Original files in samples/ and starter-datasets/ are kept.`,
+    )
+  )
+    return;
+  await changeCollection(async () => {
+    await request("/api/collection/reset", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ confirm: true }),
+    });
+    $("#search").value = "";
+    $("#predicate-filter").value = "";
+    kind = "all";
+    document
+      .querySelectorAll("[data-kind]")
+      .forEach((button) =>
+        button.classList.toggle("active", button.dataset.kind === "all"),
+      );
+    limit = 24;
+    notice(
+      "Collection cleared. Upload your own PDFs to build a new knowledge layer.",
+    );
+  });
 });
 $("#close-evidence").addEventListener("click", () =>
   $("#evidence-dialog").close(),

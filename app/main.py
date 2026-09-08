@@ -10,9 +10,11 @@ import pymupdf
 from fastapi import FastAPI, File, Form, HTTPException, UploadFile
 from fastapi.responses import FileResponse, Response
 from fastapi.staticfiles import StaticFiles
+from pydantic import BaseModel
 
 from . import store
 from .pipeline import WORKER, identifier, process
+from .collection import mutation, recover_removals, remove_records, require_idle, source_path
 
 ROOT = Path(__file__).resolve().parent.parent
 MAX_BYTES = 30 * 1024 * 1024
@@ -22,6 +24,7 @@ MAX_PAGES = 1000
 @asynccontextmanager
 async def lifespan(app):
     store.initialize()
+    recover_removals()
     yield
 
 
@@ -39,7 +42,7 @@ def health():
     return {"status": "ok", "version": "1.0.0", "modes": ["rules", "ollama"]}
 
 
-def ingest(content: bytes, name: str, mode: str) -> dict:
+def validate_pdf(content: bytes) -> int:
     if len(content) > MAX_BYTES:
         raise HTTPException(413, "Maximum PDF size is 30 MB.")
     if not content.startswith(b"%PDF-"):
@@ -55,6 +58,11 @@ def ingest(content: bytes, name: str, mode: str) -> dict:
         raise
     except Exception:
         raise HTTPException(422, "PDF is damaged or unreadable.")
+    return page_count
+
+
+def ingest(content: bytes, name: str, mode: str) -> dict:
+    page_count = validate_pdf(content)
     digest = hashlib.sha256(content).hexdigest()
     with store.connect() as db:
         # Serialize deduplication and job creation, including concurrent requests.
@@ -105,6 +113,64 @@ def get_document(doc_id):
 @app.get("/api/documents/{doc_id}")
 def document(doc_id: str):
     return get_document(doc_id)
+
+
+@app.delete("/api/documents/{doc_id}")
+def delete_document(doc_id: str):
+    with mutation() as (db, stage, _):
+        row = db.execute("SELECT * FROM documents WHERE id=?", (doc_id,)).fetchone()
+        if not row:
+            raise HTTPException(404, "Document not found.")
+        require_idle(row)
+        stage(doc_id)
+        remove_records(db, doc_id)
+    return {"deleted_id": doc_id, "name": row["name"]}
+
+
+@app.put("/api/documents/{doc_id}", status_code=202)
+def replace_document(doc_id: str, file: UploadFile = File(...),
+                     mode: Literal["rules", "ollama"] = Form("rules")):
+    content = file.file.read(MAX_BYTES + 1)
+    pages = validate_pdf(content)
+    digest = hashlib.sha256(content).hexdigest()
+    name = (file.filename or "document.pdf").replace("\\", "/").split("/")[-1][:200]
+    with mutation() as (db, stage, created):
+        old = db.execute("SELECT * FROM documents WHERE id=?", (doc_id,)).fetchone()
+        if not old:
+            raise HTTPException(404, "Document not found.")
+        require_idle(old)
+        duplicate = db.execute("SELECT * FROM documents WHERE sha256=?", (digest,)).fetchone()
+        if duplicate and duplicate["id"] != doc_id:
+            raise HTTPException(409, "That PDF already exists elsewhere in the collection. The original was kept.")
+        if duplicate and duplicate["mode"] == mode and duplicate["status"] != "failed":
+            return {**dict(duplicate), "duplicate": True}
+        new_id = identifier()
+        path = source_path(new_id)
+        created.append(path)
+        path.write_bytes(content)
+        stage(doc_id)
+        remove_records(db, doc_id)
+        db.execute("INSERT INTO documents(id,name,sha256,status,pages,mode) VALUES(?,?,?,'queued',?,?)",
+                   (new_id, name, digest, pages, mode))
+    WORKER.submit(process, new_id)
+    return {"id": new_id, "replaced_id": doc_id, "name": name, "status": "queued",
+            "pages": pages, "duplicate": False}
+
+
+class ResetCollection(BaseModel):
+    confirm: Literal[True]
+
+
+@app.post("/api/collection/reset")
+def reset_collection(body: ResetCollection):
+    with mutation() as (db, stage, _):
+        documents = db.execute("SELECT * FROM documents").fetchall()
+        for row in documents:
+            require_idle(row)
+        for row in documents:
+            stage(row["id"])
+            remove_records(db, row["id"])
+    return {"deleted_documents": len(documents)}
 
 
 @app.post("/api/documents/{doc_id}/retry", status_code=202)

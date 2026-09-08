@@ -116,3 +116,152 @@ def test_failed_job_can_retry(client, monkeypatch):
     assert client.post(f"/api/documents/{doc['id']}/retry").status_code == 202
     assert len(wait(client)['facts']) == 1
     assert client.post(f"/api/documents/{doc['id']}/retry").status_code == 409
+
+
+def test_delete_removes_owned_data_and_preserves_other_links(client):
+    from app import store
+    a = upload(client, pdf("Orbit Works' headcount was 19 in FY2026."))
+    upload(client, pdf("Orbit Works employed 27 people in FY2026."), 'b.pdf')
+    upload(client, pdf("Orbit Works' headcount was 27 in FY2026."), 'c.pdf')
+    before = wait(client)
+    retained = next(r for r in before['relationships'] if r['kind'] == 'corroborates')
+    assert client.delete(f"/api/documents/{a['id']}").status_code == 200
+    after = client.get('/api/knowledge').json()
+    assert len(after['documents']) == 2
+    assert len(after['facts']) == 2
+    assert after['relationships'] == [retained]
+    assert not (store.data_dir() / f"{a['id']}.pdf").exists()
+    assert client.get(f"/api/documents/{a['id']}/pdf").status_code == 404
+    assert client.get(f"/api/documents/{a['id']}/pages/1").status_code == 404
+    assert client.delete(f"/api/documents/{a['id']}").status_code == 404
+    with store.connect() as db:
+        assert not db.execute('PRAGMA foreign_key_check').fetchall()
+        for table in ('facts', 'issues', 'pages'):
+            assert db.execute(f'SELECT count(*) FROM {table} WHERE document_id=?', (a['id'],)).fetchone()[0] == 0
+
+
+def test_replace_rebuilds_links_and_allows_reupload_of_old_content(client):
+    from app import store
+    old_content = pdf("Orbit Works' headcount was 19 in FY2026.")
+    a = upload(client, old_content)
+    upload(client, pdf("Orbit Works employed 27 people in FY2026."), 'b.pdf')
+    before = wait(client)
+    assert before['relationships'][0]['kind'] == 'contradicts'
+    stable = next(f for f in before['facts'] if f['document_id'] != a['id'])
+    new_content = pdf("Orbit Works' headcount was 27 in FY2026.")
+    response = client.put(f"/api/documents/{a['id']}", files={'file': ('updated.pdf', new_content)})
+    assert response.status_code == 202
+    new_id = response.json()['id']
+    assert response.json()['replaced_id'] == a['id']
+    after = wait(client)
+    assert len(after['documents']) == 2
+    assert after['relationships'][0]['kind'] == 'corroborates'
+    assert stable in after['facts']
+    assert client.get(f'/api/documents/{new_id}/pdf').content == new_content
+    assert not (store.data_dir() / f"{a['id']}.pdf").exists()
+    assert not upload(client, old_content)['duplicate']
+    assert len(wait(client)['documents']) == 3
+
+
+def test_invalid_duplicate_and_unchanged_replacement_preserve_original(client):
+    a_content, b_content = pdf("Orbit Works' headcount was 19 in FY2026."), pdf('Other source document.')
+    a = upload(client, a_content)
+    upload(client, b_content)
+    before = wait(client)
+    for content, status in [(b'broken', 400), (b'%PDF-broken', 422), (b_content, 409)]:
+        assert client.put(f"/api/documents/{a['id']}", files={'file': ('bad.pdf', content)}).status_code == status
+        assert client.get('/api/knowledge').json() == before
+    same = client.put(f"/api/documents/{a['id']}", files={'file': ('renamed.pdf', a_content)})
+    assert same.json()['duplicate']
+    assert same.json()['id'] == a['id']
+    assert client.get('/api/knowledge').json() == before
+
+
+def test_clear_requires_confirmation_and_removes_only_registered_uploads(client):
+    from app import store
+    upload(client, pdf("Orbit Works' headcount was 19 in FY2026."))
+    upload(client, pdf(''))
+    before = wait(client)
+    sentinel = store.data_dir() / 'keep-original.pdf'
+    sentinel.write_bytes(b'original source outside the uploaded collection')
+    assert client.post('/api/collection/reset').status_code == 422
+    assert client.post('/api/collection/reset', json={'confirm': False}).status_code == 422
+    assert client.get('/api/knowledge').json() == before
+    assert client.post('/api/collection/reset', json={'confirm': True}).json()['deleted_documents'] == 2
+    after = client.get('/api/export').json()
+    assert all(after[key] == [] for key in ['documents', 'facts', 'issues', 'relationships', 'predicates'])
+    assert sentinel.exists()
+    assert list(store.data_dir().glob('*.pdf')) == [sentinel]
+    assert client.post('/api/collection/reset', json={'confirm': True}).json()['deleted_documents'] == 0
+    assert client.post('/api/demo').status_code == 202
+    assert len(wait(client)['facts']) == 13
+
+
+@pytest.mark.parametrize('status', ['queued', 'processing'])
+def test_active_documents_cannot_be_removed_or_replaced(client, monkeypatch, status):
+    from app import store
+    content = pdf("Orbit Works' headcount was 19 in FY2026.")
+    with monkeypatch.context() as context:
+        context.setattr(WORKER, 'submit', lambda *args: None)
+        doc = upload(client, content)
+    with store.connect() as db:
+        db.execute('UPDATE documents SET status=? WHERE id=?', (status, doc['id']))
+    assert client.delete(f"/api/documents/{doc['id']}").status_code == 409
+    assert client.put(f"/api/documents/{doc['id']}", files={'file': ('new.pdf', content)}).status_code == 409
+    assert client.post('/api/collection/reset', json={'confirm': True}).status_code == 409
+    assert client.get(f"/api/documents/{doc['id']}/pdf").content == content
+
+
+def test_removal_rollback_restores_pdf_and_database(client, monkeypatch):
+    content = pdf("Orbit Works' headcount was 19 in FY2026.")
+    doc = upload(client, content)
+    before = wait(client)
+    def fail(*args):
+        raise RuntimeError('simulated database operation failure')
+    monkeypatch.setattr('app.main.remove_records', fail)
+    with pytest.raises(RuntimeError):
+        client.put(f"/api/documents/{doc['id']}", files={'file': ('new.pdf', pdf('Replacement source.'))})
+    assert client.get('/api/knowledge').json() == before
+    assert client.get(f"/api/documents/{doc['id']}/pdf").content == content
+    from app import store
+    assert len(list(store.data_dir().glob('*.pdf'))) == 1
+
+
+def test_startup_recovers_interrupted_file_removal(client):
+    from app import store
+    from app.collection import recover_removals, source_path
+    doc = upload(client, pdf('Source content for recovery.'))
+    wait(client)
+    quarantine = store.data_dir() / '.removed'
+    quarantine.mkdir()
+    source_path(doc['id']).replace(quarantine / f"{doc['id']}.pdf")
+    orphan = quarantine / ('a' * 32 + '.pdf')
+    orphan.write_bytes(b'deleted source')
+    recover_removals()
+    assert source_path(doc['id']).exists()
+    assert not orphan.exists()
+    assert not list(quarantine.iterdir())
+
+
+def test_remove_completed_pdf_while_another_is_extracting(client, monkeypatch):
+    from threading import Event
+    from app import pipeline
+    old = upload(client, pdf("Orbit Works' headcount was 19 in FY2026."))
+    wait(client)
+    entered, release = Event(), Event()
+    original = pipeline.extract_rules
+    def pause(text):
+        entered.set()
+        assert release.wait(timeout=10)
+        return original(text)
+    monkeypatch.setattr(pipeline, 'extract_rules', pause)
+    upload(client, pdf("Orbit Works' headcount was 27 in FY2026."))
+    try:
+        assert entered.wait(timeout=10)
+        assert client.delete(f"/api/documents/{old['id']}").status_code == 200
+    finally:
+        release.set()
+    after = wait(client)
+    assert len(after['facts']) == 1
+    assert after['documents'][0]['status'] == 'complete'
+    assert not after['relationships']

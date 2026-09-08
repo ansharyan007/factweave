@@ -31,6 +31,20 @@ Open **http://127.0.0.1:8000**. Upload PDFs or click **Load demo dataset**. Proc
 
 Run **one server process / one Uvicorn worker**. Original uploads and SQLite are stored in gitignored `data/`. Set `FACTWEAVE_DATA_DIR` to isolate another knowledge layer. Limits: 30 MB and 1,000 pages per PDF. Scans are flagged, not OCR-processed.
 
+### Change the uploaded PDFs
+
+In **Overview → Source library**, each completed or failed PDF has **Replace** and **Delete** controls. **Clear collection** below the library starts an empty knowledge layer. Each action asks for confirmation.
+
+- **Replace:** select an updated PDF. The app validates it, removes the old upload and its facts, evidence, review findings and links, then extracts the replacement and compares it with the remaining documents. Other documents and their links remain intact. Replacement uses the extraction mode selected above the upload button and receives a new document ID.
+- **Delete:** removes one uploaded PDF and all dependent knowledge. You can upload it again later.
+- **Clear collection:** removes all uploaded PDFs and associated knowledge. Original files in `samples/` and `starter-datasets/` remain untouched. Upload custom PDFs or reload the demo afterwards.
+
+Wait for the affected PDF to finish processing before replacing or deleting it; clearing requires all jobs to finish. Active jobs return HTTP 409. Invalid replacements and replacements that duplicate a different document preserve the original. Identical contents with the same extraction mode are a no-op, except failed jobs may be reprocessed. Accepted replacements may still encounter extraction errors, visible in their status/review findings.
+
+File removal and database changes are coordinated: failed changes restore staged files, and startup recovery handles interrupted removals. If the operating system temporarily prevents cleanup of a staged file, it remains inaccessible through the API and cleanup retries at startup.
+
+To reproduce the browser checks using an isolated temporary collection, install Playwright as below and run `python scripts/check_collection_ui.py`. The original demo video predates these management controls; [this screenshot](docs/collection-management.png) shows the new controls.
+
 ### API
 
 Interactive API docs: **http://127.0.0.1:8000/docs**.
@@ -47,6 +61,9 @@ On PowerShell use `curl.exe`. Upload returns HTTP 202 and an ID. Poll the docume
 | Endpoint | Purpose |
 | --- | --- |
 | `POST /api/documents` | Upload arbitrary PDFs; content-hash deduplication |
+| `PUT /api/documents/{id}` | Replace using multipart `file` and optional `mode`; rebuild facts and links |
+| `DELETE /api/documents/{id}` | Remove one PDF and all dependent knowledge |
+| `POST /api/collection/reset` | Clear uploads and knowledge; requires JSON `{"confirm": true}` |
 | `GET /api/documents` | Job status and page progress |
 | `GET /api/documents/{id}` | Status of one upload |
 | `GET /api/knowledge` | Facts, evidence, predicates, relationships and issues |
@@ -70,7 +87,7 @@ pip install -r requirements-dev.txt
 python -m pytest -q
 ```
 
-On Windows without environment activation, prefix commands with `.venv\Scripts\python -m`. The suite has 36 tests. The sample PDFs are committed; regenerate with `python scripts/create_samples.py`. To record the actual UI interactions and run browser checks:
+On Windows without environment activation, prefix commands with `.venv\Scripts\python -m`. The suite has 45 tests. The sample PDFs are committed; regenerate with `python scripts/create_samples.py`. To record the actual UI interactions and run browser checks:
 
 ```bash
 pip install playwright
