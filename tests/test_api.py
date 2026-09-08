@@ -67,6 +67,25 @@ def test_synthetic_four_cases(client):
         assert fact['quote'] in client.get(f"/api/documents/{fact['document_id']}/pages/{fact['page']}").json()['text']
 
 
+def test_reprocess_saved_pdf_rebuilds_facts_and_edges(client):
+    first = upload(client, pdf("Canada's real GDP grew by 2 percent in FY2025."))
+    upload(client, pdf("Canada's real GDP growth stood at 2 per cent in FY2025."))
+    before = wait(client)
+    assert len(before['facts']) == 2
+    assert before['relationships'][0]['kind'] == 'corroborates'
+    content = client.get(f"/api/documents/{first['id']}/pdf").content
+    response = client.post(f"/api/documents/{first['id']}/reprocess")
+    assert response.status_code == 202
+    after = wait(client)
+    assert len(after['facts']) == 2
+    assert len(after['relationships']) == 1
+    assert after['relationships'][0]['kind'] == 'corroborates'
+    assert client.get(f"/api/documents/{first['id']}/pdf").content == content
+    old_ids = {f['id'] for f in before['facts'] if f['document_id'] == first['id']}
+    assert not old_ids & {f['id'] for f in after['facts']}
+    assert client.post('/api/documents/missing/reprocess').status_code == 404
+
+
 def test_rejects_invalid_and_locked_pdf(client):
     assert client.post('/api/documents', files={'file': ('bad.pdf', b'not a pdf')}).status_code == 400
     assert client.post('/api/documents', files={'file': ('bad.pdf', b'%PDF-corrupt')}).status_code == 422

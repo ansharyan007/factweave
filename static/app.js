@@ -85,7 +85,7 @@ function evidenceButton(fact) {
   return `<button data-evidence="${esc(fact.id)}">${esc(fact.document_name)} · p. ${fact.page} ↗</button>`;
 }
 function claim(fact) {
-  return `<div class="claim"><div class="context-tag">${esc(fact.context.period || "Period unspecified")} · ${esc(fact.context.scope || "Scope unspecified")}</div><strong>${esc(fact.raw_value)}</strong><div class="quote">“${esc(fact.quote)}”</div><div class="source">${evidenceButton(fact)}</div></div>`;
+  return `<div class="claim"><div class="context-tag">${esc(fact.context.period || "Period unspecified")} · ${esc(fact.context.scope || "Scope unspecified")} &middot; ${esc(fact.context.assertion_type || "reported")}${fact.context.subject_inferred ? " &middot; inferred subject" : ""}</div><strong>${esc(fact.raw_value)}</strong><div class="quote">“${esc(fact.quote)}”</div><div class="source">${evidenceButton(fact)}</div></div>`;
 }
 function relationCard(relation) {
   const left = state.facts.find((f) => f.id === relation.left_id),
@@ -126,7 +126,7 @@ function render() {
     ? state.documents
         .map(
           (doc) =>
-            `<div class="document-row"><span class="pdf-icon">PDF</span><div class="doc-info"><div class="doc-name">${esc(doc.name)}</div><div class="doc-meta">${doc.pages} page${doc.pages === 1 ? "" : "s"} · ${esc(doc.mode)} · ${doc.processed_pages}/${doc.pages} processed${doc.error ? " · " + esc(doc.error) : ""}</div></div><span class="doc-state ${doc.status}">${esc(doc.status.replaceAll("_", " "))}</span><div class="document-actions">${doc.status === "failed" ? `<button class="secondary" data-retry="${doc.id}">Retry</button>` : ""}<button class="secondary" data-replace="${doc.id}" aria-label="Replace ${esc(doc.name)}" ${busy || ["queued", "processing"].includes(doc.status) ? 'disabled title="Wait for processing to finish"' : ""}>Replace</button><button class="secondary danger" data-delete="${doc.id}" aria-label="Delete ${esc(doc.name)}" ${busy || ["queued", "processing"].includes(doc.status) ? 'disabled title="Wait for processing to finish"' : ""}>Delete</button></div></div>`,
+            `<div class="document-row"><span class="pdf-icon">PDF</span><div class="doc-info"><div class="doc-name">${esc(doc.name)}</div><div class="doc-meta">${doc.pages} page${doc.pages === 1 ? "" : "s"} · ${esc(doc.mode)} · ${doc.processed_pages}/${doc.pages} processed &middot; ${state.facts.filter(f => f.document_id === doc.id).length} facts${doc.error ? " · " + esc(doc.error) : ""}</div></div><span class="doc-state ${doc.status}">${esc(doc.status.replaceAll("_", " "))}</span><div class="document-actions">${doc.status === "failed" ? `<button class="secondary" data-retry="${doc.id}">Retry</button>` : ""}<button class="secondary" data-reprocess="${doc.id}">Reprocess</button><button class="secondary" data-replace="${doc.id}" aria-label="Replace ${esc(doc.name)}" ${busy || ["queued", "processing"].includes(doc.status) ? 'disabled title="Wait for processing to finish"' : ""}>Replace</button><button class="secondary danger" data-delete="${doc.id}" aria-label="Delete ${esc(doc.name)}" ${busy || ["queued", "processing"].includes(doc.status) ? 'disabled title="Wait for processing to finish"' : ""}>Delete</button></div></div>`,
         )
         .join("")
     : '<div class="empty"><strong>Your source library starts here</strong>Upload PDFs or load the synthetic demo to follow a claim back to its evidence.</div>';
@@ -151,10 +151,10 @@ function syncControls() {
     ? "Wait for all PDFs to finish processing"
     : "";
   document
-    .querySelectorAll("[data-delete], [data-replace], [data-retry]")
+    .querySelectorAll("[data-delete], [data-replace], [data-retry], [data-reprocess]")
     .forEach((button) => {
       const id =
-        button.dataset.delete || button.dataset.replace || button.dataset.retry;
+        button.dataset.delete || button.dataset.replace || button.dataset.retry || button.dataset.reprocess;
       const doc = state.documents.find((d) => d.id === id);
       button.disabled =
         busy || !doc || ["queued", "processing"].includes(doc.status);
@@ -203,7 +203,7 @@ function renderResults() {
     view === "facts" ? factCard : view === "issues" ? issueCard : relationCard;
   $("#results").innerHTML = items.length
     ? items.slice(0, limit).map(renderer).join("")
-    : `<div class="empty"><strong>${state.documents.length ? "No matching results yet" : "The interesting part is between the documents"}</strong>${state.documents.some((d) => ["queued", "processing"].includes(d.status)) ? "Processing is in progress. Results will appear automatically." : "Try another filter, upload documents, or explore the demo dataset."}</div>`;
+    : `<div class="empty"><strong>${state.documents.length ? "No matching results yet" : "The interesting part is between the documents"}</strong>${state.documents.some((d) => ["queued", "processing"].includes(d.status)) ? "Processing is in progress. Results will appear automatically." : state.facts.length ? "Facts were extracted. Open Fact explorer to inspect them; a relationship also requires comparable claims in different documents." : "No facts extracted yet. Open Review queue for the skipped evidence, or use Reprocess after updating the extractor. Scanned PDFs require OCR."}</div>`;
   $("#more").hidden = items.length <= limit;
 }
 async function uploadFiles(files) {
@@ -298,6 +298,14 @@ $("#results").addEventListener("click", (event) => {
 });
 $("#document-list").addEventListener("click", async (event) => {
   if (busy) return;
+  const reprocess = event.target.closest("[data-reprocess]");
+  if (reprocess) {
+    await changeCollection(async () => {
+      await request(`/api/documents/${reprocess.dataset.reprocess}/reprocess?mode=${encodeURIComponent($("#mode").value)}`, {method: "POST"});
+      notice("Reprocessing the saved PDF with the selected extractor. Facts and links will refresh automatically.");
+    });
+    return;
+  }
   const remove = event.target.closest("[data-delete]");
   if (remove) {
     const doc = state.documents.find((d) => d.id === remove.dataset.delete);

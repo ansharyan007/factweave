@@ -63,6 +63,8 @@ UNITS = {"percent": "%", "kilogram": "kg", "kilograms": "kg", "g": "g", "grams":
 
 def normalize_value(raw: str, predicate: str) -> dict:
     raw = clean(raw).rstrip(".")
+    raw = re.sub(r"\bper cent\b", "percent", raw, flags=re.I)
+    raw = re.sub(r"US\$", "USD", raw, flags=re.I)
     match = NUMBER.fullmatch(raw)
     if not match:
         value = canonical(raw)

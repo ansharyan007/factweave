@@ -46,6 +46,14 @@ def main():
                 page.locator('#file-input').set_input_files([str(directory/'initial.pdf'),str(directory/'supporting.pdf')])
                 page.wait_for_function("document.querySelector('#stat-facts').textContent === '2'")
                 assert page.locator('.badge.contradicts').count() == 1
+                assert '1 facts' in page.locator('.doc-meta').first.inner_text()
+                old_fact_ids = {f['id'] for f in httpx.get(URL+'/api/knowledge').json()['facts']}
+                page.locator('[data-reprocess]').first.click()
+                page.wait_for_function("document.querySelector('#notice').textContent.includes('Reprocessing')")
+                page.wait_for_function("document.querySelector('#stat-facts').textContent === '2' && !document.querySelector('[data-reprocess]').disabled")
+                new_fact_ids = {f['id'] for f in httpx.get(URL+'/api/knowledge').json()['facts']}
+                assert old_fact_ids != new_fact_ids
+                assert page.locator('.badge.contradicts').count() == 1
                 page.once('dialog', lambda dialog: dialog.dismiss())
                 page.get_by_role('button',name='Delete initial.pdf',exact=True).click()
                 assert page.locator('#stat-documents').inner_text() == '2'

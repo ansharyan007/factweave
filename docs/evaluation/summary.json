@@ -3,21 +3,21 @@
     "dataset": "delhivery",
     "documents": 3,
     "pages": 227,
-    "facts": 211,
+    "facts": 212,
     "relationships": {
       "reconciled": 1,
       "corroborates": 1,
       "uncertain": 10
     },
     "issues": {
-      "unparsed_statement": 4257,
+      "unparsed_statement": 3873,
       "qualified_statement": 14,
-      "ambiguous_statement": 231,
-      "uncertain_subject": 69,
+      "ambiguous_statement": 239,
+      "uncertain_subject": 75,
       "uncertain_value": 5,
       "no_extractable_text": 2
     },
-    "seconds": 18.03,
+    "seconds": 12.89,
     "evidence_checks": "all fact and context spans found in source pages",
     "quality_note": "Automated grounding check, not a precision/recall score. Layout ownership and context are heuristic."
   },
@@ -25,18 +25,20 @@
     "dataset": "india-macroeconomy",
     "documents": 3,
     "pages": 284,
-    "facts": 5,
-    "relationships": {},
+    "facts": 31,
+    "relationships": {
+      "uncertain": 30
+    },
     "issues": {
-      "unparsed_statement": 4783,
-      "ambiguous_statement": 259,
-      "uncertain_subject": 41,
-      "qualified_statement": 17,
+      "unparsed_statement": 3726,
+      "ambiguous_statement": 295,
+      "uncertain_subject": 54,
+      "qualified_statement": 21,
       "uncertain_value": 1,
       "no_extractable_text": 1,
       "uncertain_parse": 1
     },
-    "seconds": 5.58,
+    "seconds": 5.13,
     "evidence_checks": "all fact and context spans found in source pages",
     "quality_note": "Automated grounding check, not a precision/recall score. Layout ownership and context are heuristic."
   }

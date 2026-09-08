@@ -189,6 +189,25 @@ def retry(doc_id: str, mode: Literal["rules", "ollama"] = "rules"):
     return {"id": doc_id, "status": "queued"}
 
 
+@app.post("/api/documents/{doc_id}/reprocess", status_code=202)
+def reprocess(doc_id: str, mode: Literal["rules", "ollama"] = "rules"):
+    """Keep the uploaded PDF and identity; rebuild derived facts and links."""
+    with store.connect() as db:
+        db.execute("BEGIN IMMEDIATE")
+        row = db.execute("SELECT * FROM documents WHERE id=?", (doc_id,)).fetchone()
+        if not row:
+            raise HTTPException(404, "Document not found.")
+        require_idle(row)
+        if not source_path(doc_id).is_file():
+            raise HTTPException(409, "The uploaded PDF is missing. Replace it with a readable copy.")
+        db.execute("DELETE FROM relationships WHERE left_id IN (SELECT id FROM facts WHERE document_id=?) OR right_id IN (SELECT id FROM facts WHERE document_id=?)", (doc_id, doc_id))
+        for table in ("facts", "issues", "pages"):
+            db.execute(f"DELETE FROM {table} WHERE document_id=?", (doc_id,))
+        db.execute("UPDATE documents SET status='queued',processed_pages=0,error=NULL,mode=? WHERE id=?", (mode, doc_id))
+    WORKER.submit(process, doc_id)
+    return {"id": doc_id, "status": "queued"}
+
+
 @app.get("/api/documents/{doc_id}/pdf")
 def pdf_file(doc_id: str):
     doc = get_document(doc_id)

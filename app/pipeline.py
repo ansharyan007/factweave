@@ -10,6 +10,7 @@ from . import store
 from .comparison import compare
 from .layout import document_subject, extract_layout
 from .extraction import clean, extract_model, extract_rules
+from .statistics import country_subject, extract_statistics, reading_blocks
 
 WORKER = ThreadPoolExecutor(max_workers=1, thread_name_prefix="pdf-worker")
 
@@ -25,15 +26,22 @@ def process(document_id: str):
             db.execute("UPDATE documents SET status='processing',error=NULL WHERE id=?", (document_id,))
         with pymupdf.open(store.data_dir() / f"{document_id}.pdf") as pdf:
             subject = document_subject(pdf) if document["mode"] == "rules" else None
+            country = country_subject(pdf) if document["mode"] == "rules" else None
             for index in range(len(pdf)):
                 page = pdf[index]
                 blocks = [b for b in page.get_text("blocks", sort=True) if b[6] == 0]
                 page_text = "\n".join(clean(b[4]) for b in blocks)
+                prose = reading_blocks(blocks)
+                # Preserve raw blocks for layout evidence, and joined reading
+                # spans for prose quotes. Reconstruction only adds whitespace.
+                joined = [b[4] for b in prose if len(b[5]) > 1]
+                if joined:
+                    page_text += "\n[Reconstructed reading spans]\n" + "\n".join(joined)
                 page_facts, page_issues = [], []
                 if len(page_text.strip()) < 30:
                     page_issues.append({"kind": "no_extractable_text", "quote": page_text,
                                         "reason": "Page has little or no text. Likely scanned/image content; OCR is not enabled. No facts invented."})
-                for block in blocks:
+                for block in prose:
                     text = clean(block[4])
                     if len(text) > 16000:
                         page_issues.append({"kind": "oversized_block", "quote": text[:300],
@@ -42,10 +50,16 @@ def process(document_id: str):
                     extractor = extract_model if document["mode"] == "ollama" else extract_rules
                     try:
                         facts, issues = extractor(text)
+                        if document["mode"] == "rules":
+                            extra = [f for f in extract_statistics(text, country)
+                                     if not any(f["quote"] == old["quote"] for old in facts)]
+                            facts.extend(extra)
+                            recovered = {f["quote"] for f in extra}
+                            issues = [i for i in issues if i.get("quote") not in recovered]
                     except Exception as exc:
                         # Do not silently fall back or label a failed model as successful.
-                        facts, issues = [], [{"kind": "model_failure", "quote": text[:500],
-                                             "reason": f"Local model failed ({type(exc).__name__}). Retry with offline mode or check Ollama."}]
+                        facts, issues = [], [{"kind": "extraction_failure", "quote": text[:500],
+                                             "reason": f"Extractor failed ({type(exc).__name__}); this block needs review."}]
                     bbox = list(block[:4])
                     for fact in facts:
                         start = text.find(fact["quote"])
@@ -54,6 +68,12 @@ def process(document_id: str):
                         fact.update(id=identifier(), document_id=document_id, document_name=document["name"],
                                     page=index + 1, bbox=bbox, block_text=text,
                                     evidence_start=start, evidence_end=start + len(fact["quote"]))
+                        if len(block[5]) > 1:
+                            fact.setdefault("evidence_parts", []).extend(
+                                {"role": "joined source fragment", "page": index + 1,
+                                 "quote": clean(part[4]), "bbox": list(part[:4])} for part in block[5])
+                        for part in fact.get("evidence_parts", []):
+                            part["document_id"] = document_id
                         page_facts.append(fact)
                     for issue in issues:
                         issue["bbox"] = bbox

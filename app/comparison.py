@@ -14,6 +14,11 @@ def compare(left: dict, right: dict) -> dict | None:
         return {"kind": kind, "reason": reason, "steps": steps + [reason], "confidence": confidence,
                 "caveat": "A relationship between documented claims; not an independent verification of truth."}
 
+    assertions = (ca.get("assertion_type", "reported"), cb.get("assertion_type", "reported"))
+    if "forecast" in assertions or "estimate" in assertions:
+        steps.append(f"Claim qualifications: {assertions[0]} versus {assertions[1]}.")
+        return result("uncertain", "At least one claim is an estimate or forecast. Publication dates and revision history must be aligned before treating differences as contradictions.", 0.5)
+
     if ca.get("unit_unresolved") or cb.get("unit_unresolved"):
         return result("uncertain", "Table-wide units have not been resolved from the row; numerical comparability needs review.", 0.4)
     if ca.get("qualifier_unresolved") or cb.get("qualifier_unresolved"):
@@ -33,6 +38,17 @@ def compare(left: dict, right: dict) -> dict | None:
     if "period" in different:
         pa, pb = ca["period"], cb["period"]
         import re
+        if left.get("method") == "statistical prose" or right.get("method") == "statistical prose":
+            def granularity(period):
+                if re.search(r"Q[1-4]|QUARTER", period):
+                    return "quarter"
+                if re.search(r"H[12]", period):
+                    return "half"
+                if re.search(r"JANUARY|FEBRUARY|MARCH|APRIL|MAY|JUNE|JULY|AUGUST|SEPTEMBER|OCTOBER|NOVEMBER|DECEMBER", period):
+                    return "month range" if "/" in period else "month"
+                return "year"
+            if granularity(pa) != granularity(pb):
+                return result("uncertain", "The periods have different granularity and may overlap; a quarter or month cannot be equated with an annual measure.", 0.45)
         ya, yb = re.findall(r"\d{4}", pa), re.findall(r"\d{4}", pb)
         if ya == yb and (pa[:2] != pb[:2] or "/" in pa or "-" in pa or "/" in pb or "-" in pb):
             return result("uncertain", "Period labels may overlap (for example fiscal versus calendar year); boundaries are unknown.", 0.45)

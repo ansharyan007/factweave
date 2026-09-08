@@ -4,8 +4,8 @@ Both local starter datasets were evaluated through the same public PDF-upload AP
 
 | Dataset | PDFs / pages | Extracted claims | Relationships | Measured local evaluation time |
 | --- | --- | --- | --- | --- |
-| Delhivery | 3 / 227 | 211 | 1 corroboration, 1 reconciliation, 10 uncertain | approximately 18 seconds |
-| India macroeconomy | 3 / 284 | 5 | 0 | approximately 5 seconds |
+| Delhivery | 3 / 227 | 212 | 1 corroboration, 1 reconciliation, 10 uncertain | approximately 13 seconds |
+| India macroeconomy | 3 / 284 | 31 | 30 uncertain | approximately 5 seconds |
 
 These counts are **coverage observations, not accuracy scores**. Every emitted fact quote and inherited grounding span was checked against its stored source page. Lexical grounding does not establish correct semantic interpretation, entity ownership or numerical units. The run includes extraction, storage, comparison and source-span checks; it is not a controlled performance benchmark.
 
@@ -35,9 +35,17 @@ Other real limitations remain: a page about a partner's operations can inherit t
 
 ## The macroeconomy failure
 
-The offline parser found only five semantic claims and no relationships across 284 pages. Long prose, estimates, changing data vintages, macroeconomic table hierarchies and implicit country context exceed its current grammar. The review queue contains many unparsed or qualified statements; the system does not claim comprehensive extraction.
+The original parser found only five claims, including zero from RBI. RBI stored prose as individual line blocks, and the grammar missed statistical verbs and the unit spelling `per cent`. Reading PDF pages successfully did not mean facts had been extracted.
 
-A next version should use a evaluated structured model extractor, richer period/vintage definitions, table hierarchy reconstruction and evidence-aware entity resolution. The optional Ollama adapter is implemented but live model quality was not evaluated.
+The updated implementation joins nearby text fragments sharing a column edge and retains their original rectangles as separate evidence spans. A statistical prose supplement recognizes common measures, preserves metric modifiers and attached periods, and keeps estimates/forecasts labeled. An ISO country catalogue supports a dominant-country heuristic with a visible source anchor; no PDF filenames or India-specific extraction rules select behavior.
+
+The revised run yields **11 Economic Survey facts, 7 RBI facts, and 13 IMF facts**. For example, RBI excerpt page 8 now supplies real GDP growth of 6.5 per cent in 2024-25, and IMF page 10 supplies 6.5 percent in FY2024/25. Their values agree, but the comparison remains uncertain because the period labels need calendar alignment. Survey page 4 supplies the 6.4 per cent FY25 *estimate*, which is not asserted as a contradiction with later reported growth. The 30 links are all uncertain; no extra corroboration or contradiction is claimed merely to improve a count.
+
+Reviewing the first expanded run exposed incorrect candidates: a *contribution to inflation* parsed as inflation, and a quarter inheriting the year of an earlier clause. Regression tests now reject share/contribution claims in this grammar and preserve attached quarter/month/range context. Unknown metric modifiers are rejected; an unspecified inflation subtype forces uncertain comparison.
+
+Coverage remains limited: complex tables, implicit references, national-account revisions, contextual subpopulations and unfamiliar statistical grammar still need review. Country inheritance and layout reconstruction are heuristics. The optional Ollama adapter is implemented but live model quality was not evaluated. Source substring checks do not establish semantic accuracy.
+
+Already uploaded PDFs can be updated using **Reprocess**, without uploading again. Original bytes and document IDs stay in place while derived facts, evidence and links are rebuilt. Tests exercise this through the API and browser.
 
 ## Reproduce and provenance
 

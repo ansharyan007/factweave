@@ -1,7 +1,7 @@
 {
   "documents": [
     {
-      "id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "id": "07a0e725ba864b449c52cb29be197d16",
       "name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "sha256": "86f2e79a3b7b4a3698907897297b9e17fe06d39c074d52e68303066d18a2cf71",
       "status": "needs_review",
@@ -9,10 +9,10 @@
       "processed_pages": 89,
       "mode": "rules",
       "error": null,
-      "created_at": "2026-09-07 11:01:34"
+      "created_at": "2026-09-08 10:46:06"
     },
     {
-      "id": "a98fe017039a4e0590ef1d4f9275bd6a",
+      "id": "bc650b381bca4ac0ba2d24714ac2790a",
       "name": "02-rbi-annual-report-2024-25-excerpt.pdf",
       "sha256": "73209a2caa2f5671f2feae065d01602302daaaac9e8230c9c471d99243fd079e",
       "status": "needs_review",
@@ -20,10 +20,10 @@
       "processed_pages": 100,
       "mode": "rules",
       "error": null,
-      "created_at": "2026-09-07 11:01:35"
+      "created_at": "2026-09-08 10:46:07"
     },
     {
-      "id": "16e3c71b7ebf439d82b590fb5f3e9528",
+      "id": "0625c3c0322a4a3d85759914168c80b3",
       "name": "03-imf-india-2025-article-iv-excerpt.pdf",
       "sha256": "f6d3cfecafd9548920349b29b1137d645c20073434d0ac66485ead9738a0ea4d",
       "status": "needs_review",
@@ -31,10 +31,53 @@
       "processed_pages": 95,
       "mode": "rules",
       "error": null,
-      "created_at": "2026-09-07 11:01:35"
+      "created_at": "2026-09-08 10:46:07"
     }
   ],
   "facts": [
+    {
+      "subject": "India",
+      "subject_key": "india",
+      "predicate": "real gdp growth",
+      "raw_predicate": "real gdp growth",
+      "raw_value": "6.4 per cent",
+      "normalized": {
+        "kind": "number",
+        "value": "6.4",
+        "unit": "%",
+        "resolution": "0.1",
+        "scaled": false,
+        "normalization": "6.4 percent \u2192 6.4 %; decimal arithmetic, no currency conversion."
+      },
+      "context": {
+        "period": "FY2025",
+        "scope": null,
+        "periods": [
+          "FY2025"
+        ],
+        "ambiguous": false,
+        "approximate": false,
+        "assertion_type": "estimate",
+        "subject_inferred": false
+      },
+      "quote": "As per the first advance estimates of national accounts, India\u2019s real GDP is estimated to grow by 6.4 per cent in FY25.",
+      "method": "statistical prose",
+      "confidence": 0.65,
+      "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score.",
+      "id": "c015bcc6719b4de4b0062e21cc4ffa12",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 4,
+      "bbox": [
+        74.99520111083984,
+        403.2748718261719,
+        503.8992004394531,
+        573.662841796875
+      ],
+      "block_text": "In this global context, India displayed steady economic growth. As per the first advance estimates of national accounts, India\u2019s real GDP is estimated to grow by 6.4 per cent in FY25. Growth in the first half of FY25 was supported by agriculture and services, with rural demand improving on the back of record Kharif production and favourable agricultural conditions. The manufacturing sector faced pressures due to weak global demand and domestic seasonal conditions. Private consumption remained stable, reflecting steady domestic demand. Fiscal discipline and strong external balance supported by a services trade surplus and healthy remittance growth contributed to macroeconomic stability. Together, these factors provided a solid foundation for sustained growth amid external uncertainties.",
+      "evidence_start": 64,
+      "evidence_end": 183
+    },
     {
       "subject": "India",
       "subject_key": "india",
@@ -58,8 +101,8 @@
       "method": "rules",
       "confidence": 0.78,
       "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score.",
-      "id": "01368f89cf83486eb710962690d67e1b",
-      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "id": "3e633cbd06e44dfab4a97453db91c54e",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 8,
       "bbox": [
@@ -71,6 +114,1872 @@
       "block_text": "1.10 Production trends varied widely across regions in December (Chart I.6 and I.7). Production rose in 13 of the 30 nations for which December PMI data were available. The Eurozone saw the steepest contractions, led by France, Germany, and Austria. North America showed mixed results, with Canada\u2019s growth offset by declines in the US and Mexico. India reported the strongest expansion of output. The outlook for global manufacturing also remained subdued in December, with business sentiment dipping to a three-month low.9",
       "evidence_start": 348,
       "evidence_end": 397
+    },
+    {
+      "subject": "India",
+      "subject_key": "india",
+      "predicate": "real gdp growth",
+      "raw_predicate": "real gdp growth",
+      "raw_value": "6.4 per cent",
+      "normalized": {
+        "kind": "number",
+        "value": "6.4",
+        "unit": "%",
+        "resolution": "0.1",
+        "scaled": false,
+        "normalization": "6.4 percent \u2192 6.4 %; decimal arithmetic, no currency conversion."
+      },
+      "context": {
+        "period": "FY2025",
+        "scope": null,
+        "periods": [
+          "FY2025"
+        ],
+        "ambiguous": false,
+        "approximate": false,
+        "assertion_type": "estimate",
+        "subject_inferred": true
+      },
+      "quote": "1.22 As per the first advance estimates released by the National Statistical Office, Ministry of Statistics & Programme Implementation (MoSPI), the real gross domestic product (GDP) growth for FY25 is estimated to be 6.4 per cent.",
+      "method": "statistical prose",
+      "confidence": 0.65,
+      "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score. Country subject inferred from dominant mentions in the first 12 pages; inspect its separate evidence.",
+      "evidence_parts": [
+        {
+          "role": "inferred country subject",
+          "page": 1,
+          "quote": "36 Introduction 36 Monetary Developments 38 Financial Intermediation 73 Risks Pertaining to India\u2019s Financial Sector 76 Outlook",
+          "bbox": [
+            60.00091552734375,
+            386.8125305175781,
+            378.3110046386719,
+            455.4224853515625
+          ],
+          "document_id": "07a0e725ba864b449c52cb29be197d16"
+        }
+      ],
+      "id": "7f93a8ec76b247958dc21266a2a1209f",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 14,
+      "bbox": [
+        59.99760055541992,
+        235.00772094726562,
+        518.89697265625,
+        382.043701171875
+      ],
+      "block_text": "1.22 As per the first advance estimates released by the National Statistical Office, Ministry of Statistics & Programme Implementation (MoSPI), the real gross domestic product (GDP) growth for FY25 is estimated to be 6.4 per cent. From the angle of aggregate demand in the economy, private final consumption expenditure at constant prices is estimated to grow by 7.3 per cent, driven by a rebound in rural demand. PFCE as a share of GDP (at current prices) is estimated to increase from 60.3 per cent in FY24 to 61.8 per cent in FY25. This share is the highest since FY03. Gross fixed capital formation (GFCF) (at constant prices) is estimated to grow by 6.4 per cent.",
+      "evidence_start": 0,
+      "evidence_end": 230
+    },
+    {
+      "subject": "India",
+      "subject_key": "india",
+      "predicate": "real gva growth",
+      "raw_predicate": "real gva growth",
+      "raw_value": "6.4 per cent",
+      "normalized": {
+        "kind": "number",
+        "value": "6.4",
+        "unit": "%",
+        "resolution": "0.1",
+        "scaled": false,
+        "normalization": "6.4 percent \u2192 6.4 %; decimal arithmetic, no currency conversion."
+      },
+      "context": {
+        "period": null,
+        "scope": null,
+        "periods": [],
+        "ambiguous": false,
+        "approximate": false,
+        "assertion_type": "estimate",
+        "subject_inferred": true
+      },
+      "quote": "1.23 On the supply side, real gross value added (GVA) is also estimated to grow by 6.4 per cent.",
+      "method": "statistical prose",
+      "confidence": 0.65,
+      "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score. Country subject inferred from dominant mentions in the first 12 pages; inspect its separate evidence.",
+      "evidence_parts": [
+        {
+          "role": "inferred country subject",
+          "page": 1,
+          "quote": "36 Introduction 36 Monetary Developments 38 Financial Intermediation 73 Risks Pertaining to India\u2019s Financial Sector 76 Outlook",
+          "bbox": [
+            60.00091552734375,
+            386.8125305175781,
+            378.3110046386719,
+            455.4224853515625
+          ],
+          "document_id": "07a0e725ba864b449c52cb29be197d16"
+        }
+      ],
+      "id": "aafdf11496454a2db1ff2f8e88b4e309",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 14,
+      "bbox": [
+        59.99760055541992,
+        657.6753540039062,
+        518.8920288085938,
+        722.2113647460938
+      ],
+      "block_text": "1.23 On the supply side, real gross value added (GVA) is also estimated to grow by 6.4 per cent. The agriculture sector is expected to rebound to a growth of 3.8 per cent in FY25. The industrial sector is estimated to grow by 6.2 per cent in FY25. Strong growth rates in construction activities and electricity, gas, water supply and other utility",
+      "evidence_start": 0,
+      "evidence_end": 96
+    },
+    {
+      "subject": "India",
+      "subject_key": "india",
+      "predicate": "industrial sector growth",
+      "raw_predicate": "industrial sector growth",
+      "raw_value": "6.2 per cent",
+      "normalized": {
+        "kind": "number",
+        "value": "6.2",
+        "unit": "%",
+        "resolution": "0.1",
+        "scaled": false,
+        "normalization": "6.2 percent \u2192 6.2 %; decimal arithmetic, no currency conversion."
+      },
+      "context": {
+        "period": "FY2025",
+        "scope": null,
+        "periods": [
+          "FY2025"
+        ],
+        "ambiguous": false,
+        "approximate": false,
+        "assertion_type": "estimate",
+        "subject_inferred": true
+      },
+      "quote": "The industrial sector is estimated to grow by 6.2 per cent in FY25.",
+      "method": "statistical prose",
+      "confidence": 0.65,
+      "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score. Country subject inferred from dominant mentions in the first 12 pages; inspect its separate evidence.",
+      "evidence_parts": [
+        {
+          "role": "inferred country subject",
+          "page": 1,
+          "quote": "36 Introduction 36 Monetary Developments 38 Financial Intermediation 73 Risks Pertaining to India\u2019s Financial Sector 76 Outlook",
+          "bbox": [
+            60.00091552734375,
+            386.8125305175781,
+            378.3110046386719,
+            455.4224853515625
+          ],
+          "document_id": "07a0e725ba864b449c52cb29be197d16"
+        }
+      ],
+      "id": "7cd40746883a402ba844499721b2ecc3",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 14,
+      "bbox": [
+        59.99760055541992,
+        657.6753540039062,
+        518.8920288085938,
+        722.2113647460938
+      ],
+      "block_text": "1.23 On the supply side, real gross value added (GVA) is also estimated to grow by 6.4 per cent. The agriculture sector is expected to rebound to a growth of 3.8 per cent in FY25. The industrial sector is estimated to grow by 6.2 per cent in FY25. Strong growth rates in construction activities and electricity, gas, water supply and other utility",
+      "evidence_start": 180,
+      "evidence_end": 247
+    },
+    {
+      "subject": "India",
+      "subject_key": "india",
+      "predicate": "real gva growth",
+      "raw_predicate": "real gva growth",
+      "raw_value": "6.2 per cent",
+      "normalized": {
+        "kind": "number",
+        "value": "6.2",
+        "unit": "%",
+        "resolution": "0.1",
+        "scaled": false,
+        "normalization": "6.2 percent \u2192 6.2 %; decimal arithmetic, no currency conversion."
+      },
+      "context": {
+        "period": "H1FY25",
+        "scope": null,
+        "periods": [
+          "H1FY25"
+        ],
+        "ambiguous": false,
+        "approximate": false,
+        "assertion_type": "reported",
+        "subject_inferred": true
+      },
+      "quote": "1.28 The real GVA grew by 6.2 per cent in H1 FY25.",
+      "method": "statistical prose",
+      "confidence": 0.65,
+      "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score. Country subject inferred from dominant mentions in the first 12 pages; inspect its separate evidence.",
+      "evidence_parts": [
+        {
+          "role": "inferred country subject",
+          "page": 1,
+          "quote": "36 Introduction 36 Monetary Developments 38 Financial Intermediation 73 Risks Pertaining to India\u2019s Financial Sector 76 Outlook",
+          "bbox": [
+            60.00091552734375,
+            386.8125305175781,
+            378.3110046386719,
+            455.4224853515625
+          ],
+          "document_id": "07a0e725ba864b449c52cb29be197d16"
+        }
+      ],
+      "id": "0bc8d54a74c94c3c86face477cd8597b",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 17,
+      "bbox": [
+        59.99760055541992,
+        378.1631164550781,
+        518.880126953125,
+        459.1990966796875
+      ],
+      "block_text": "1.28 The real GVA grew by 6.2 per cent in H1 FY25. A strong growth momentum in Q1 FY25 was followed by a subdued performance in Q2 FY25. The agriculture and services sectors emerged as key growth drivers during this period. However, the overall growth was tempered by moderation in industrial growth, particularly in manufacturing, which faced challenges from slowing global demand and supply chain disruptions.",
+      "evidence_start": 0,
+      "evidence_end": 50
+    },
+    {
+      "subject": "India",
+      "subject_key": "india",
+      "predicate": "industrial sector growth",
+      "raw_predicate": "industrial sector growth",
+      "raw_value": "6 per cent",
+      "normalized": {
+        "kind": "number",
+        "value": "6",
+        "unit": "%",
+        "resolution": "1",
+        "scaled": false,
+        "normalization": "6 percent \u2192 6 %; decimal arithmetic, no currency conversion."
+      },
+      "context": {
+        "period": "H1FY25",
+        "scope": null,
+        "periods": [
+          "H1FY25"
+        ],
+        "ambiguous": false,
+        "approximate": false,
+        "assertion_type": "reported",
+        "subject_inferred": true
+      },
+      "quote": "1.30 The industrial sector grew by 6 per cent in H1 FY25.",
+      "method": "statistical prose",
+      "confidence": 0.65,
+      "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score. Country subject inferred from dominant mentions in the first 12 pages; inspect its separate evidence.",
+      "evidence_parts": [
+        {
+          "role": "inferred country subject",
+          "page": 1,
+          "quote": "36 Introduction 36 Monetary Developments 38 Financial Intermediation 73 Risks Pertaining to India\u2019s Financial Sector 76 Outlook",
+          "bbox": [
+            60.00091552734375,
+            386.8125305175781,
+            378.3110046386719,
+            455.4224853515625
+          ],
+          "document_id": "07a0e725ba864b449c52cb29be197d16"
+        }
+      ],
+      "id": "2fc8c564779f428ea48084ed9dde04e1",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 18,
+      "bbox": [
+        59.99760055541992,
+        170.40768432617188,
+        518.8585815429688,
+        317.44366455078125
+      ],
+      "block_text": "1.30 The industrial sector grew by 6 per cent in H1 FY25. Q1 saw a strong growth of 8.3 per cent, but growth moderated in Q2 due to three key factors. First, manufacturing exports slowed significantly due to weak demand from destination countries, and aggressive trade and industrial policies in major trading nations. Second, the above- average monsoon had mixed effects - while it replenished reservoirs and supported agriculture, it also disrupted sectors like mining, construction, and, to some extent, manufacturing. Third, the variation in the timing of festivities between September and October in the previous and current years led to a modest growth slowdown in Q2 FY25.",
+      "evidence_start": 0,
+      "evidence_end": 57
+    },
+    {
+      "subject": "India",
+      "subject_key": "india",
+      "predicate": "real gdp growth",
+      "raw_predicate": "real gdp growth",
+      "raw_value": "6.0 per cent",
+      "normalized": {
+        "kind": "number",
+        "value": "6",
+        "unit": "%",
+        "resolution": "0.1",
+        "scaled": false,
+        "normalization": "6.0 percent \u2192 6 %; decimal arithmetic, no currency conversion."
+      },
+      "context": {
+        "period": null,
+        "scope": null,
+        "periods": [],
+        "ambiguous": false,
+        "approximate": false,
+        "assertion_type": "reported",
+        "subject_inferred": true
+      },
+      "quote": "This implied a real GDP growth of 6.0 per cent in the first half of the current fiscal.",
+      "method": "statistical prose",
+      "confidence": 0.65,
+      "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score. Country subject inferred from dominant mentions in the first 12 pages; inspect its separate evidence.",
+      "evidence_parts": [
+        {
+          "role": "inferred country subject",
+          "page": 1,
+          "quote": "36 Introduction 36 Monetary Developments 38 Financial Intermediation 73 Risks Pertaining to India\u2019s Financial Sector 76 Outlook",
+          "bbox": [
+            60.00091552734375,
+            386.8125305175781,
+            378.3110046386719,
+            455.4224853515625
+          ],
+          "document_id": "07a0e725ba864b449c52cb29be197d16"
+        }
+      ],
+      "id": "f5b54e00a6b84371bafc8534281dbbfd",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 20,
+      "bbox": [
+        59.99760055541992,
+        222.10769653320312,
+        518.9050903320312,
+        270.1436767578125
+      ],
+      "block_text": "1.35 India\u2019s GDP at constant (2011-12) prices grew by 6.7 per cent and 5.4 per cent in Q1 and Q2 FY25, respectively. This implied a real GDP growth of 6.0 per cent in the first half of the current fiscal.",
+      "evidence_start": 117,
+      "evidence_end": 204
+    },
+    {
+      "subject": "India",
+      "subject_key": "india",
+      "predicate": "merchandise exports growth",
+      "raw_predicate": "merchandise exports growth",
+      "raw_value": "1.6 per cent",
+      "normalized": {
+        "kind": "number",
+        "value": "1.6",
+        "unit": "%",
+        "resolution": "0.1",
+        "scaled": false,
+        "normalization": "1.6 percent \u2192 1.6 %; decimal arithmetic, no currency conversion."
+      },
+      "context": {
+        "period": "APRIL/DECEMBER2024",
+        "scope": null,
+        "periods": [
+          "APRIL/DECEMBER2024"
+        ],
+        "ambiguous": false,
+        "approximate": false,
+        "assertion_type": "reported",
+        "subject_inferred": false
+      },
+      "quote": "Data on merchandise trade shows that India\u2019s merchandise exports grew by 1.6 per cent YoY in April \u2013 December 2024.33 However, non-petroleum exports (on the same comparison basis) were up by 7.1 per cent.",
+      "method": "statistical prose",
+      "confidence": 0.65,
+      "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score.",
+      "id": "1670bd2850f741aba9a47a05575da1e9",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 29,
+      "bbox": [
+        59.997501373291016,
+        382.5783996582031,
+        518.8943481445312,
+        541.6143798828125
+      ],
+      "block_text": "1.54 India\u2019s external sector displayed mixed trends, primarily due to volatile global conditions. A decline in commodity prices affected India\u2019s merchandise exports through the petroleum goods channel. Data on merchandise trade shows that India\u2019s merchandise exports grew by 1.6 per cent YoY in April \u2013 December 2024.33 However, non-petroleum exports (on the same comparison basis) were up by 7.1 per cent. Non- petroleum and non-gems and jewellery exports rose by 9.1 per cent. Merchandise imports rose by 5.2 per cent. This growth was primarily driven by an increase in non- oil, non-gold imports. Gold imports also grew, influenced by higher global prices, early purchases ahead of festive spending, and demand for safe-haven assets.",
+      "evidence_start": 202,
+      "evidence_end": 406
+    },
+    {
+      "subject": "India",
+      "subject_key": "india",
+      "predicate": "merchandise imports growth",
+      "raw_predicate": "merchandise imports growth",
+      "raw_value": "5.2 per cent",
+      "normalized": {
+        "kind": "number",
+        "value": "5.2",
+        "unit": "%",
+        "resolution": "0.1",
+        "scaled": false,
+        "normalization": "5.2 percent \u2192 5.2 %; decimal arithmetic, no currency conversion."
+      },
+      "context": {
+        "period": "APRIL/DECEMBER2024",
+        "scope": null,
+        "periods": [
+          "APRIL/DECEMBER2024"
+        ],
+        "ambiguous": false,
+        "approximate": false,
+        "assertion_type": "reported",
+        "subject_inferred": true
+      },
+      "quote": "3.24 Merchandise imports grew by 5.2 per cent during April-December 2024.",
+      "method": "statistical prose",
+      "confidence": 0.65,
+      "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score. Country subject inferred from dominant mentions in the first 12 pages; inspect its separate evidence.",
+      "evidence_parts": [
+        {
+          "role": "inferred country subject",
+          "page": 1,
+          "quote": "36 Introduction 36 Monetary Developments 38 Financial Intermediation 73 Risks Pertaining to India\u2019s Financial Sector 76 Outlook",
+          "bbox": [
+            60.00091552734375,
+            386.8125305175781,
+            378.3110046386719,
+            455.4224853515625
+          ],
+          "document_id": "07a0e725ba864b449c52cb29be197d16"
+        }
+      ],
+      "id": "a65f00f68e7a46e08db25d5aeb68e336",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 51,
+      "bbox": [
+        59.99489974975586,
+        194.20370483398438,
+        518.89892578125,
+        390.73968505859375
+      ],
+      "block_text": "3.24 Merchandise imports grew by 5.2 per cent during April-December 2024. This increase was largely due to a rise in non-oil, non-gold imports, which reached USD 352.1 billion in the first nine months of FY25 compared to USD 340.5 billion during the same period last year, indicating a rebound in domestic consumption despite the inflationary impact. Gold imports increased due to higher international prices, driven by frontloading ahead of festival spending and demand for safe-haven assets. Among the major non-oil, non-gold imports, non-ferrous metals, machine tools, machinery, electrical & non-electrical goods, and transport equipment witnessed remarkable growth in the first nine months of FY25, reflecting growing demand for capital goods. Electronic goods also maintained consistent momentum, signalling a rise in discretionary consumer spending. Additionally, imports of pulses and cotton rose to support domestic production and control inflation.",
+      "evidence_start": 0,
+      "evidence_end": 73
+    },
+    {
+      "subject": "India",
+      "subject_key": "india",
+      "predicate": "inflation rate",
+      "raw_predicate": "inflation rate",
+      "raw_value": "4.4 per cent",
+      "normalized": {
+        "kind": "number",
+        "value": "4.4",
+        "unit": "%",
+        "resolution": "0.1",
+        "scaled": false,
+        "normalization": "4.4 percent \u2192 4.4 %; decimal arithmetic, no currency conversion."
+      },
+      "context": {
+        "period": "FY2025",
+        "scope": null,
+        "periods": [
+          "FY2025"
+        ],
+        "ambiguous": false,
+        "approximate": false,
+        "assertion_type": "forecast",
+        "subject_inferred": true
+      },
+      "quote": "IMF has projected an inflation rate of 4.4 per cent in FY25 and 4.1 per cent in FY26 for India.",
+      "method": "statistical prose",
+      "confidence": 0.65,
+      "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score. Country subject inferred from dominant mentions in the first 12 pages; inspect its separate evidence.",
+      "evidence_parts": [
+        {
+          "role": "inferred country subject",
+          "page": 1,
+          "quote": "36 Introduction 36 Monetary Developments 38 Financial Intermediation 73 Risks Pertaining to India\u2019s Financial Sector 76 Outlook",
+          "bbox": [
+            60.00091552734375,
+            386.8125305175781,
+            378.3110046386719,
+            455.4224853515625
+          ],
+          "document_id": "07a0e725ba864b449c52cb29be197d16"
+        },
+        {
+          "role": "joined source fragment",
+          "page": 87,
+          "quote": "OUTLOOK AND WAY FORWARD",
+          "bbox": [
+            60.99760055541992,
+            489.5164794921875,
+            302.9330139160156,
+            507.6044921875
+          ],
+          "document_id": "07a0e725ba864b449c52cb29be197d16"
+        },
+        {
+          "role": "joined source fragment",
+          "page": 87,
+          "quote": "4.22. The RBI and the IMF have projected that India's consumer price inflation will progressively align towards the inflation target in FY26. In the December 2024 RBI\u2019s Monetary Policy Committee report revised its inflation projection from 4.5 per cent to 4.8 per cent in FY25. Assuming a normal monsoon and no further external or policy shocks, the RBI expects headline inflation to be 4.2 per cent in FY26. IMF has projected an inflation rate of 4.4 per cent in FY25 and 4.1 per cent in FY26 for India.",
+          "bbox": [
+            59.99760055541992,
+            513.5623779296875,
+            518.8895874023438,
+            608.578369140625
+          ],
+          "document_id": "07a0e725ba864b449c52cb29be197d16"
+        }
+      ],
+      "id": "24c860008336483da0ec2044b516548a",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 87,
+      "bbox": [
+        60.99760055541992,
+        489.5164794921875,
+        518.8895874023438,
+        608.578369140625
+      ],
+      "block_text": "OUTLOOK AND WAY FORWARD 4.22. The RBI and the IMF have projected that India's consumer price inflation will progressively align towards the inflation target in FY26. In the December 2024 RBI\u2019s Monetary Policy Committee report revised its inflation projection from 4.5 per cent to 4.8 per cent in FY25. Assuming a normal monsoon and no further external or policy shocks, the RBI expects headline inflation to be 4.2 per cent in FY26. IMF has projected an inflation rate of 4.4 per cent in FY25 and 4.1 per cent in FY26 for India.",
+      "evidence_start": 433,
+      "evidence_end": 528
+    },
+    {
+      "subject": "India",
+      "subject_key": "india",
+      "predicate": "industrial sector growth",
+      "raw_predicate": "industrial sector growth",
+      "raw_value": "4.3 per cent",
+      "normalized": {
+        "kind": "number",
+        "value": "4.3",
+        "unit": "%",
+        "resolution": "0.1",
+        "scaled": false,
+        "normalization": "4.3 percent \u2192 4.3 %; decimal arithmetic, no currency conversion."
+      },
+      "context": {
+        "period": "2024/25",
+        "scope": null,
+        "periods": [
+          "2024/25"
+        ],
+        "ambiguous": false,
+        "approximate": false,
+        "assertion_type": "reported",
+        "subject_inferred": true
+      },
+      "quote": "I.11 Growth in industrial sector moderated to 4.3 per cent in 2024-25, primarily due to deceleration in manufacturing GVA.",
+      "method": "statistical prose",
+      "confidence": 0.65,
+      "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score. Country subject inferred from dominant mentions in the first 12 pages; inspect its separate evidence.",
+      "evidence_parts": [
+        {
+          "role": "inferred country subject",
+          "page": 4,
+          "quote": "II.2.1 : R&D Expenditure as a Driver of India\u2019s Productivity Growth......................................... 30",
+          "bbox": [
+            52.2943115234375,
+            127.60108184814453,
+            559.6963500976562,
+            144.43258666992188
+          ],
+          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+        },
+        {
+          "role": "joined source fragment",
+          "page": 8,
+          "quote": "I.11 Growth in industrial sector moderated to 4.3",
+          "bbox": [
+            318.75311279296875,
+            494.6763000488281,
+            562.7347412109375,
+            512.309326171875
+          ],
+          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+        },
+        {
+          "role": "joined source fragment",
+          "page": 8,
+          "quote": "per cent in 2024-25, primarily due to deceleration",
+          "bbox": [
+            318.75311279296875,
+            511.3633117675781,
+            562.713623046875,
+            528.996337890625
+          ],
+          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+        },
+        {
+          "role": "joined source fragment",
+          "page": 8,
+          "quote": "in manufacturing GVA. Manufacturing sector",
+          "bbox": [
+            318.75311279296875,
+            528.0503540039062,
+            562.74658203125,
+            545.683349609375
+          ],
+          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+        },
+        {
+          "role": "joined source fragment",
+          "page": 8,
+          "quote": "witnessed robust growth in Q1:2024-25, but",
+          "bbox": [
+            318.75311279296875,
+            544.7373657226562,
+            562.7433471679688,
+            562.370361328125
+          ],
+          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+        },
+        {
+          "role": "joined source fragment",
+          "page": 8,
+          "quote": "moderated in the next three quarters, reflecting",
+          "bbox": [
+            318.75311279296875,
+            561.42431640625,
+            562.7312622070312,
+            579.0573120117188
+          ],
+          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+        },
+        {
+          "role": "joined source fragment",
+          "page": 8,
+          "quote": "both base effect and muted demand conditions.",
+          "bbox": [
+            318.75311279296875,
+            578.111328125,
+            562.7224731445312,
+            595.7443237304688
+          ],
+          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+        }
+      ],
+      "id": "772b828f2406441ea5dfff24728757b4",
+      "document_id": "bc650b381bca4ac0ba2d24714ac2790a",
+      "document_name": "02-rbi-annual-report-2024-25-excerpt.pdf",
+      "page": 8,
+      "bbox": [
+        318.75311279296875,
+        494.6763000488281,
+        562.74658203125,
+        595.7443237304688
+      ],
+      "block_text": "I.11 Growth in industrial sector moderated to 4.3 per cent in 2024-25, primarily due to deceleration in manufacturing GVA. Manufacturing sector witnessed robust growth in Q1:2024-25, but moderated in the next three quarters, reflecting both base effect and muted demand conditions.",
+      "evidence_start": 0,
+      "evidence_end": 122
+    },
+    {
+      "subject": "India",
+      "subject_key": "india",
+      "predicate": "real gdp growth",
+      "raw_predicate": "real gdp growth",
+      "raw_value": "6.5 per cent",
+      "normalized": {
+        "kind": "number",
+        "value": "6.5",
+        "unit": "%",
+        "resolution": "0.1",
+        "scaled": false,
+        "normalization": "6.5 percent \u2192 6.5 %; decimal arithmetic, no currency conversion."
+      },
+      "context": {
+        "period": "2024/25",
+        "scope": null,
+        "periods": [
+          "2024/25"
+        ],
+        "ambiguous": false,
+        "approximate": false,
+        "assertion_type": "reported",
+        "subject_inferred": true
+      },
+      "quote": "Although real gross domestic product (GDP)3 growth moderated to 6.5 per cent in 2024-25,",
+      "method": "statistical prose",
+      "confidence": 0.65,
+      "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score. Country subject inferred from dominant mentions in the first 12 pages; inspect its separate evidence.",
+      "evidence_parts": [
+        {
+          "role": "inferred country subject",
+          "page": 4,
+          "quote": "II.2.1 : R&D Expenditure as a Driver of India\u2019s Productivity Growth......................................... 30",
+          "bbox": [
+            52.2943115234375,
+            127.60108184814453,
+            559.6963500976562,
+            144.43258666992188
+          ],
+          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+        },
+        {
+          "role": "joined source fragment",
+          "page": 8,
+          "quote": "Although real gross domestic product (GDP)3",
+          "bbox": [
+            52.29519271850586,
+            644.750732421875,
+            296.3021240234375,
+            662.5031127929688
+          ],
+          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+        },
+        {
+          "role": "joined source fragment",
+          "page": 8,
+          "quote": "growth moderated to 6.5 per cent in 2024-25,",
+          "bbox": [
+            52.30010986328125,
+            661.381103515625,
+            296.2999267578125,
+            679.0140991210938
+          ],
+          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+        }
+      ],
+      "id": "07dc55a2168a4d9a849335a3c379fcc5",
+      "document_id": "bc650b381bca4ac0ba2d24714ac2790a",
+      "document_name": "02-rbi-annual-report-2024-25-excerpt.pdf",
+      "page": 8,
+      "bbox": [
+        52.29519271850586,
+        644.750732421875,
+        296.3021240234375,
+        679.0140991210938
+      ],
+      "block_text": "Although real gross domestic product (GDP)3 growth moderated to 6.5 per cent in 2024-25,",
+      "evidence_start": 0,
+      "evidence_end": 88
+    },
+    {
+      "subject": "India",
+      "subject_key": "india",
+      "predicate": "merchandise imports growth",
+      "raw_predicate": "merchandise imports growth",
+      "raw_value": "6.2 per cent",
+      "normalized": {
+        "kind": "number",
+        "value": "6.2",
+        "unit": "%",
+        "resolution": "0.1",
+        "scaled": false,
+        "normalization": "6.2 percent \u2192 6.2 %; decimal arithmetic, no currency conversion."
+      },
+      "context": {
+        "period": null,
+        "scope": null,
+        "periods": [],
+        "ambiguous": false,
+        "approximate": false,
+        "assertion_type": "reported",
+        "subject_inferred": true
+      },
+      "quote": "On the other hand, merchandise imports grew by 6.2 per cent during this period as against a contraction of 5.3 per cent a year ago.",
+      "method": "statistical prose",
+      "confidence": 0.65,
+      "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score. Country subject inferred from dominant mentions in the first 12 pages; inspect its separate evidence.",
+      "evidence_parts": [
+        {
+          "role": "inferred country subject",
+          "page": 4,
+          "quote": "II.2.1 : R&D Expenditure as a Driver of India\u2019s Productivity Growth......................................... 30",
+          "bbox": [
+            52.2943115234375,
+            127.60108184814453,
+            559.6963500976562,
+            144.43258666992188
+          ],
+          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+        },
+        {
+          "role": "joined source fragment",
+          "page": 11,
+          "quote": "I.22 India\u2019s merchandise exports grew",
+          "bbox": [
+            318.75909423828125,
+            409.8260192871094,
+            562.7481079101562,
+            427.4590148925781
+          ],
+          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+        },
+        {
+          "role": "joined source fragment",
+          "page": 11,
+          "quote": "marginally by 0.1 per cent in 2024-25 as against",
+          "bbox": [
+            318.75909423828125,
+            426.4360046386719,
+            562.7371826171875,
+            444.0690002441406
+          ],
+          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+        },
+        {
+          "role": "joined source fragment",
+          "page": 11,
+          "quote": "a contraction of 3.1 per cent a year ago. On the",
+          "bbox": [
+            318.75909423828125,
+            443.0459899902344,
+            562.7385864257812,
+            460.6789855957031
+          ],
+          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+        },
+        {
+          "role": "joined source fragment",
+          "page": 11,
+          "quote": "other hand, merchandise imports grew by 6.2 per",
+          "bbox": [
+            318.75909423828125,
+            459.6559753417969,
+            562.75048828125,
+            477.2889709472656
+          ],
+          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+        },
+        {
+          "role": "joined source fragment",
+          "page": 11,
+          "quote": "cent during this period as against a contraction",
+          "bbox": [
+            318.75909423828125,
+            476.2659606933594,
+            562.7514038085938,
+            493.8989562988281
+          ],
+          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+        },
+        {
+          "role": "joined source fragment",
+          "page": 11,
+          "quote": "of 5.3 per cent a year ago. Consequently, India\u2019s",
+          "bbox": [
+            318.75909423828125,
+            492.8759460449219,
+            562.727294921875,
+            510.5089416503906
+          ],
+          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+        },
+        {
+          "role": "joined source fragment",
+          "page": 11,
+          "quote": "merchandise trade deficit widened to US$ 282.8",
+          "bbox": [
+            318.75909423828125,
+            509.4859313964844,
+            562.7261962890625,
+            527.1189575195312
+          ],
+          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+        },
+        {
+          "role": "joined source fragment",
+          "page": 11,
+          "quote": "billion during 2024-25 from US$ 241.1 billion a",
+          "bbox": [
+            318.75909423828125,
+            526.095947265625,
+            562.7109985351562,
+            543.7289428710938
+          ],
+          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+        },
+        {
+          "role": "joined source fragment",
+          "page": 11,
+          "quote": "year ago. Nonetheless, strong services exports",
+          "bbox": [
+            318.75909423828125,
+            542.7059936523438,
+            562.7349243164062,
+            560.3389892578125
+          ],
+          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+        },
+        {
+          "role": "joined source fragment",
+          "page": 11,
+          "quote": "and a steady flow in inward remittances cushioned",
+          "bbox": [
+            318.75909423828125,
+            559.3159790039062,
+            562.7218017578125,
+            576.948974609375
+          ],
+          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+        },
+        {
+          "role": "joined source fragment",
+          "page": 11,
+          "quote": "India\u2019s CAD to remain within sustainable level at",
+          "bbox": [
+            318.75909423828125,
+            575.9259643554688,
+            562.7327270507812,
+            593.5589599609375
+          ],
+          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+        },
+        {
+          "role": "joined source fragment",
+          "page": 11,
+          "quote": "1.3 per cent of GDP during April-December 2024",
+          "bbox": [
+            318.75909423828125,
+            592.5359497070312,
+            562.7196655273438,
+            610.1689453125
+          ],
+          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+        },
+        {
+          "role": "joined source fragment",
+          "page": 11,
+          "quote": "(1.1 per cent a year ago).",
+          "bbox": [
+            318.75909423828125,
+            609.1459350585938,
+            445.01727294921875,
+            626.7789306640625
+          ],
+          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+        }
+      ],
+      "id": "1bff2e519c4641e1a3901ca1f6628621",
+      "document_id": "bc650b381bca4ac0ba2d24714ac2790a",
+      "document_name": "02-rbi-annual-report-2024-25-excerpt.pdf",
+      "page": 11,
+      "bbox": [
+        318.75909423828125,
+        409.8260192871094,
+        562.7514038085938,
+        626.7789306640625
+      ],
+      "block_text": "I.22 India\u2019s merchandise exports grew marginally by 0.1 per cent in 2024-25 as against a contraction of 3.1 per cent a year ago. On the other hand, merchandise imports grew by 6.2 per cent during this period as against a contraction of 5.3 per cent a year ago. Consequently, India\u2019s merchandise trade deficit widened to US$ 282.8 billion during 2024-25 from US$ 241.1 billion a year ago. Nonetheless, strong services exports and a steady flow in inward remittances cushioned India\u2019s CAD to remain within sustainable level at 1.3 per cent of GDP during April-December 2024 (1.1 per cent a year ago).",
+      "evidence_start": 129,
+      "evidence_end": 260
+    },
+    {
+      "subject": "India",
+      "subject_key": "india",
+      "predicate": "real gdp growth",
+      "raw_predicate": "real gdp growth",
+      "raw_value": "6.5 per cent",
+      "normalized": {
+        "kind": "number",
+        "value": "6.5",
+        "unit": "%",
+        "resolution": "0.1",
+        "scaled": false,
+        "normalization": "6.5 percent \u2192 6.5 %; decimal arithmetic, no currency conversion."
+      },
+      "context": {
+        "period": "2024/25",
+        "scope": null,
+        "periods": [
+          "2024/25"
+        ],
+        "ambiguous": false,
+        "approximate": false,
+        "assertion_type": "reported",
+        "subject_inferred": true
+      },
+      "quote": "Although real gross domestic product (GDP) growth moderated to 6.5 per cent4 in 2024-25, India remained the fastest growing large economy.",
+      "method": "statistical prose",
+      "confidence": 0.65,
+      "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score. Country subject inferred from dominant mentions in the first 12 pages; inspect its separate evidence.",
+      "evidence_parts": [
+        {
+          "role": "inferred country subject",
+          "page": 4,
+          "quote": "II.2.1 : R&D Expenditure as a Driver of India\u2019s Productivity Growth......................................... 30",
+          "bbox": [
+            52.2943115234375,
+            127.60108184814453,
+            559.6963500976562,
+            144.43258666992188
+          ],
+          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+        },
+        {
+          "role": "joined source fragment",
+          "page": 22,
+          "quote": "Although real gross domestic product (GDP)",
+          "bbox": [
+            318.75,
+            502.8694152832031,
+            562.7407836914062,
+            520.50244140625
+          ],
+          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+        },
+        {
+          "role": "joined source fragment",
+          "page": 22,
+          "quote": "growth moderated to 6.5 per cent4 in 2024-25,",
+          "bbox": [
+            318.75,
+            519.3914794921875,
+            562.7540893554688,
+            537.033447265625
+          ],
+          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+        },
+        {
+          "role": "joined source fragment",
+          "page": 22,
+          "quote": "India remained the fastest growing large",
+          "bbox": [
+            318.75421142578125,
+            535.9224243164062,
+            562.7243041992188,
+            553.555419921875
+          ],
+          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+        },
+        {
+          "role": "joined source fragment",
+          "page": 22,
+          "quote": "economy. Economic activity was bolstered by",
+          "bbox": [
+            318.75421142578125,
+            552.4443969726562,
+            562.7286987304688,
+            570.077392578125
+          ],
+          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+        },
+        {
+          "role": "joined source fragment",
+          "page": 22,
+          "quote": "an improvement in consumption demand and",
+          "bbox": [
+            318.75421142578125,
+            568.9664306640625,
+            562.71875,
+            586.5994262695312
+          ],
+          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+        },
+        {
+          "role": "joined source fragment",
+          "page": 22,
+          "quote": "net exports on the expenditure side and buoyant",
+          "bbox": [
+            318.75421142578125,
+            585.4884643554688,
+            562.7175903320312,
+            603.1214599609375
+          ],
+          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+        },
+        {
+          "role": "joined source fragment",
+          "page": 22,
+          "quote": "services sector and recovery in agricultural",
+          "bbox": [
+            318.75421142578125,
+            602.2084350585938,
+            562.7142944335938,
+            619.8414306640625
+          ],
+          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+        },
+        {
+          "role": "joined source fragment",
+          "page": 22,
+          "quote": "production on the supply side.",
+          "bbox": [
+            318.75421142578125,
+            618.9284057617188,
+            469.5399169921875,
+            636.5614013671875
+          ],
+          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+        }
+      ],
+      "id": "e12ae088a06648c58572aa9a4bd336bf",
+      "document_id": "bc650b381bca4ac0ba2d24714ac2790a",
+      "document_name": "02-rbi-annual-report-2024-25-excerpt.pdf",
+      "page": 22,
+      "bbox": [
+        318.75,
+        502.8694152832031,
+        562.7540893554688,
+        636.5614013671875
+      ],
+      "block_text": "Although real gross domestic product (GDP) growth moderated to 6.5 per cent4 in 2024-25, India remained the fastest growing large economy. Economic activity was bolstered by an improvement in consumption demand and net exports on the expenditure side and buoyant services sector and recovery in agricultural production on the supply side.",
+      "evidence_start": 0,
+      "evidence_end": 138
+    },
+    {
+      "subject": "India",
+      "subject_key": "india",
+      "predicate": "inflation",
+      "raw_predicate": "inflation",
+      "raw_value": "10.2 per cent",
+      "normalized": {
+        "kind": "number",
+        "value": "10.2",
+        "unit": "%",
+        "resolution": "0.1",
+        "scaled": false,
+        "normalization": "10.2 percent \u2192 10.2 %; decimal arithmetic, no currency conversion."
+      },
+      "context": {
+        "period": "AUGUST2024/MARCH2025",
+        "scope": null,
+        "periods": [
+          "AUGUST2024/MARCH2025"
+        ],
+        "ambiguous": false,
+        "approximate": false,
+        "assertion_type": "reported",
+        "subject_inferred": true,
+        "qualifier_unresolved": true
+      },
+      "quote": "However, inflation increased to 10.2 per cent during August 2024-March 2025 despite adequate production (0.2 per cent higher as per 1st AE 2024-25 over 2023-24), primarily driven by a sharp increase in coconut prices.",
+      "method": "statistical prose",
+      "confidence": 0.65,
+      "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score. Inflation subtype is unspecified in this sentence and may depend on preceding context. Country subject inferred from dominant mentions in the first 12 pages; inspect its separate evidence.",
+      "evidence_parts": [
+        {
+          "role": "inferred country subject",
+          "page": 4,
+          "quote": "II.2.1 : R&D Expenditure as a Driver of India\u2019s Productivity Growth......................................... 30",
+          "bbox": [
+            52.2943115234375,
+            127.60108184814453,
+            559.6963500976562,
+            144.43258666992188
+          ],
+          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+        }
+      ],
+      "id": "881ea395da8646b790a09142dbf0296d",
+      "document_id": "bc650b381bca4ac0ba2d24714ac2790a",
+      "document_name": "02-rbi-annual-report-2024-25-excerpt.pdf",
+      "page": 46,
+      "bbox": [
+        52.29429626464844,
+        120.9090347290039,
+        296.2889709472656,
+        300.4815673828125
+      ],
+      "block_text": "II.3.17 Inflation in fruits (weight of 6.3 per cent in CPI-food and beverages) averaged 6.3 per cent during April-June 2024 on account of lower mandi arrivals of major fruits including banana, mango and coconut. Prices corrected in July on favourable base effects. However, inflation increased to 10.2 per cent during August 2024-March 2025 despite adequate production (0.2 per cent higher as per 1st AE 2024-25 over 2023-24), primarily driven by a sharp increase in coconut prices.",
+      "evidence_start": 265,
+      "evidence_end": 482
+    },
+    {
+      "subject": "India",
+      "subject_key": "india",
+      "predicate": "fuel inflation",
+      "raw_predicate": "fuel inflation",
+      "raw_value": "1.5 per cent",
+      "normalized": {
+        "kind": "number",
+        "value": "1.5",
+        "unit": "%",
+        "resolution": "0.1",
+        "scaled": false,
+        "normalization": "1.5 percent \u2192 1.5 %; decimal arithmetic, no currency conversion."
+      },
+      "context": {
+        "period": "MARCH2025",
+        "scope": null,
+        "periods": [
+          "MARCH2025"
+        ],
+        "ambiguous": false,
+        "approximate": false,
+        "assertion_type": "reported",
+        "subject_inferred": true
+      },
+      "quote": "After remaining in deflation during April 2024-February 2025, fuel inflation increased to 1.5 per cent in March 2025.",
+      "method": "statistical prose",
+      "confidence": 0.65,
+      "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score. Country subject inferred from dominant mentions in the first 12 pages; inspect its separate evidence.",
+      "evidence_parts": [
+        {
+          "role": "inferred country subject",
+          "page": 4,
+          "quote": "II.2.1 : R&D Expenditure as a Driver of India\u2019s Productivity Growth......................................... 30",
+          "bbox": [
+            52.2943115234375,
+            127.60108184814453,
+            559.6963500976562,
+            144.43258666992188
+          ],
+          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+        }
+      ],
+      "id": "6e95841adf584f589a24ce5c61340c18",
+      "document_id": "bc650b381bca4ac0ba2d24714ac2790a",
+      "document_name": "02-rbi-annual-report-2024-25-excerpt.pdf",
+      "page": 46,
+      "bbox": [
+        318.74969482421875,
+        176.2769012451172,
+        562.7421875,
+        374.4417419433594
+      ],
+      "block_text": "II.3.19 Fuel and light (weight of 6.8 per cent in CPI) prices remained in deflation during 2024-25, averaging (-) 2.5 per cent (Chart II.3.11). After remaining in deflation during April 2024-February 2025, fuel inflation increased to 1.5 per cent in March 2025. The domestic LPG price cut of \u20b9100 per cylinder in March 2024 accentuated the pace of deflation in fuel observed in 2024-25 (Chart II.3.12). Consequently, the contribution of the fuel group to headline inflation decreased to (-) 3.6 per cent in 2024-25 from 1.6 per cent a year ago.",
+      "evidence_start": 144,
+      "evidence_end": 261
+    },
+    {
+      "subject": "India",
+      "subject_key": "india",
+      "predicate": "merchandise imports growth",
+      "raw_predicate": "merchandise imports growth",
+      "raw_value": "6.2 per cent",
+      "normalized": {
+        "kind": "number",
+        "value": "6.2",
+        "unit": "%",
+        "resolution": "0.1",
+        "scaled": false,
+        "normalization": "6.2 percent \u2192 6.2 %; decimal arithmetic, no currency conversion."
+      },
+      "context": {
+        "period": "2024/25",
+        "scope": null,
+        "periods": [
+          "2024/25"
+        ],
+        "ambiguous": false,
+        "approximate": false,
+        "assertion_type": "reported",
+        "subject_inferred": true
+      },
+      "quote": "Merchandise imports expanded by 6.2 per cent (y-o-y) to US$ 720.2 billion during 2024-25 vis-\u00e0-vis a contraction of 5.3 per cent during the previous year (Table II.7.1).",
+      "method": "statistical prose",
+      "confidence": 0.65,
+      "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score. Country subject inferred from dominant mentions in the first 12 pages; inspect its separate evidence.",
+      "evidence_parts": [
+        {
+          "role": "inferred country subject",
+          "page": 4,
+          "quote": "II.2.1 : R&D Expenditure as a Driver of India\u2019s Productivity Growth......................................... 30",
+          "bbox": [
+            52.2943115234375,
+            127.60108184814453,
+            559.6963500976562,
+            144.43258666992188
+          ],
+          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+        },
+        {
+          "role": "joined source fragment",
+          "page": 77,
+          "quote": "3. Merchandise Trade",
+          "bbox": [
+            52.29429626464844,
+            82.27751159667969,
+            166.26638793945312,
+            100.49351501464844
+          ],
+          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+        },
+        {
+          "role": "joined source fragment",
+          "page": 77,
+          "quote": "II.7.5 India\u2019s merchandise exports increased",
+          "bbox": [
+            52.29429244995117,
+            105.6855239868164,
+            296.2677307128906,
+            123.31852722167969
+          ],
+          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+        },
+        {
+          "role": "joined source fragment",
+          "page": 77,
+          "quote": "marginally by 0.1 per cent year-on-year (y-o-y)",
+          "bbox": [
+            52.294288635253906,
+            122.83451080322266,
+            296.2853088378906,
+            140.46751403808594
+          ],
+          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+        },
+        {
+          "role": "joined source fragment",
+          "page": 77,
+          "quote": "to US$ 437.4 billion in 2024-25, recovering from",
+          "bbox": [
+            52.294288635253906,
+            139.98350524902344,
+            296.2545471191406,
+            157.6165008544922
+          ],
+          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+        },
+        {
+          "role": "joined source fragment",
+          "page": 77,
+          "quote": "a contraction of 3.1 per cent witnessed in 2023-",
+          "bbox": [
+            52.294288635253906,
+            157.1324920654297,
+            293.20751953125,
+            174.76548767089844
+          ],
+          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+        },
+        {
+          "role": "joined source fragment",
+          "page": 77,
+          "quote": "24. Merchandise imports expanded by 6.2 per",
+          "bbox": [
+            52.294288635253906,
+            174.28147888183594,
+            296.28533935546875,
+            191.9144744873047
+          ],
+          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+        },
+        {
+          "role": "joined source fragment",
+          "page": 77,
+          "quote": "cent (y-o-y) to US$ 720.2 billion during 2024-25",
+          "bbox": [
+            52.294288635253906,
+            191.4304656982422,
+            296.25567626953125,
+            209.06346130371094
+          ],
+          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+        },
+        {
+          "role": "joined source fragment",
+          "page": 77,
+          "quote": "vis-\u00e0-vis a contraction of 5.3 per cent during the",
+          "bbox": [
+            52.294288635253906,
+            208.4034423828125,
+            296.26776123046875,
+            226.2124481201172
+          ],
+          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+        },
+        {
+          "role": "joined source fragment",
+          "page": 77,
+          "quote": "previous year (Table II.7.1).",
+          "bbox": [
+            52.294288635253906,
+            225.7284393310547,
+            188.6513671875,
+            243.36143493652344
+          ],
+          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+        }
+      ],
+      "id": "5b540fcf397e46d98eedfeed643b4f5b",
+      "document_id": "bc650b381bca4ac0ba2d24714ac2790a",
+      "document_name": "02-rbi-annual-report-2024-25-excerpt.pdf",
+      "page": 77,
+      "bbox": [
+        52.29429626464844,
+        82.27751159667969,
+        296.28533935546875,
+        243.36143493652344
+      ],
+      "block_text": "3. Merchandise Trade II.7.5 India\u2019s merchandise exports increased marginally by 0.1 per cent year-on-year (y-o-y) to US$ 437.4 billion in 2024-25, recovering from a contraction of 3.1 per cent witnessed in 2023- 24. Merchandise imports expanded by 6.2 per cent (y-o-y) to US$ 720.2 billion during 2024-25 vis-\u00e0-vis a contraction of 5.3 per cent during the previous year (Table II.7.1).",
+      "evidence_start": 216,
+      "evidence_end": 385
+    },
+    {
+      "subject": "India",
+      "subject_key": "india",
+      "predicate": "real gdp growth",
+      "raw_predicate": "real gdp growth",
+      "raw_value": "7.8 percent",
+      "normalized": {
+        "kind": "number",
+        "value": "7.8",
+        "unit": "%",
+        "resolution": "0.1",
+        "scaled": false,
+        "normalization": "7.8 percent \u2192 7.8 %; decimal arithmetic, no currency conversion."
+      },
+      "context": {
+        "period": "THEFIRSTQUARTEROFFY2025/26",
+        "scope": null,
+        "periods": [
+          "THEFIRSTQUARTEROFFY2025/26"
+        ],
+        "ambiguous": false,
+        "approximate": false,
+        "assertion_type": "reported",
+        "subject_inferred": true
+      },
+      "quote": "Following economic growth of 6.5 percent in FY2024/25, real GDP expanded by 7.8 percent in the first quarter of FY2025/26.",
+      "method": "statistical prose",
+      "confidence": 0.65,
+      "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score. Country subject inferred from dominant mentions in the first 12 pages; inspect its separate evidence.",
+      "evidence_parts": [
+        {
+          "role": "inferred country subject",
+          "page": 2,
+          "quote": "Under Article IV of the IMF\u2019s Articles of Agreement, the IMF holds bilateral discussions with members, usually every year. In the context of the 2025 Article IV consultation with India, the following documents have been released and are included in this package: \u2022 A Press Release summarizing the views of the Executive Board as expressed during its November 21, 2025 consideration of the staff report that concluded the Article IV consultation with India.",
+          "bbox": [
+            121.69999694824219,
+            194.51309204101562,
+            541.0109252929688,
+            296.59014892578125
+          ],
+          "document_id": "0625c3c0322a4a3d85759914168c80b3"
+        }
+      ],
+      "id": "98e12bea27de4bb59122d95fed961a00",
+      "document_id": "0625c3c0322a4a3d85759914168c80b3",
+      "document_name": "03-imf-india-2025-article-iv-excerpt.pdf",
+      "page": 3,
+      "bbox": [
+        97.19375610351562,
+        236.243408203125,
+        515.807861328125,
+        314.9870910644531
+      ],
+      "block_text": "India\u2019s economy has continued to perform well. Following economic growth of 6.5 percent in FY2024/25, real GDP expanded by 7.8 percent in the first quarter of FY2025/26. Headline inflation has declined markedly, driven by subdued food prices. The financial and corporate sectors have remained resilient, supported by adequate capital buffers and multi-year low non-performing assets. Fiscal consolidation has advanced, and the current account deficit has been contained, supported by resilient service exports.",
+      "evidence_start": 47,
+      "evidence_end": 169
+    },
+    {
+      "subject": "India",
+      "subject_key": "india",
+      "predicate": "real gdp growth",
+      "raw_predicate": "real gdp growth",
+      "raw_value": "6.6 percent",
+      "normalized": {
+        "kind": "number",
+        "value": "6.6",
+        "unit": "%",
+        "resolution": "0.1",
+        "scaled": false,
+        "normalization": "6.6 percent \u2192 6.6 %; decimal arithmetic, no currency conversion."
+      },
+      "context": {
+        "period": "FY2025/26",
+        "scope": null,
+        "periods": [
+          "FY2025/26"
+        ],
+        "ambiguous": false,
+        "approximate": false,
+        "assertion_type": "forecast",
+        "subject_inferred": true
+      },
+      "quote": "Under the baseline assumption of prolonged 50 percent U.S. tariffs, real GDP is projected to grow at 6.6 percent in FY2025/26 before moderating to 6.2 percent in FY2026/27.",
+      "method": "statistical prose",
+      "confidence": 0.65,
+      "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score. Country subject inferred from dominant mentions in the first 12 pages; inspect its separate evidence.",
+      "evidence_parts": [
+        {
+          "role": "inferred country subject",
+          "page": 2,
+          "quote": "Under Article IV of the IMF\u2019s Articles of Agreement, the IMF holds bilateral discussions with members, usually every year. In the context of the 2025 Article IV consultation with India, the following documents have been released and are included in this package: \u2022 A Press Release summarizing the views of the Executive Board as expressed during its November 21, 2025 consideration of the staff report that concluded the Article IV consultation with India.",
+          "bbox": [
+            121.69999694824219,
+            194.51309204101562,
+            541.0109252929688,
+            296.59014892578125
+          ],
+          "document_id": "0625c3c0322a4a3d85759914168c80b3"
+        }
+      ],
+      "id": "7ce85f6d865a402db825a264e9844605",
+      "document_id": "0625c3c0322a4a3d85759914168c80b3",
+      "document_name": "03-imf-india-2025-article-iv-excerpt.pdf",
+      "page": 3,
+      "bbox": [
+        97.19375610351562,
+        323.2339782714844,
+        516.1483764648438,
+        440.9710693359375
+      ],
+      "block_text": "Despite external headwinds, growth is expected to remain robust, supported by favorable domestic conditions. Under the baseline assumption of prolonged 50 percent U.S. tariffs, real GDP is projected to grow at 6.6 percent in FY2025/26 before moderating to 6.2 percent in FY2026/27. The reform of the goods and services tax (GST) and the resulting reduction in the effective rate are expected to help cushion the adverse impact of tariffs. Headline inflation is projected to remain well contained, reflecting the one-off effect of the GST reform and continued benign food prices. Looking ahead, India\u2019s ambition to become an advanced economy can be supported by advancing comprehensive structural reforms that enable higher potential growth.",
+      "evidence_start": 109,
+      "evidence_end": 281
+    },
+    {
+      "subject": "India",
+      "subject_key": "india",
+      "predicate": "real gdp growth",
+      "raw_predicate": "real gdp growth",
+      "raw_value": "6.5 percent",
+      "normalized": {
+        "kind": "number",
+        "value": "6.5",
+        "unit": "%",
+        "resolution": "0.1",
+        "scaled": false,
+        "normalization": "6.5 percent \u2192 6.5 %; decimal arithmetic, no currency conversion."
+      },
+      "context": {
+        "period": "FY2024/25",
+        "scope": null,
+        "periods": [
+          "FY2024/25"
+        ],
+        "ambiguous": false,
+        "approximate": false,
+        "assertion_type": "reported",
+        "subject_inferred": false
+      },
+      "quote": "India\u2019s real GDP grew by 6.5 percent in FY2024/25.",
+      "method": "statistical prose",
+      "confidence": 0.65,
+      "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score.",
+      "id": "3e828420e93e4d139c1f7785aed01a04",
+      "document_id": "0625c3c0322a4a3d85759914168c80b3",
+      "document_name": "03-imf-india-2025-article-iv-excerpt.pdf",
+      "page": 10,
+      "bbox": [
+        73.46399688720703,
+        144.26309204101562,
+        541.4334106445312,
+        252.3301544189453
+      ],
+      "block_text": "4. Growth has been robust (Figure 2). India\u2019s real GDP grew by 6.5 percent in FY2024/25. Private consumption growth was buoyant at 7.2 percent on increasing rural demand and stable urban demand. Investment growth moderated to 7.1 percent, supported by public investment, whereas private investment appeared to be less dynamic. Strong private consumption has continued this fiscal year, underpinning real GDP growth of 7.8 percent in 2025Q2. Nominal GDP growth moderated to 8.8 percent in 2025Q2, down from 9.8 percent in FY2024/25, reflecting a low deflator mainly driven by declining food prices. The output gap was broadly closed as of FY2024/25.",
+      "evidence_start": 38,
+      "evidence_end": 88
+    },
+    {
+      "subject": "India",
+      "subject_key": "india",
+      "predicate": "investment growth",
+      "raw_predicate": "investment growth",
+      "raw_value": "7.1 percent",
+      "normalized": {
+        "kind": "number",
+        "value": "7.1",
+        "unit": "%",
+        "resolution": "0.1",
+        "scaled": false,
+        "normalization": "7.1 percent \u2192 7.1 %; decimal arithmetic, no currency conversion."
+      },
+      "context": {
+        "period": null,
+        "scope": null,
+        "periods": [],
+        "ambiguous": false,
+        "approximate": false,
+        "assertion_type": "reported",
+        "subject_inferred": true
+      },
+      "quote": "Investment growth moderated to 7.1 percent, supported by public investment, whereas private investment appeared to be less dynamic.",
+      "method": "statistical prose",
+      "confidence": 0.65,
+      "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score. Country subject inferred from dominant mentions in the first 12 pages; inspect its separate evidence.",
+      "evidence_parts": [
+        {
+          "role": "inferred country subject",
+          "page": 2,
+          "quote": "Under Article IV of the IMF\u2019s Articles of Agreement, the IMF holds bilateral discussions with members, usually every year. In the context of the 2025 Article IV consultation with India, the following documents have been released and are included in this package: \u2022 A Press Release summarizing the views of the Executive Board as expressed during its November 21, 2025 consideration of the staff report that concluded the Article IV consultation with India.",
+          "bbox": [
+            121.69999694824219,
+            194.51309204101562,
+            541.0109252929688,
+            296.59014892578125
+          ],
+          "document_id": "0625c3c0322a4a3d85759914168c80b3"
+        }
+      ],
+      "id": "8ddffee9b88a401ba157bef26b21b270",
+      "document_id": "0625c3c0322a4a3d85759914168c80b3",
+      "document_name": "03-imf-india-2025-article-iv-excerpt.pdf",
+      "page": 10,
+      "bbox": [
+        73.46399688720703,
+        144.26309204101562,
+        541.4334106445312,
+        252.3301544189453
+      ],
+      "block_text": "4. Growth has been robust (Figure 2). India\u2019s real GDP grew by 6.5 percent in FY2024/25. Private consumption growth was buoyant at 7.2 percent on increasing rural demand and stable urban demand. Investment growth moderated to 7.1 percent, supported by public investment, whereas private investment appeared to be less dynamic. Strong private consumption has continued this fiscal year, underpinning real GDP growth of 7.8 percent in 2025Q2. Nominal GDP growth moderated to 8.8 percent in 2025Q2, down from 9.8 percent in FY2024/25, reflecting a low deflator mainly driven by declining food prices. The output gap was broadly closed as of FY2024/25.",
+      "evidence_start": 195,
+      "evidence_end": 326
+    },
+    {
+      "subject": "India",
+      "subject_key": "india",
+      "predicate": "real gdp growth",
+      "raw_predicate": "real gdp growth",
+      "raw_value": "7.8 percent",
+      "normalized": {
+        "kind": "number",
+        "value": "7.8",
+        "unit": "%",
+        "resolution": "0.1",
+        "scaled": false,
+        "normalization": "7.8 percent \u2192 7.8 %; decimal arithmetic, no currency conversion."
+      },
+      "context": {
+        "period": "2025Q2",
+        "scope": null,
+        "periods": [
+          "2025Q2"
+        ],
+        "ambiguous": false,
+        "approximate": false,
+        "assertion_type": "reported",
+        "subject_inferred": true
+      },
+      "quote": "Strong private consumption has continued this fiscal year, underpinning real GDP growth of 7.8 percent in 2025Q2.",
+      "method": "statistical prose",
+      "confidence": 0.65,
+      "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score. Country subject inferred from dominant mentions in the first 12 pages; inspect its separate evidence.",
+      "evidence_parts": [
+        {
+          "role": "inferred country subject",
+          "page": 2,
+          "quote": "Under Article IV of the IMF\u2019s Articles of Agreement, the IMF holds bilateral discussions with members, usually every year. In the context of the 2025 Article IV consultation with India, the following documents have been released and are included in this package: \u2022 A Press Release summarizing the views of the Executive Board as expressed during its November 21, 2025 consideration of the staff report that concluded the Article IV consultation with India.",
+          "bbox": [
+            121.69999694824219,
+            194.51309204101562,
+            541.0109252929688,
+            296.59014892578125
+          ],
+          "document_id": "0625c3c0322a4a3d85759914168c80b3"
+        }
+      ],
+      "id": "766a4c0ee89444e7afee8a73245cebb4",
+      "document_id": "0625c3c0322a4a3d85759914168c80b3",
+      "document_name": "03-imf-india-2025-article-iv-excerpt.pdf",
+      "page": 10,
+      "bbox": [
+        73.46399688720703,
+        144.26309204101562,
+        541.4334106445312,
+        252.3301544189453
+      ],
+      "block_text": "4. Growth has been robust (Figure 2). India\u2019s real GDP grew by 6.5 percent in FY2024/25. Private consumption growth was buoyant at 7.2 percent on increasing rural demand and stable urban demand. Investment growth moderated to 7.1 percent, supported by public investment, whereas private investment appeared to be less dynamic. Strong private consumption has continued this fiscal year, underpinning real GDP growth of 7.8 percent in 2025Q2. Nominal GDP growth moderated to 8.8 percent in 2025Q2, down from 9.8 percent in FY2024/25, reflecting a low deflator mainly driven by declining food prices. The output gap was broadly closed as of FY2024/25.",
+      "evidence_start": 327,
+      "evidence_end": 440
+    },
+    {
+      "subject": "India",
+      "subject_key": "india",
+      "predicate": "nominal gdp growth",
+      "raw_predicate": "nominal gdp growth",
+      "raw_value": "8.8 percent",
+      "normalized": {
+        "kind": "number",
+        "value": "8.8",
+        "unit": "%",
+        "resolution": "0.1",
+        "scaled": false,
+        "normalization": "8.8 percent \u2192 8.8 %; decimal arithmetic, no currency conversion."
+      },
+      "context": {
+        "period": "2025Q2",
+        "scope": null,
+        "periods": [
+          "2025Q2"
+        ],
+        "ambiguous": false,
+        "approximate": false,
+        "assertion_type": "reported",
+        "subject_inferred": true
+      },
+      "quote": "Nominal GDP growth moderated to 8.8 percent in 2025Q2, down from 9.8 percent in FY2024/25, reflecting a low deflator mainly driven by declining food prices.",
+      "method": "statistical prose",
+      "confidence": 0.65,
+      "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score. Country subject inferred from dominant mentions in the first 12 pages; inspect its separate evidence.",
+      "evidence_parts": [
+        {
+          "role": "inferred country subject",
+          "page": 2,
+          "quote": "Under Article IV of the IMF\u2019s Articles of Agreement, the IMF holds bilateral discussions with members, usually every year. In the context of the 2025 Article IV consultation with India, the following documents have been released and are included in this package: \u2022 A Press Release summarizing the views of the Executive Board as expressed during its November 21, 2025 consideration of the staff report that concluded the Article IV consultation with India.",
+          "bbox": [
+            121.69999694824219,
+            194.51309204101562,
+            541.0109252929688,
+            296.59014892578125
+          ],
+          "document_id": "0625c3c0322a4a3d85759914168c80b3"
+        }
+      ],
+      "id": "e02962b66ce94f5385832c399c367b49",
+      "document_id": "0625c3c0322a4a3d85759914168c80b3",
+      "document_name": "03-imf-india-2025-article-iv-excerpt.pdf",
+      "page": 10,
+      "bbox": [
+        73.46399688720703,
+        144.26309204101562,
+        541.4334106445312,
+        252.3301544189453
+      ],
+      "block_text": "4. Growth has been robust (Figure 2). India\u2019s real GDP grew by 6.5 percent in FY2024/25. Private consumption growth was buoyant at 7.2 percent on increasing rural demand and stable urban demand. Investment growth moderated to 7.1 percent, supported by public investment, whereas private investment appeared to be less dynamic. Strong private consumption has continued this fiscal year, underpinning real GDP growth of 7.8 percent in 2025Q2. Nominal GDP growth moderated to 8.8 percent in 2025Q2, down from 9.8 percent in FY2024/25, reflecting a low deflator mainly driven by declining food prices. The output gap was broadly closed as of FY2024/25.",
+      "evidence_start": 441,
+      "evidence_end": 597
+    },
+    {
+      "subject": "India",
+      "subject_key": "india",
+      "predicate": "headline inflation",
+      "raw_predicate": "headline inflation",
+      "raw_value": "1.5 percent",
+      "normalized": {
+        "kind": "number",
+        "value": "1.5",
+        "unit": "%",
+        "resolution": "0.1",
+        "scaled": false,
+        "normalization": "1.5 percent \u2192 1.5 %; decimal arithmetic, no currency conversion."
+      },
+      "context": {
+        "period": "SEPTEMBER2025",
+        "scope": null,
+        "periods": [
+          "SEPTEMBER2025"
+        ],
+        "ambiguous": false,
+        "approximate": false,
+        "assertion_type": "reported",
+        "subject_inferred": true
+      },
+      "quote": "Headline inflation has declined to 1.5 percent in September 2025, down from 4.6 percent (FY2024/25 average), reflecting lower domestic food prices from good harvests.",
+      "method": "statistical prose",
+      "confidence": 0.65,
+      "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score. Country subject inferred from dominant mentions in the first 12 pages; inspect its separate evidence.",
+      "evidence_parts": [
+        {
+          "role": "inferred country subject",
+          "page": 2,
+          "quote": "Under Article IV of the IMF\u2019s Articles of Agreement, the IMF holds bilateral discussions with members, usually every year. In the context of the 2025 Article IV consultation with India, the following documents have been released and are included in this package: \u2022 A Press Release summarizing the views of the Executive Board as expressed during its November 21, 2025 consideration of the staff report that concluded the Article IV consultation with India.",
+          "bbox": [
+            121.69999694824219,
+            194.51309204101562,
+            541.0109252929688,
+            296.59014892578125
+          ],
+          "document_id": "0625c3c0322a4a3d85759914168c80b3"
+        }
+      ],
+      "id": "87a5ab028659453989fd683ed4d1e903",
+      "document_id": "0625c3c0322a4a3d85759914168c80b3",
+      "document_name": "03-imf-india-2025-article-iv-excerpt.pdf",
+      "page": 10,
+      "bbox": [
+        73.46399688720703,
+        255.16311645507812,
+        541.626220703125,
+        318.3601379394531
+      ],
+      "block_text": "5. Inflation dynamics are benign. Headline inflation has declined to 1.5 percent in September 2025, down from 4.6 percent (FY2024/25 average), reflecting lower domestic food prices from good harvests. Core inflation increased to 4.6 percent (from 3.5 percent FY2024/25 average), in part due to rising gold and silver prices.",
+      "evidence_start": 34,
+      "evidence_end": 200
+    },
+    {
+      "subject": "India",
+      "subject_key": "india",
+      "predicate": "core inflation",
+      "raw_predicate": "core inflation",
+      "raw_value": "4.6 percent",
+      "normalized": {
+        "kind": "number",
+        "value": "4.6",
+        "unit": "%",
+        "resolution": "0.1",
+        "scaled": false,
+        "normalization": "4.6 percent \u2192 4.6 %; decimal arithmetic, no currency conversion."
+      },
+      "context": {
+        "period": null,
+        "scope": null,
+        "periods": [],
+        "ambiguous": false,
+        "approximate": false,
+        "assertion_type": "reported",
+        "subject_inferred": true
+      },
+      "quote": "Core inflation increased to 4.6 percent (from 3.5 percent FY2024/25 average), in part due to rising gold and silver prices.",
+      "method": "statistical prose",
+      "confidence": 0.65,
+      "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score. Country subject inferred from dominant mentions in the first 12 pages; inspect its separate evidence.",
+      "evidence_parts": [
+        {
+          "role": "inferred country subject",
+          "page": 2,
+          "quote": "Under Article IV of the IMF\u2019s Articles of Agreement, the IMF holds bilateral discussions with members, usually every year. In the context of the 2025 Article IV consultation with India, the following documents have been released and are included in this package: \u2022 A Press Release summarizing the views of the Executive Board as expressed during its November 21, 2025 consideration of the staff report that concluded the Article IV consultation with India.",
+          "bbox": [
+            121.69999694824219,
+            194.51309204101562,
+            541.0109252929688,
+            296.59014892578125
+          ],
+          "document_id": "0625c3c0322a4a3d85759914168c80b3"
+        }
+      ],
+      "id": "933d782c141c4f6e91fdb25b39ea7f1d",
+      "document_id": "0625c3c0322a4a3d85759914168c80b3",
+      "document_name": "03-imf-india-2025-article-iv-excerpt.pdf",
+      "page": 10,
+      "bbox": [
+        73.46399688720703,
+        255.16311645507812,
+        541.626220703125,
+        318.3601379394531
+      ],
+      "block_text": "5. Inflation dynamics are benign. Headline inflation has declined to 1.5 percent in September 2025, down from 4.6 percent (FY2024/25 average), reflecting lower domestic food prices from good harvests. Core inflation increased to 4.6 percent (from 3.5 percent FY2024/25 average), in part due to rising gold and silver prices.",
+      "evidence_start": 201,
+      "evidence_end": 324
+    },
+    {
+      "subject": "India",
+      "subject_key": "india",
+      "predicate": "labor force participation rate",
+      "raw_predicate": "labor force participation rate",
+      "raw_value": "56.2 percent",
+      "normalized": {
+        "kind": "number",
+        "value": "56.2",
+        "unit": "%",
+        "resolution": "0.1",
+        "scaled": false,
+        "normalization": "56.2 percent \u2192 56.2 %; decimal arithmetic, no currency conversion."
+      },
+      "context": {
+        "period": null,
+        "scope": null,
+        "periods": [],
+        "ambiguous": false,
+        "approximate": false,
+        "assertion_type": "reported",
+        "subject_inferred": true
+      },
+      "quote": "Amid an unchanged labor force participation rate of 56.2 percent, regular and formal employment expanded.",
+      "method": "statistical prose",
+      "confidence": 0.65,
+      "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score. Country subject inferred from dominant mentions in the first 12 pages; inspect its separate evidence.",
+      "evidence_parts": [
+        {
+          "role": "inferred country subject",
+          "page": 2,
+          "quote": "Under Article IV of the IMF\u2019s Articles of Agreement, the IMF holds bilateral discussions with members, usually every year. In the context of the 2025 Article IV consultation with India, the following documents have been released and are included in this package: \u2022 A Press Release summarizing the views of the Executive Board as expressed during its November 21, 2025 consideration of the staff report that concluded the Article IV consultation with India.",
+          "bbox": [
+            121.69999694824219,
+            194.51309204101562,
+            541.0109252929688,
+            296.59014892578125
+          ],
+          "document_id": "0625c3c0322a4a3d85759914168c80b3"
+        }
+      ],
+      "id": "b07011d2600247d4804ae1c69b6827c1",
+      "document_id": "0625c3c0322a4a3d85759914168c80b3",
+      "document_name": "03-imf-india-2025-article-iv-excerpt.pdf",
+      "page": 10,
+      "bbox": [
+        73.46399688720703,
+        491.5457763671875,
+        538.7366333007812,
+        627.5701293945312
+      ],
+      "block_text": "6. Labor market indicators remained broadly stable in 2024, with a mild improvement in job quality, though challenges remain. Amid an unchanged labor force participation rate of 56.2 percent, regular and formal employment expanded. The employment rate of regular wage earners grew from 12.3 percent in 2023 to 12.7 percent in 2024, while formal employment (defined by social security coverage) increased from 11 percent to 11.2 percent. Real hourly wages have grown by 16 and 26 percent since 2018 in rural and urban areas, respectively, in part reflecting fewer hours worked. Unemployment has remained low at 5.2 percent in September. Despite recent improvements, challenges persist, with high informality and underemployment, and declining but still high youth unemployment for the most educated (Figure 3).",
+      "evidence_start": 126,
+      "evidence_end": 231
     },
     {
       "subject": "India",
@@ -95,8 +2004,8 @@
       "method": "rules",
       "confidence": 0.78,
       "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score.",
-      "id": "e8821cfddd9a481497ff010d7698c0e8",
-      "document_id": "16e3c71b7ebf439d82b590fb5f3e9528",
+      "id": "4be54b8c3ea645319250246c1a944b93",
+      "document_id": "0625c3c0322a4a3d85759914168c80b3",
       "document_name": "03-imf-india-2025-article-iv-excerpt.pdf",
       "page": 32,
       "bbox": [
@@ -132,8 +2041,8 @@
       "method": "rules",
       "confidence": 0.78,
       "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score.",
-      "id": "7687a40c01824c7f88050a44c3416168",
-      "document_id": "16e3c71b7ebf439d82b590fb5f3e9528",
+      "id": "6c53e9c728c2499d834f5a719e785ad0",
+      "document_id": "0625c3c0322a4a3d85759914168c80b3",
       "document_name": "03-imf-india-2025-article-iv-excerpt.pdf",
       "page": 34,
       "bbox": [
@@ -169,8 +2078,8 @@
       "method": "rules",
       "confidence": 0.78,
       "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score.",
-      "id": "f63f3f9d7fa94169af2eb12768cf8f37",
-      "document_id": "16e3c71b7ebf439d82b590fb5f3e9528",
+      "id": "13911612bb5d4fb9871aaf0321d2e802",
+      "document_id": "0625c3c0322a4a3d85759914168c80b3",
       "document_name": "03-imf-india-2025-article-iv-excerpt.pdf",
       "page": 37,
       "bbox": [
@@ -206,8 +2115,8 @@
       "method": "rules",
       "confidence": 0.78,
       "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score.",
-      "id": "1f14628433ab4148b0eece29b6a93f19",
-      "document_id": "16e3c71b7ebf439d82b590fb5f3e9528",
+      "id": "42b4c2b706614c4db89c025fae90f1d3",
+      "document_id": "0625c3c0322a4a3d85759914168c80b3",
       "document_name": "03-imf-india-2025-article-iv-excerpt.pdf",
       "page": 92,
       "bbox": [
@@ -221,20 +2130,545 @@
       "evidence_end": 97
     }
   ],
-  "relationships": [],
+  "relationships": [
+    {
+      "kind": "uncertain",
+      "reason": "At least one claim is an estimate or forecast. Publication dates and revision history must be aligned before treating differences as contradictions.",
+      "steps": [
+        "Same conservative entity key: india.",
+        "Same normalized predicate: industrial sector growth.",
+        "6.2 percent \u2192 6.2 %; decimal arithmetic, no currency conversion.",
+        "4.3 percent \u2192 4.3 %; decimal arithmetic, no currency conversion.",
+        "Claim qualifications: estimate versus reported.",
+        "At least one claim is an estimate or forecast. Publication dates and revision history must be aligned before treating differences as contradictions."
+      ],
+      "confidence": 0.5,
+      "caveat": "A relationship between documented claims; not an independent verification of truth.",
+      "id": "57102810f10b44699bd50d5098f76e82",
+      "left_id": "7cd40746883a402ba844499721b2ecc3",
+      "right_id": "772b828f2406441ea5dfff24728757b4"
+    },
+    {
+      "kind": "uncertain",
+      "reason": "The periods have different granularity and may overlap; a quarter or month cannot be equated with an annual measure.",
+      "steps": [
+        "Same conservative entity key: india.",
+        "Same normalized predicate: industrial sector growth.",
+        "6 percent \u2192 6 %; decimal arithmetic, no currency conversion.",
+        "4.3 percent \u2192 4.3 %; decimal arithmetic, no currency conversion.",
+        "Period: H1FY25 \u2194 2024/25.",
+        "Scope: unspecified \u2194 unspecified.",
+        "The periods have different granularity and may overlap; a quarter or month cannot be equated with an annual measure."
+      ],
+      "confidence": 0.45,
+      "caveat": "A relationship between documented claims; not an independent verification of truth.",
+      "id": "641584b10e6141499a928124e81ce6e3",
+      "left_id": "2fc8c564779f428ea48084ed9dde04e1",
+      "right_id": "772b828f2406441ea5dfff24728757b4"
+    },
+    {
+      "kind": "uncertain",
+      "reason": "At least one claim is an estimate or forecast. Publication dates and revision history must be aligned before treating differences as contradictions.",
+      "steps": [
+        "Same conservative entity key: india.",
+        "Same normalized predicate: real gdp growth.",
+        "6.4 percent \u2192 6.4 %; decimal arithmetic, no currency conversion.",
+        "6.5 percent \u2192 6.5 %; decimal arithmetic, no currency conversion.",
+        "Claim qualifications: estimate versus reported.",
+        "At least one claim is an estimate or forecast. Publication dates and revision history must be aligned before treating differences as contradictions."
+      ],
+      "confidence": 0.5,
+      "caveat": "A relationship between documented claims; not an independent verification of truth.",
+      "id": "e020f85afd6449b887491768dd01b97f",
+      "left_id": "c015bcc6719b4de4b0062e21cc4ffa12",
+      "right_id": "07dc55a2168a4d9a849335a3c379fcc5"
+    },
+    {
+      "kind": "uncertain",
+      "reason": "At least one claim is an estimate or forecast. Publication dates and revision history must be aligned before treating differences as contradictions.",
+      "steps": [
+        "Same conservative entity key: india.",
+        "Same normalized predicate: real gdp growth.",
+        "6.4 percent \u2192 6.4 %; decimal arithmetic, no currency conversion.",
+        "6.5 percent \u2192 6.5 %; decimal arithmetic, no currency conversion.",
+        "Claim qualifications: estimate versus reported.",
+        "At least one claim is an estimate or forecast. Publication dates and revision history must be aligned before treating differences as contradictions."
+      ],
+      "confidence": 0.5,
+      "caveat": "A relationship between documented claims; not an independent verification of truth.",
+      "id": "9ea1b4e19aba46a4a5238c4c4087299e",
+      "left_id": "7f93a8ec76b247958dc21266a2a1209f",
+      "right_id": "07dc55a2168a4d9a849335a3c379fcc5"
+    },
+    {
+      "kind": "uncertain",
+      "reason": "One source omits period; alignment cannot be established.",
+      "steps": [
+        "Same conservative entity key: india.",
+        "Same normalized predicate: real gdp growth.",
+        "6.0 percent \u2192 6 %; decimal arithmetic, no currency conversion.",
+        "6.5 percent \u2192 6.5 %; decimal arithmetic, no currency conversion.",
+        "Period: unspecified \u2194 2024/25.",
+        "Scope: unspecified \u2194 unspecified.",
+        "One source omits period; alignment cannot be established."
+      ],
+      "confidence": 0.45,
+      "caveat": "A relationship between documented claims; not an independent verification of truth.",
+      "id": "2617e6982c384ad7b0bacff6e954b312",
+      "left_id": "f5b54e00a6b84371bafc8534281dbbfd",
+      "right_id": "07dc55a2168a4d9a849335a3c379fcc5"
+    },
+    {
+      "kind": "uncertain",
+      "reason": "One source omits period; alignment cannot be established.",
+      "steps": [
+        "Same conservative entity key: india.",
+        "Same normalized predicate: merchandise imports growth.",
+        "5.2 percent \u2192 5.2 %; decimal arithmetic, no currency conversion.",
+        "6.2 percent \u2192 6.2 %; decimal arithmetic, no currency conversion.",
+        "Period: APRIL/DECEMBER2024 \u2194 unspecified.",
+        "Scope: unspecified \u2194 unspecified.",
+        "One source omits period; alignment cannot be established."
+      ],
+      "confidence": 0.45,
+      "caveat": "A relationship between documented claims; not an independent verification of truth.",
+      "id": "46c1aa266726438db3fbf828fbbdfa55",
+      "left_id": "a65f00f68e7a46e08db25d5aeb68e336",
+      "right_id": "1bff2e519c4641e1a3901ca1f6628621"
+    },
+    {
+      "kind": "uncertain",
+      "reason": "At least one claim is an estimate or forecast. Publication dates and revision history must be aligned before treating differences as contradictions.",
+      "steps": [
+        "Same conservative entity key: india.",
+        "Same normalized predicate: real gdp growth.",
+        "6.4 percent \u2192 6.4 %; decimal arithmetic, no currency conversion.",
+        "6.5 percent \u2192 6.5 %; decimal arithmetic, no currency conversion.",
+        "Claim qualifications: estimate versus reported.",
+        "At least one claim is an estimate or forecast. Publication dates and revision history must be aligned before treating differences as contradictions."
+      ],
+      "confidence": 0.5,
+      "caveat": "A relationship between documented claims; not an independent verification of truth.",
+      "id": "11a5447704a447ac98cdfcd6e33dfa6c",
+      "left_id": "c015bcc6719b4de4b0062e21cc4ffa12",
+      "right_id": "e12ae088a06648c58572aa9a4bd336bf"
+    },
+    {
+      "kind": "uncertain",
+      "reason": "At least one claim is an estimate or forecast. Publication dates and revision history must be aligned before treating differences as contradictions.",
+      "steps": [
+        "Same conservative entity key: india.",
+        "Same normalized predicate: real gdp growth.",
+        "6.4 percent \u2192 6.4 %; decimal arithmetic, no currency conversion.",
+        "6.5 percent \u2192 6.5 %; decimal arithmetic, no currency conversion.",
+        "Claim qualifications: estimate versus reported.",
+        "At least one claim is an estimate or forecast. Publication dates and revision history must be aligned before treating differences as contradictions."
+      ],
+      "confidence": 0.5,
+      "caveat": "A relationship between documented claims; not an independent verification of truth.",
+      "id": "2969ac38d00f427cbf2a55346dc973d8",
+      "left_id": "7f93a8ec76b247958dc21266a2a1209f",
+      "right_id": "e12ae088a06648c58572aa9a4bd336bf"
+    },
+    {
+      "kind": "uncertain",
+      "reason": "One source omits period; alignment cannot be established.",
+      "steps": [
+        "Same conservative entity key: india.",
+        "Same normalized predicate: real gdp growth.",
+        "6.0 percent \u2192 6 %; decimal arithmetic, no currency conversion.",
+        "6.5 percent \u2192 6.5 %; decimal arithmetic, no currency conversion.",
+        "Period: unspecified \u2194 2024/25.",
+        "Scope: unspecified \u2194 unspecified.",
+        "One source omits period; alignment cannot be established."
+      ],
+      "confidence": 0.45,
+      "caveat": "A relationship between documented claims; not an independent verification of truth.",
+      "id": "7020a3b7d317440e9d2dafcddae74e1b",
+      "left_id": "f5b54e00a6b84371bafc8534281dbbfd",
+      "right_id": "e12ae088a06648c58572aa9a4bd336bf"
+    },
+    {
+      "kind": "uncertain",
+      "reason": "The periods have different granularity and may overlap; a quarter or month cannot be equated with an annual measure.",
+      "steps": [
+        "Same conservative entity key: india.",
+        "Same normalized predicate: merchandise imports growth.",
+        "5.2 percent \u2192 5.2 %; decimal arithmetic, no currency conversion.",
+        "6.2 percent \u2192 6.2 %; decimal arithmetic, no currency conversion.",
+        "Period: APRIL/DECEMBER2024 \u2194 2024/25.",
+        "Scope: unspecified \u2194 unspecified.",
+        "The periods have different granularity and may overlap; a quarter or month cannot be equated with an annual measure."
+      ],
+      "confidence": 0.45,
+      "caveat": "A relationship between documented claims; not an independent verification of truth.",
+      "id": "e02af6eb5a294c7d83ea20e27d820e60",
+      "left_id": "a65f00f68e7a46e08db25d5aeb68e336",
+      "right_id": "5b540fcf397e46d98eedfeed643b4f5b"
+    },
+    {
+      "kind": "uncertain",
+      "reason": "At least one claim is an estimate or forecast. Publication dates and revision history must be aligned before treating differences as contradictions.",
+      "steps": [
+        "Same conservative entity key: india.",
+        "Same normalized predicate: real gdp growth.",
+        "6.4 percent \u2192 6.4 %; decimal arithmetic, no currency conversion.",
+        "7.8 percent \u2192 7.8 %; decimal arithmetic, no currency conversion.",
+        "Claim qualifications: estimate versus reported.",
+        "At least one claim is an estimate or forecast. Publication dates and revision history must be aligned before treating differences as contradictions."
+      ],
+      "confidence": 0.5,
+      "caveat": "A relationship between documented claims; not an independent verification of truth.",
+      "id": "67bc9d48910845bc925a88ec75c671ea",
+      "left_id": "c015bcc6719b4de4b0062e21cc4ffa12",
+      "right_id": "98e12bea27de4bb59122d95fed961a00"
+    },
+    {
+      "kind": "uncertain",
+      "reason": "At least one claim is an estimate or forecast. Publication dates and revision history must be aligned before treating differences as contradictions.",
+      "steps": [
+        "Same conservative entity key: india.",
+        "Same normalized predicate: real gdp growth.",
+        "6.4 percent \u2192 6.4 %; decimal arithmetic, no currency conversion.",
+        "7.8 percent \u2192 7.8 %; decimal arithmetic, no currency conversion.",
+        "Claim qualifications: estimate versus reported.",
+        "At least one claim is an estimate or forecast. Publication dates and revision history must be aligned before treating differences as contradictions."
+      ],
+      "confidence": 0.5,
+      "caveat": "A relationship between documented claims; not an independent verification of truth.",
+      "id": "0755c5b50f8a4d85b261ee28cb9b77a5",
+      "left_id": "7f93a8ec76b247958dc21266a2a1209f",
+      "right_id": "98e12bea27de4bb59122d95fed961a00"
+    },
+    {
+      "kind": "uncertain",
+      "reason": "One source omits period; alignment cannot be established.",
+      "steps": [
+        "Same conservative entity key: india.",
+        "Same normalized predicate: real gdp growth.",
+        "6.0 percent \u2192 6 %; decimal arithmetic, no currency conversion.",
+        "7.8 percent \u2192 7.8 %; decimal arithmetic, no currency conversion.",
+        "Period: unspecified \u2194 THEFIRSTQUARTEROFFY2025/26.",
+        "Scope: unspecified \u2194 unspecified.",
+        "One source omits period; alignment cannot be established."
+      ],
+      "confidence": 0.45,
+      "caveat": "A relationship between documented claims; not an independent verification of truth.",
+      "id": "9d6eb0fe192441c0b73fbbd5ec9554a4",
+      "left_id": "f5b54e00a6b84371bafc8534281dbbfd",
+      "right_id": "98e12bea27de4bb59122d95fed961a00"
+    },
+    {
+      "kind": "uncertain",
+      "reason": "The periods have different granularity and may overlap; a quarter or month cannot be equated with an annual measure.",
+      "steps": [
+        "Same conservative entity key: india.",
+        "Same normalized predicate: real gdp growth.",
+        "6.5 percent \u2192 6.5 %; decimal arithmetic, no currency conversion.",
+        "7.8 percent \u2192 7.8 %; decimal arithmetic, no currency conversion.",
+        "Period: 2024/25 \u2194 THEFIRSTQUARTEROFFY2025/26.",
+        "Scope: unspecified \u2194 unspecified.",
+        "The periods have different granularity and may overlap; a quarter or month cannot be equated with an annual measure."
+      ],
+      "confidence": 0.45,
+      "caveat": "A relationship between documented claims; not an independent verification of truth.",
+      "id": "36d72340e1e545a495a9f5ac47b67321",
+      "left_id": "07dc55a2168a4d9a849335a3c379fcc5",
+      "right_id": "98e12bea27de4bb59122d95fed961a00"
+    },
+    {
+      "kind": "uncertain",
+      "reason": "The periods have different granularity and may overlap; a quarter or month cannot be equated with an annual measure.",
+      "steps": [
+        "Same conservative entity key: india.",
+        "Same normalized predicate: real gdp growth.",
+        "6.5 percent \u2192 6.5 %; decimal arithmetic, no currency conversion.",
+        "7.8 percent \u2192 7.8 %; decimal arithmetic, no currency conversion.",
+        "Period: 2024/25 \u2194 THEFIRSTQUARTEROFFY2025/26.",
+        "Scope: unspecified \u2194 unspecified.",
+        "The periods have different granularity and may overlap; a quarter or month cannot be equated with an annual measure."
+      ],
+      "confidence": 0.45,
+      "caveat": "A relationship between documented claims; not an independent verification of truth.",
+      "id": "fbff9c8f84e94938aaf1499463e2e36b",
+      "left_id": "e12ae088a06648c58572aa9a4bd336bf",
+      "right_id": "98e12bea27de4bb59122d95fed961a00"
+    },
+    {
+      "kind": "uncertain",
+      "reason": "At least one claim is an estimate or forecast. Publication dates and revision history must be aligned before treating differences as contradictions.",
+      "steps": [
+        "Same conservative entity key: india.",
+        "Same normalized predicate: real gdp growth.",
+        "6.4 percent \u2192 6.4 %; decimal arithmetic, no currency conversion.",
+        "6.6 percent \u2192 6.6 %; decimal arithmetic, no currency conversion.",
+        "Claim qualifications: estimate versus forecast.",
+        "At least one claim is an estimate or forecast. Publication dates and revision history must be aligned before treating differences as contradictions."
+      ],
+      "confidence": 0.5,
+      "caveat": "A relationship between documented claims; not an independent verification of truth.",
+      "id": "764984a4d11b496a810e5755f5d24af3",
+      "left_id": "c015bcc6719b4de4b0062e21cc4ffa12",
+      "right_id": "7ce85f6d865a402db825a264e9844605"
+    },
+    {
+      "kind": "uncertain",
+      "reason": "At least one claim is an estimate or forecast. Publication dates and revision history must be aligned before treating differences as contradictions.",
+      "steps": [
+        "Same conservative entity key: india.",
+        "Same normalized predicate: real gdp growth.",
+        "6.4 percent \u2192 6.4 %; decimal arithmetic, no currency conversion.",
+        "6.6 percent \u2192 6.6 %; decimal arithmetic, no currency conversion.",
+        "Claim qualifications: estimate versus forecast.",
+        "At least one claim is an estimate or forecast. Publication dates and revision history must be aligned before treating differences as contradictions."
+      ],
+      "confidence": 0.5,
+      "caveat": "A relationship between documented claims; not an independent verification of truth.",
+      "id": "12c8f1164ee3418eb2d61d66fc8551af",
+      "left_id": "7f93a8ec76b247958dc21266a2a1209f",
+      "right_id": "7ce85f6d865a402db825a264e9844605"
+    },
+    {
+      "kind": "uncertain",
+      "reason": "At least one claim is an estimate or forecast. Publication dates and revision history must be aligned before treating differences as contradictions.",
+      "steps": [
+        "Same conservative entity key: india.",
+        "Same normalized predicate: real gdp growth.",
+        "6.0 percent \u2192 6 %; decimal arithmetic, no currency conversion.",
+        "6.6 percent \u2192 6.6 %; decimal arithmetic, no currency conversion.",
+        "Claim qualifications: reported versus forecast.",
+        "At least one claim is an estimate or forecast. Publication dates and revision history must be aligned before treating differences as contradictions."
+      ],
+      "confidence": 0.5,
+      "caveat": "A relationship between documented claims; not an independent verification of truth.",
+      "id": "9c00c0f4379d49fc8b0fe0e61400ea64",
+      "left_id": "f5b54e00a6b84371bafc8534281dbbfd",
+      "right_id": "7ce85f6d865a402db825a264e9844605"
+    },
+    {
+      "kind": "uncertain",
+      "reason": "At least one claim is an estimate or forecast. Publication dates and revision history must be aligned before treating differences as contradictions.",
+      "steps": [
+        "Same conservative entity key: india.",
+        "Same normalized predicate: real gdp growth.",
+        "6.5 percent \u2192 6.5 %; decimal arithmetic, no currency conversion.",
+        "6.6 percent \u2192 6.6 %; decimal arithmetic, no currency conversion.",
+        "Claim qualifications: reported versus forecast.",
+        "At least one claim is an estimate or forecast. Publication dates and revision history must be aligned before treating differences as contradictions."
+      ],
+      "confidence": 0.5,
+      "caveat": "A relationship between documented claims; not an independent verification of truth.",
+      "id": "fb74e1f2784e4e90bf1a5a7ca658acb3",
+      "left_id": "07dc55a2168a4d9a849335a3c379fcc5",
+      "right_id": "7ce85f6d865a402db825a264e9844605"
+    },
+    {
+      "kind": "uncertain",
+      "reason": "At least one claim is an estimate or forecast. Publication dates and revision history must be aligned before treating differences as contradictions.",
+      "steps": [
+        "Same conservative entity key: india.",
+        "Same normalized predicate: real gdp growth.",
+        "6.5 percent \u2192 6.5 %; decimal arithmetic, no currency conversion.",
+        "6.6 percent \u2192 6.6 %; decimal arithmetic, no currency conversion.",
+        "Claim qualifications: reported versus forecast.",
+        "At least one claim is an estimate or forecast. Publication dates and revision history must be aligned before treating differences as contradictions."
+      ],
+      "confidence": 0.5,
+      "caveat": "A relationship between documented claims; not an independent verification of truth.",
+      "id": "f13ad75fd6cd43ceae2fd0ff4d656661",
+      "left_id": "e12ae088a06648c58572aa9a4bd336bf",
+      "right_id": "7ce85f6d865a402db825a264e9844605"
+    },
+    {
+      "kind": "uncertain",
+      "reason": "At least one claim is an estimate or forecast. Publication dates and revision history must be aligned before treating differences as contradictions.",
+      "steps": [
+        "Same conservative entity key: india.",
+        "Same normalized predicate: real gdp growth.",
+        "6.4 percent \u2192 6.4 %; decimal arithmetic, no currency conversion.",
+        "6.5 percent \u2192 6.5 %; decimal arithmetic, no currency conversion.",
+        "Claim qualifications: estimate versus reported.",
+        "At least one claim is an estimate or forecast. Publication dates and revision history must be aligned before treating differences as contradictions."
+      ],
+      "confidence": 0.5,
+      "caveat": "A relationship between documented claims; not an independent verification of truth.",
+      "id": "3cd12d220b4d4af7a6fa5d7514690f1b",
+      "left_id": "c015bcc6719b4de4b0062e21cc4ffa12",
+      "right_id": "3e828420e93e4d139c1f7785aed01a04"
+    },
+    {
+      "kind": "uncertain",
+      "reason": "At least one claim is an estimate or forecast. Publication dates and revision history must be aligned before treating differences as contradictions.",
+      "steps": [
+        "Same conservative entity key: india.",
+        "Same normalized predicate: real gdp growth.",
+        "6.4 percent \u2192 6.4 %; decimal arithmetic, no currency conversion.",
+        "6.5 percent \u2192 6.5 %; decimal arithmetic, no currency conversion.",
+        "Claim qualifications: estimate versus reported.",
+        "At least one claim is an estimate or forecast. Publication dates and revision history must be aligned before treating differences as contradictions."
+      ],
+      "confidence": 0.5,
+      "caveat": "A relationship between documented claims; not an independent verification of truth.",
+      "id": "ed8d0d22b40a41afb454e831778f6225",
+      "left_id": "7f93a8ec76b247958dc21266a2a1209f",
+      "right_id": "3e828420e93e4d139c1f7785aed01a04"
+    },
+    {
+      "kind": "uncertain",
+      "reason": "One source omits period; alignment cannot be established.",
+      "steps": [
+        "Same conservative entity key: india.",
+        "Same normalized predicate: real gdp growth.",
+        "6.0 percent \u2192 6 %; decimal arithmetic, no currency conversion.",
+        "6.5 percent \u2192 6.5 %; decimal arithmetic, no currency conversion.",
+        "Period: unspecified \u2194 FY2024/25.",
+        "Scope: unspecified \u2194 unspecified.",
+        "One source omits period; alignment cannot be established."
+      ],
+      "confidence": 0.45,
+      "caveat": "A relationship between documented claims; not an independent verification of truth.",
+      "id": "40a3cc1f08a34c7891fa0a6312663e80",
+      "left_id": "f5b54e00a6b84371bafc8534281dbbfd",
+      "right_id": "3e828420e93e4d139c1f7785aed01a04"
+    },
+    {
+      "kind": "uncertain",
+      "reason": "Period labels may overlap (for example fiscal versus calendar year); boundaries are unknown.",
+      "steps": [
+        "Same conservative entity key: india.",
+        "Same normalized predicate: real gdp growth.",
+        "6.5 percent \u2192 6.5 %; decimal arithmetic, no currency conversion.",
+        "6.5 percent \u2192 6.5 %; decimal arithmetic, no currency conversion.",
+        "Period: 2024/25 \u2194 FY2024/25.",
+        "Scope: unspecified \u2194 unspecified.",
+        "Period labels may overlap (for example fiscal versus calendar year); boundaries are unknown."
+      ],
+      "confidence": 0.45,
+      "caveat": "A relationship between documented claims; not an independent verification of truth.",
+      "id": "fe8aca061453497e8c350d7bdf8d7168",
+      "left_id": "07dc55a2168a4d9a849335a3c379fcc5",
+      "right_id": "3e828420e93e4d139c1f7785aed01a04"
+    },
+    {
+      "kind": "uncertain",
+      "reason": "Period labels may overlap (for example fiscal versus calendar year); boundaries are unknown.",
+      "steps": [
+        "Same conservative entity key: india.",
+        "Same normalized predicate: real gdp growth.",
+        "6.5 percent \u2192 6.5 %; decimal arithmetic, no currency conversion.",
+        "6.5 percent \u2192 6.5 %; decimal arithmetic, no currency conversion.",
+        "Period: 2024/25 \u2194 FY2024/25.",
+        "Scope: unspecified \u2194 unspecified.",
+        "Period labels may overlap (for example fiscal versus calendar year); boundaries are unknown."
+      ],
+      "confidence": 0.45,
+      "caveat": "A relationship between documented claims; not an independent verification of truth.",
+      "id": "948465833f794011a2dcc0dc425416bb",
+      "left_id": "e12ae088a06648c58572aa9a4bd336bf",
+      "right_id": "3e828420e93e4d139c1f7785aed01a04"
+    },
+    {
+      "kind": "uncertain",
+      "reason": "At least one claim is an estimate or forecast. Publication dates and revision history must be aligned before treating differences as contradictions.",
+      "steps": [
+        "Same conservative entity key: india.",
+        "Same normalized predicate: real gdp growth.",
+        "6.4 percent \u2192 6.4 %; decimal arithmetic, no currency conversion.",
+        "7.8 percent \u2192 7.8 %; decimal arithmetic, no currency conversion.",
+        "Claim qualifications: estimate versus reported.",
+        "At least one claim is an estimate or forecast. Publication dates and revision history must be aligned before treating differences as contradictions."
+      ],
+      "confidence": 0.5,
+      "caveat": "A relationship between documented claims; not an independent verification of truth.",
+      "id": "4de912e266134ea68dc6fd8f5574f2d0",
+      "left_id": "c015bcc6719b4de4b0062e21cc4ffa12",
+      "right_id": "766a4c0ee89444e7afee8a73245cebb4"
+    },
+    {
+      "kind": "uncertain",
+      "reason": "At least one claim is an estimate or forecast. Publication dates and revision history must be aligned before treating differences as contradictions.",
+      "steps": [
+        "Same conservative entity key: india.",
+        "Same normalized predicate: real gdp growth.",
+        "6.4 percent \u2192 6.4 %; decimal arithmetic, no currency conversion.",
+        "7.8 percent \u2192 7.8 %; decimal arithmetic, no currency conversion.",
+        "Claim qualifications: estimate versus reported.",
+        "At least one claim is an estimate or forecast. Publication dates and revision history must be aligned before treating differences as contradictions."
+      ],
+      "confidence": 0.5,
+      "caveat": "A relationship between documented claims; not an independent verification of truth.",
+      "id": "4323843e5d854ecf9bc9fbd984e4aea9",
+      "left_id": "7f93a8ec76b247958dc21266a2a1209f",
+      "right_id": "766a4c0ee89444e7afee8a73245cebb4"
+    },
+    {
+      "kind": "uncertain",
+      "reason": "One source omits period; alignment cannot be established.",
+      "steps": [
+        "Same conservative entity key: india.",
+        "Same normalized predicate: real gdp growth.",
+        "6.0 percent \u2192 6 %; decimal arithmetic, no currency conversion.",
+        "7.8 percent \u2192 7.8 %; decimal arithmetic, no currency conversion.",
+        "Period: unspecified \u2194 2025Q2.",
+        "Scope: unspecified \u2194 unspecified.",
+        "One source omits period; alignment cannot be established."
+      ],
+      "confidence": 0.45,
+      "caveat": "A relationship between documented claims; not an independent verification of truth.",
+      "id": "9c255c15e91c4640854c5eac9a9dd7f3",
+      "left_id": "f5b54e00a6b84371bafc8534281dbbfd",
+      "right_id": "766a4c0ee89444e7afee8a73245cebb4"
+    },
+    {
+      "kind": "uncertain",
+      "reason": "The periods have different granularity and may overlap; a quarter or month cannot be equated with an annual measure.",
+      "steps": [
+        "Same conservative entity key: india.",
+        "Same normalized predicate: real gdp growth.",
+        "6.5 percent \u2192 6.5 %; decimal arithmetic, no currency conversion.",
+        "7.8 percent \u2192 7.8 %; decimal arithmetic, no currency conversion.",
+        "Period: 2024/25 \u2194 2025Q2.",
+        "Scope: unspecified \u2194 unspecified.",
+        "The periods have different granularity and may overlap; a quarter or month cannot be equated with an annual measure."
+      ],
+      "confidence": 0.45,
+      "caveat": "A relationship between documented claims; not an independent verification of truth.",
+      "id": "f72607845a1541f6a29186b4f846b730",
+      "left_id": "07dc55a2168a4d9a849335a3c379fcc5",
+      "right_id": "766a4c0ee89444e7afee8a73245cebb4"
+    },
+    {
+      "kind": "uncertain",
+      "reason": "The periods have different granularity and may overlap; a quarter or month cannot be equated with an annual measure.",
+      "steps": [
+        "Same conservative entity key: india.",
+        "Same normalized predicate: real gdp growth.",
+        "6.5 percent \u2192 6.5 %; decimal arithmetic, no currency conversion.",
+        "7.8 percent \u2192 7.8 %; decimal arithmetic, no currency conversion.",
+        "Period: 2024/25 \u2194 2025Q2.",
+        "Scope: unspecified \u2194 unspecified.",
+        "The periods have different granularity and may overlap; a quarter or month cannot be equated with an annual measure."
+      ],
+      "confidence": 0.45,
+      "caveat": "A relationship between documented claims; not an independent verification of truth.",
+      "id": "ed061dd21a2c4e378bc41d20552e7909",
+      "left_id": "e12ae088a06648c58572aa9a4bd336bf",
+      "right_id": "766a4c0ee89444e7afee8a73245cebb4"
+    }
+  ],
   "issues": [
     {
       "kind": "unparsed_statement",
-      "quote": "1 STATE OF THE ECONOMY: GETTING BACK INTO THE FAST LANE",
+      "quote": "Name of the Chapter 1 STATE OF THE ECONOMY: GETTING BACK INTO THE FAST LANE",
       "reason": "Offline grammar could not safely recover an explicit subject, predicate and value. Try local-model mode or review manually.",
       "bbox": [
         60.00090026855469,
-        235.1625518798828,
+        219.1925811767578,
         503.32098388671875,
         260.0825500488281
       ],
-      "id": "0a03c86398504c2ab6c7ba66139ca32a",
-      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "id": "f02807c07de64f6280770b1b89b319a2",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 1
     },
@@ -248,53 +2682,23 @@
         244.4608917236328,
         276.0525207519531
       ],
-      "id": "407a791ea0f64a8992db761ae1b7c689",
-      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
-      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
-      "page": 1
-    },
-    {
-      "kind": "unparsed_statement",
-      "quote": "2 Global Economic Scenario",
-      "reason": "Offline grammar could not safely recover an explicit subject, predicate and value. Try local-model mode or review manually.",
-      "bbox": [
-        85.00090026855469,
-        279.4925231933594,
-        304.2109069824219,
-        292.02252197265625
-      ],
-      "id": "e1e53682820d4e6cb786e1b8e99f0b31",
-      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "id": "900a427f47c04c70821fdebffecef438",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 1
     },
     {
       "kind": "ambiguous_statement",
-      "quote": "11 Domestic Economy Remains Steady Amidst Global Uncertainties",
+      "quote": "2 Global Economic Scenario 11 Domestic Economy Remains Steady Amidst Global Uncertainties 20 Economy Characterised by Stability and Inclusivity on Multiple Fronts",
       "reason": "Multiple periods, scopes, ranges, or aligned values need structured interpretation. No fact asserted.",
       "bbox": [
         85.00090026855469,
-        295.4625244140625,
-        474.92095947265625,
-        307.9925231933594
-      ],
-      "id": "4329ebc0054c4d448b7c0879df5b909d",
-      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
-      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
-      "page": 1
-    },
-    {
-      "kind": "unparsed_statement",
-      "quote": "20 Economy Characterised by Stability and Inclusivity on Multiple Fronts",
-      "reason": "Offline grammar could not safely recover an explicit subject, predicate and value. Try local-model mode or review manually.",
-      "bbox": [
-        85.00090026855469,
-        311.4325256347656,
+        279.4925231933594,
         498.5309753417969,
         323.9625244140625
       ],
-      "id": "7200adb91df942a5a9407aec0e2881ff",
-      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "id": "3e6b611058c74522a0ef2fc4b369e2c9",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 1
     },
@@ -308,8 +2712,8 @@
         305.01092529296875,
         339.9325256347656
       ],
-      "id": "1014f374a6064271aeba4beae11685bd",
-      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "id": "48892d5a2d2541c1b85de2c16d4ca0ef",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 1
     },
@@ -323,8 +2727,8 @@
         494.6009216308594,
         383.8725280761719
       ],
-      "id": "7eed03df408e4777b79b19262a57718f",
-      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "id": "436f49bf5dd0439abee87979868d9195",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 1
     },
@@ -338,8 +2742,8 @@
         378.3110046386719,
         455.4224853515625
       ],
-      "id": "49754bb03780452cb487c2083119b31e",
-      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "id": "a9a9254ce2f04306b89a5209c2b19402",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 1
     },
@@ -353,8 +2757,8 @@
         411.700927734375,
         567.58251953125
       ],
-      "id": "bb72ba84301b4878bb1081a909f27bc1",
-      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "id": "cfd2df9e584f4100966b5327bced395c",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 1
     },
@@ -368,8 +2772,8 @@
         515.3409423828125,
         651.7025146484375
       ],
-      "id": "1682b09c8e5f4a2ea970a492bf82fbe5",
-      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "id": "8f743aaee71b48cbbe565ea37cfb5870",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 1
     },
@@ -383,8 +2787,8 @@
         515.6799926757812,
         721.802490234375
       ],
-      "id": "aad3ce5ff7a9472a8289c70a6bd37464",
-      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "id": "77e1775045a94de3ad93193a61c8d537",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 1
     },
@@ -398,8 +2802,8 @@
         503.5209045410156,
         110.13455200195312
       ],
-      "id": "a583483b74e54ba0aea07ca8da0123b5",
-      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "id": "b5d706f9886e4c7687addbf245e9a095",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 2
     },
@@ -413,8 +2817,8 @@
         510.1509094238281,
         278.3747253417969
       ],
-      "id": "98e71850a7c84300a7dd33af38632393",
-      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "id": "91e0089cbd564c60b7c28d822b005d34",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 2
     },
@@ -428,8 +2832,8 @@
         490.9009094238281,
         430.07464599609375
       ],
-      "id": "ff7d38bf5369412eb8a9f17e90462317",
-      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "id": "b262bc8aec66457f94f0fdd6d2a4cf04",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 2
     },
@@ -443,8 +2847,8 @@
         485.2526550292969,
         570.2744750976562
       ],
-      "id": "ed69b350950d4c9f9914a522ed184b68",
-      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "id": "d99b49e8cff943d6b04a37aba8ac5540",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 2
     },
@@ -458,8 +2862,8 @@
         517.260986328125,
         719.4544677734375
       ],
-      "id": "e2cef70fba694e27864f76c5d3369c33",
-      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "id": "928697cd5e25417faa6a37d4bc24773e",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 2
     },
@@ -473,8 +2877,8 @@
         516.5408935546875,
         279.3747863769531
       ],
-      "id": "43c0ba59bbe94115b934e38220a48697",
-      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "id": "d334bf38b52f485ea173e76c967ff55f",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 3
     },
@@ -488,8 +2892,8 @@
         473.74090576171875,
         389.0147399902344
       ],
-      "id": "e2fac79b240544a7adf4606c5ce0fbe4",
-      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "id": "37581ea700c34ae99ddd1ab491f39439",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 3
     },
@@ -503,8 +2907,8 @@
         490.3710021972656,
         510.1546936035156
       ],
-      "id": "38db55f287684ce592410d0db537ed82",
-      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "id": "214c2b123c874f8184aa21fa2f423358",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 3
     },
@@ -518,8 +2922,8 @@
         442.120849609375,
         650.354736328125
       ],
-      "id": "91d914bd24614630a5cc3ebb32cefabb",
-      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "id": "cc8bf3a3f1d04c3ca5691868199ba4e6",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 3
     },
@@ -533,8 +2937,8 @@
         503.92193603515625,
         394.52685546875
       ],
-      "id": "b5ecd3416bd5440a842c65bfe2c59fc0",
-      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "id": "79cbe04c52324c17bbad8225afd7c003",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 4
     },
@@ -548,23 +2952,8 @@
         503.92193603515625,
         394.52685546875
       ],
-      "id": "f873ca03a5d943deb2dfe51be3ebaddc",
-      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
-      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
-      "page": 4
-    },
-    {
-      "kind": "uncertain_subject",
-      "quote": "As per the first advance estimates of national accounts, India\u2019s real GDP is estimated to grow by 6.4 per cent in FY25.",
-      "reason": "Subject or predicate is not an explicit atomic named-entity assertion.",
-      "bbox": [
-        74.99520111083984,
-        403.2748718261719,
-        503.8992004394531,
-        573.662841796875
-      ],
-      "id": "c29e1bee3aca45c58f9c1987fcb1428f",
-      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "id": "99176411e4dc47be92edb0eadbd5a5d2",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 4
     },
@@ -578,8 +2967,8 @@
         503.8992004394531,
         573.662841796875
       ],
-      "id": "c04a8906883148ddad3db8487fedf765",
-      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "id": "003faf5189e94bc2acdeee1e252428e6",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 4
     },
@@ -593,8 +2982,8 @@
         503.8992004394531,
         573.662841796875
       ],
-      "id": "486f8986713544dd95eea069aca51c95",
-      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "id": "de3387d0f981419d84ab7762da98c686",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 4
     },
@@ -608,8 +2997,8 @@
         503.91131591796875,
         737.2947998046875
       ],
-      "id": "27d29e9f122f488f8db395c0967bd6d6",
-      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "id": "a6ab11c5f67d4b7baeb083adf9148a2c",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 4
     },
@@ -623,8 +3012,8 @@
         180.8658905029297,
         49.15282440185547
       ],
-      "id": "29a8bf9872904c61a059d941f7bdc122",
-      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "id": "86027ef06c2d4d4ea85ea371a052b0f1",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 5
     },
@@ -638,8 +3027,8 @@
         518.8871459960938,
         291.25640869140625
       ],
-      "id": "5870964ebd5a4a34bb2d2e23ccf767b2",
-      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "id": "a3d2a517f7e3455792211e61ff6873dd",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 5
     },
@@ -653,8 +3042,8 @@
         518.8871459960938,
         291.25640869140625
       ],
-      "id": "a7c7304cc39443fe8c18ce625c0c68c5",
-      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "id": "17c0a19a4a2f42afbbbdb7c6ae4bbe6e",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 5
     },
@@ -668,8 +3057,8 @@
         518.8871459960938,
         291.25640869140625
       ],
-      "id": "d5834773da424b56801b656a60dcf3e1",
-      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "id": "356a554d48c645d591a7044c595ec856",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 5
     },
@@ -683,8 +3072,8 @@
         518.8871459960938,
         291.25640869140625
       ],
-      "id": "9b4859f6e2864fc8aad824b7bade6cae",
-      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "id": "9358638074c342428e1c270e2507c628",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 5
     },
@@ -698,8 +3087,8 @@
         518.8944091796875,
         537.0562744140625
       ],
-      "id": "2602d4801ec041f1ac7274137cf999b3",
-      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "id": "a9a19df8c9e947708c0636dfc57821e0",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 5
     },
@@ -713,8 +3102,8 @@
         518.8944091796875,
         537.0562744140625
       ],
-      "id": "6416c91f9cb94f4d82136859044fc8da",
-      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "id": "3572430cc592489e9606c031ec2a762d",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 5
     },
@@ -728,8 +3117,8 @@
         518.8944091796875,
         537.0562744140625
       ],
-      "id": "ff537ef1ceaf4bfa9244ee28ac6193c4",
-      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "id": "2407a2b708ca4e98ae077c3378fc7711",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 5
     },
@@ -743,8 +3132,8 @@
         518.8910522460938,
         651.0562744140625
       ],
-      "id": "7195f1099b5b4fe28ae53cebbbd8de24",
-      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "id": "dd540afc9c7c4aea8870193516fd08b4",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 5
     },
@@ -758,8 +3147,8 @@
         518.8910522460938,
         651.0562744140625
       ],
-      "id": "6f4fc15e0d3d4550b976d32d5a814688",
-      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "id": "55b80ce2a7ca4a0a938e9f092d011979",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 5
     },
@@ -773,8 +3162,8 @@
         518.8910522460938,
         651.0562744140625
       ],
-      "id": "ac80cbfd4c5c4ffda093a63b083c68d5",
-      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "id": "34e700ae622f47afa338baa080337aae",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 5
     },
@@ -788,8 +3177,8 @@
         518.8910522460938,
         651.0562744140625
       ],
-      "id": "9c4e023e29d14e4a932e23a3d85edea1",
-      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "id": "ddf815f3551042d78a9ab327d745312f",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 5
     },
@@ -803,8 +3192,8 @@
         394.302734375,
         709.6259155273438
       ],
-      "id": "10f6185e04be4d6fa8893c87a530c35d",
-      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "id": "ecea1fa40e5040c99c02abee5761b31e",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 5
     },
@@ -818,8 +3207,8 @@
         394.302734375,
         709.6259155273438
       ],
-      "id": "7045a56022fc471182264cea274e72c1",
-      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "id": "7825ddd61608463f973868212eafc978",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 5
     },
@@ -833,8 +3222,8 @@
         518.1715698242188,
         734.7268676757812
       ],
-      "id": "e1867381f81d40499084ea0bfcabf09c",
-      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "id": "a0532a4cdfbd455e95cae290c46689c9",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 5
     },
@@ -848,8 +3237,8 @@
         518.1715698242188,
         734.7268676757812
       ],
-      "id": "59436e95c0fc4baa843526cf3d9344a9",
-      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "id": "72c16cd84b1c4b72976ee19005465799",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 5
     },
@@ -863,8 +3252,8 @@
         274.9825439453125,
         86.18431854248047
       ],
-      "id": "1051a439b8914b209acd6bfd04056f4a",
-      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "id": "d0a2872e0a0f40bb96f72e445a0e7436",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 6
     },
@@ -878,8 +3267,8 @@
         496.9845886230469,
         86.18431854248047
       ],
-      "id": "824dfd1041f34014911f9fd6e661fac3",
-      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "id": "0d2df911f4834598833cc917dd05ee72",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 6
     },
@@ -893,8 +3282,8 @@
         220.16952514648438,
         99.18633270263672
       ],
-      "id": "5b209bdcc7bb487683cd27a50340d9ac",
-      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "id": "3cfefce6f87e4e84b07620bc34661ea9",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 6
     },
@@ -908,8 +3297,8 @@
         427.6005554199219,
         133.93194580078125
       ],
-      "id": "aeba166f8092486384bd0ddc8bd18cdf",
-      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "id": "2ce31e5318d741bdb5d0bbed75cb709f",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 6
     },
@@ -923,23 +3312,8 @@
         272.3286437988281,
         170.09483337402344
       ],
-      "id": "4e7ba4b7bf5e425ab70c17624adeb396",
-      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
-      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
-      "page": 6
-    },
-    {
-      "kind": "unparsed_statement",
-      "quote": "Source: OECD Economic Outlook, Volume 2024 Issue 2.",
-      "reason": "Offline grammar could not safely recover an explicit subject, predicate and value. Try local-model mode or review manually.",
-      "bbox": [
-        68.87379455566406,
-        298.596923828125,
-        264.8667907714844,
-        320.67388916015625
-      ],
-      "id": "7346d9947e1545858b046c4ae9bfb2b6",
-      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "id": "c5b463c52510431e8f0937435705aa57",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 6
     },
@@ -953,8 +3327,23 @@
         509.29144287109375,
         327.0728759765625
       ],
-      "id": "db5452acdc9e4507b9ff30866b7acab9",
-      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "id": "b3516861da354b8d92dcb5ae7216ec28",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 6
+    },
+    {
+      "kind": "unparsed_statement",
+      "quote": "Source: OECD Economic Outlook, Volume 2024 Issue 2.",
+      "reason": "Offline grammar could not safely recover an explicit subject, predicate and value. Try local-model mode or review manually.",
+      "bbox": [
+        68.87379455566406,
+        298.596923828125,
+        264.8667907714844,
+        320.67388916015625
+      ],
+      "id": "e425c2c80adb4d18bcda58112e01ac93",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 6
     },
@@ -968,17 +3357,75 @@
         518.8826293945312,
         435.48297119140625
       ],
-      "id": "bf4bee0889784c81b53a6d9981df612c",
-      "document_id": "6c9f57a14c44434aa08771c0fb18ac4f",
+      "id": "60df788f2b664d3d8b39e99b44c4c882",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 6
+    },
+    {
+      "kind": "ambiguous_statement",
+      "quote": "This was on account of moderating inflation and sustained employment and consumption.3 However, the growth outlook differs between the United States (US) and the Euro Area.",
+      "reason": "Multiple periods, scopes, ranges, or aligned values need structured interpretation. No fact asserted.",
+      "bbox": [
+        59.997501373291016,
+        337.9469909667969,
+        518.8826293945312,
+        435.48297119140625
+      ],
+      "id": "0117ea7899b948a4bcea8e8b5613533f",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 6
+    },
+    {
+      "kind": "ambiguous_statement",
+      "quote": "Growth in the US is expected to remain strong at 2.8 per cent in 2024 and may decline slightly in 2025, reflecting a moderation in consumption and exports.4",
+      "reason": "Multiple periods, scopes, ranges, or aligned values need structured interpretation. No fact asserted.",
+      "bbox": [
+        59.997501373291016,
+        337.9469909667969,
+        518.8826293945312,
+        435.48297119140625
+      ],
+      "id": "024a78ef31244becbf65cd8690860ded",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
+      "page": 6
+    },
+    {
+      "kind": "ambiguous_statement",
+      "quote": "1.5 In the Euro area, growth is expected to improve from 0.4 per cent in 2023 to 0.8 per cent in 2024 and further to 1.0 per cent in 2025 on the back of improving services activity.",
+      "reason": "Multiple periods, scopes, ranges, or aligned values need structured interpretation. No fact asserted.",
+      "bbox": [
+        59.997501373291016,
+        446.9469909667969,
+        518.89892578125,
+        593.9829711914062
+      ],
+      "id": "3b3041e7e06044f8a5fc29060a48276f",
+      "document_id": "07a0e725ba864b449c52cb29be197d16",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 6
     }
   ],
   "predicates": [
+    "core inflation",
     "data",
     "external debt",
     "external position",
+    "fuel inflation",
+    "headline inflation",
+    "industrial sector growth",
+    "inflation",
+    "inflation rate",
+    "investment growth",
+    "labor force participation rate",
     "manufacturing sector",
+    "merchandise exports growth",
+    "merchandise imports growth",
+    "nominal gdp growth",
+    "real gdp growth",
+    "real gva growth",
     "the strongest expansion"
   ],
   "metadata": {
@@ -986,6 +3433,6 @@
     "evidence": "Whitespace-normalized exact source spans; enclosing block rectangles.",
     "disclaimer": "Claims and heuristic relationships, not verified real-world truth."
   },
-  "issue_count": 5103,
+  "issue_count": 4099,
   "issues_truncated": true
 }

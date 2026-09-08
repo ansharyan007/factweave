@@ -35,6 +35,7 @@ Run **one server process / one Uvicorn worker**. Original uploads and SQLite are
 
 In **Overview → Source library**, each completed or failed PDF has **Replace** and **Delete** controls. **Clear collection** below the library starts an empty knowledge layer. Each action asks for confirmation.
 
+- **Reprocess:** rerun the saved PDF with the current code and selected extraction mode, preserving its file and document ID. Previous derived results are removed and rebuilt, including cross-document links. Use this after upgrading the extractor; uploading identical bytes alone is deduplicated. The source library shows each PDF's fact count.
 - **Replace:** select an updated PDF. The app validates it, removes the old upload and its facts, evidence, review findings and links, then extracts the replacement and compares it with the remaining documents. Other documents and their links remain intact. Replacement uses the extraction mode selected above the upload button and receives a new document ID.
 - **Delete:** removes one uploaded PDF and all dependent knowledge. You can upload it again later.
 - **Clear collection:** removes all uploaded PDFs and associated knowledge. Original files in `samples/` and `starter-datasets/` remain untouched. Upload custom PDFs or reload the demo afterwards.
@@ -70,6 +71,7 @@ On PowerShell use `curl.exe`. Upload returns HTTP 202 and an ID. Poll the docume
 | `GET /api/documents/{id}/pdf` | Original PDF |
 | `GET /api/documents/{id}/pages/{page}` | Extracted page text and dimensions |
 | `GET /api/documents/{id}/pages/{page}/image` | Rendered source page |
+| `POST /api/documents/{id}/reprocess?mode=rules` | Rebuild results for a saved, idle PDF; optionally use `mode=ollama` |
 | `POST /api/documents/{id}/retry` | Retry failed/interrupted processing |
 | `POST /api/demo` | Process bundled synthetic examples |
 | `GET /api/export` | Download full JSON output |
@@ -78,7 +80,7 @@ On PowerShell use `curl.exe`. Upload returns HTTP 202 and an ID. Poll the docume
 
 Install/start [Ollama](https://ollama.com/), run `ollama pull qwen2.5:7b`, and select **Local model · Ollama** before uploading. Optional shell variables: `OLLAMA_URL` (default `http://127.0.0.1:11434`) and `OLLAMA_MODEL` (default `qwen2.5:7b`). `.env.example` documents them; `.env` is not auto-loaded. A remote endpoint receives extracted text, so use a local endpoint for local-only processing.
 
-The adapter is implemented and tested with mocked responses; a live model was not installed during development. Offline mode and committed sample outputs are sufficient to evaluate the project. Duplicates preserve their original extraction mode; use another data directory to compare modes.
+The adapter is implemented and tested with mocked responses; a live model was not installed during development. Offline mode and committed sample outputs are sufficient to evaluate the project. Duplicates preserve their original extraction mode; use Reprocess to change it, or another data directory to retain results for comparison.
 
 ### Tests and demo reproduction
 
@@ -87,7 +89,7 @@ pip install -r requirements-dev.txt
 python -m pytest -q
 ```
 
-On Windows without environment activation, prefix commands with `.venv\Scripts\python -m`. The suite has 45 tests. The sample PDFs are committed; regenerate with `python scripts/create_samples.py`. To record the actual UI interactions and run browser checks:
+On Windows without environment activation, prefix commands with `.venv\Scripts\python -m`. The suite has 60 tests. The sample PDFs are committed; regenerate with `python scripts/create_samples.py`. To record the actual UI interactions and run browser checks:
 
 ```bash
 pip install playwright
@@ -107,6 +109,7 @@ The video includes the four synthetic cases plus real Delhivery corroboration an
 
 - **Evidence first:** retain the source PDF, page, exact whitespace-normalized quote, character offsets and enclosing source-block coordinates.
 - **Understandable extraction:** general English grammar and geometric KPI/simple-table extraction support explicit claims; predicates can arise from document text. Optional Ollama supports broader phrasing with strict substring grounding.
+- **Statistical prose:** join nearby text fragments within a column; recognize common growth/inflation/trade measures and `per cent` wording. A dominant country can supply an explicitly labeled, separately grounded inferred subject. Estimates and forecasts remain qualified claims. No filenames select extraction rules.
 - **Context before conflict:** normalize values and units, align explicit periods/scopes, and abstain when comparison is unsafe.
 - **Explain each connection:** every relationship carries both source links and a decision trace. Agreement is not proof; confidence is heuristic.
 - **Incremental storage:** SQLite indexes entity/predicate candidates. New uploads preserve existing facts. Content hashing prevents duplicate evidence inflation. Flexible payloads accept new fact types.
@@ -118,8 +121,8 @@ Architecture: **FastAPI + PyMuPDF + SQLite + vanilla HTML/CSS/JavaScript**, with
 
 ## Limitations and Next Steps
 
-- **Real-data coverage is uneven.** Both supplied datasets were evaluated: 211 claims from 227 Delhivery pages, but only five claims and no relationships from 284 macroeconomic pages. These are extraction counts, not accuracy scores. See [real-data evaluation](docs/REAL_DATA.md).
-- Offline grammar has limited English coverage. Complex tables, indirect claims, cross-sentence references and unfamiliar units can be missed or flagged.
+- **Real-data coverage is uneven.** Both supplied datasets were evaluated: 212 claims from 227 Delhivery pages and 31 claims with 30 uncertain links from 284 macroeconomic pages. The macroeconomic baseline was five claims (zero from RBI); prose reconstruction and statistical extraction improve coverage but leave many statements unsupported. These are extraction counts, not accuracy scores. See [real-data evaluation](docs/REAL_DATA.md).
+- The statistical supplement uses an expandable metric vocabulary; it is not a general language understanding model. Country inheritance is heuristic and can be wrong for implicit subpopulations or comparisons. Bare inflation subtypes remain unresolved. Offline grammar has limited English coverage. Complex tables, indirect claims, cross-sentence references and unfamiliar units can be missed or flagged.
 - Scans need OCR. Next: OCR with numerical confidence review, layout reconstruction and table/header/footnote alignment.
 - Semantic matching uses conservative aliases and normalization. Broader paraphrases and entity aliases need resolution and entailment checks; different text values usually remain uncertain.
 - Layout facts retain separate metric/value/period/subject spans. Company ownership is inferred from document evidence and can be wrong on partner/case-study pages. Table-wide units and footnotes remain unresolved and force uncertain comparisons.

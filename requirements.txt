@@ -3,3 +3,4 @@ uvicorn==0.52.4
 python-multipart==0.0.32
 PyMuPDF==1.28.2
 httpx==0.28.1
+pycountry==24.6.1
