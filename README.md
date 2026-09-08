@@ -4,9 +4,39 @@
 
 ![FactWeave interface](docs/demo/overview.png)
 
+FactWeave turns supported statements in uploaded PDFs into inspectable claims, then compares related claims across documents. It is an engineering-assignment prototype: the default mode runs locally without a paid LLM, and every result keeps source evidence. It does not independently verify whether a document tells the truth.
+
+## Contents
+
+- [Setup and Run Instructions](#setup-and-run-instructions)
+- [Using the interface](#using-the-interface)
+- [Change the uploaded PDFs](#change-the-uploaded-pdfs)
+- [Inspect connections from new PDFs](#inspect-connections-from-new-pdfs)
+- [API](#api)
+- [Configuration and saved data](#configuration-and-saved-data)
+- [Troubleshooting](#troubleshooting)
+- [Optional local model](#optional-local-model)
+- [Tests and demo reproduction](#tests-and-demo-reproduction)
+- [Video Demo](#video-demo)
+- [Approach](#approach)
+- [Repository guide](#repository-guide)
+- [Limitations and Next Steps](#limitations-and-next-steps)
+- [Additional Notes](#additional-notes)
+
 ## Setup and Run Instructions
 
 Requires **Python 3.12+**. Offline mode needs no API key, paid account or database service.
+
+### Get the repository
+
+Install Python and Git, then run:
+
+```bash
+git clone https://github.com/ansharyan007/factweave.git
+cd factweave
+```
+
+Alternatively, download the repository ZIP from GitHub, extract it, and open a terminal in the extracted folder containing `requirements.txt`. Run all commands below from that folder. There is no Node.js build step, Docker requirement, or separate database installation. Internet access is needed to install dependencies; default extraction then runs locally.
 
 ### Windows PowerShell
 
@@ -30,6 +60,64 @@ python -m uvicorn app.main:app --host 127.0.0.1 --port 8000
 Open **http://127.0.0.1:8000**. Upload PDFs or click **Load demo dataset**. Processing updates automatically. Explore facts, filter relationships, expand reasoning, and click source links to inspect highlighted PDF evidence. Review failed or ambiguous extraction in the Review queue. Export all results as JSON.
 
 Run **one server process / one Uvicorn worker**. Original uploads and SQLite are stored in gitignored `data/`. Set `FACTWEAVE_DATA_DIR` to isolate another knowledge layer. Limits: 30 MB and 1,000 pages per PDF. Scans are flagged, not OCR-processed.
+
+### Stop, restart, and update
+
+Keep the server terminal open while using the website. `localhost` is your computer, not a permanently hosted website. Closing the terminal, stopping Python, or restarting your computer can stop the server. Press **Ctrl+C** in the server terminal to stop it intentionally.
+
+For subsequent Windows sessions, run this from the repository folder; dependency installation is unnecessary unless dependencies changed:
+
+```powershell
+.venv\Scripts\python -m uvicorn app.main:app --host 127.0.0.1 --port 8000
+```
+
+On macOS/Linux, activate `.venv` again and run the equivalent `python -m uvicorn ...` command above. Saved uploads survive a restart. Interrupted jobs are marked failed and can be retried in the interface.
+
+To install a project update, stop the server, run `git pull`, reinstall `requirements.txt` using the virtual-environment Python, and start the server again. Use **Reprocess** on existing PDFs when you want results from an updated extractor; a browser refresh alone does not rebuild stored facts.
+
+## Using the interface
+
+For a first evaluation, start with an empty collection and click **Load demo dataset**. The three synthetic PDFs demonstrate the required cases and produce **13 facts**. A fresh clone starts with an empty uploaded library; files in `samples/` are available to load but are not automatically ingested. The original assignment PDFs in `starter-datasets/` are not included in the GitHub checkout.
+
+For your own documents:
+
+1. Select **Offline · conservative**, then click **Upload PDFs** or drag files into the upload panel. You may select multiple PDFs. Each receives a separate processing job.
+2. Watch the Source library in **Overview**. Processing runs sequentially in the background, and the browser polls for updates. Final facts and relationships become visible when each document finishes.
+3. Open **Fact explorer** to inspect individual claims. A fact can exist without a relationship to another PDF.
+4. Open **Relationships**, or select a pair under **Connected documents**. Filter by relationship type, predicate, or search text. Select **Show all document pairs** to remove a pair filter.
+5. Expand **How this connection was made** for comparison steps. Click a source filename/page button to open the evidence inspector and original PDF.
+6. Check **Review queue** for missed or ambiguous content. Use **Export knowledge** to download the collection as JSON.
+
+| Interface area | What it means |
+| --- | --- |
+| Overview / Source library | Uploaded files, extraction mode, page progress, status, fact/connection counts and document controls |
+| Fact explorer | Extracted subject, metric, value, time/scope, qualifiers and source evidence |
+| Connected documents | PDF pairs with at least one relationship; counts distinguish agreement, context and uncertainty |
+| Relationships | Side-by-side claims with an explanation; a connection is not necessarily agreement |
+| Review queue | Source statements/pages that the extractor could not safely interpret; findings are not factual claims |
+| Evidence inspector | Quote, normalized value, page image, enclosing rectangle and separate context spans where used |
+| Export knowledge | Full JSON snapshot, including documents, facts, relationships, issues, predicates and pair summaries |
+
+### Understand processing status
+
+| Status | Meaning / next action |
+| --- | --- |
+| `queued` | Waiting for the single worker; no action needed |
+| `processing` | Extracting pages; wait for completion |
+| `complete` | Processing finished without recorded extraction findings; this does not guarantee full coverage |
+| `needs_review` | Processing finished with findings. Facts and connections can still be available; inspect Review queue |
+| `failed` | A processing job failed or was interrupted. Inspect its error, then Retry or Replace |
+
+### Understand connection types
+
+| UI label / JSON kind | Meaning |
+| --- | --- |
+| Corroboration / `corroborates` | Normalized claims agree under the context the system could align |
+| Likely contradiction / `contradicts` | Values differ for an aligned entity/metric and explicit period; omitted definitions may still explain the difference |
+| Explained by context / `reconciled` | Period, scope, units/displayed precision, or explicit reporting windows explain why figures need not be identical |
+| Needs context / `uncertain` | A possible connection exists, but missing identity, dates, units, bounds or qualifiers prevent a stronger conclusion |
+
+Confidence percentages are heuristic indicators, not measured probabilities. Multiple documents can repeat the same upstream source; corroboration does not establish source independence. No source is automatically chosen as the truth.
 
 ### Change the uploaded PDFs
 
@@ -73,6 +161,7 @@ On PowerShell use `curl.exe`. Upload returns HTTP 202 and an ID. Poll the docume
 
 | Endpoint | Purpose |
 | --- | --- |
+| `GET /api/health` | Check that the server is responding |
 | `POST /api/documents` | Upload arbitrary PDFs; content-hash deduplication |
 | `PUT /api/documents/{id}` | Replace using multipart `file` and optional `mode`; rebuild facts and links |
 | `DELETE /api/documents/{id}` | Remove one PDF and all dependent knowledge |
@@ -88,6 +177,68 @@ On PowerShell use `curl.exe`. Upload returns HTTP 202 and an ID. Poll the docume
 | `POST /api/demo` | Process bundled synthetic examples |
 | `GET /api/export` | Download full JSON output |
 
+### API workflow example
+
+Use the document `id` returned by an upload in place of `DOCUMENT_ID`. These commands use `curl` syntax for macOS/Linux; PowerShell users can use `curl.exe`, or the interactive `/docs` page to avoid shell-specific JSON quoting.
+
+```bash
+# Read one processing job and its extracted page text.
+curl http://127.0.0.1:8000/api/documents/DOCUMENT_ID
+curl http://127.0.0.1:8000/api/documents/DOCUMENT_ID/pages/1
+
+# Re-extract the same saved PDF after updating the code.
+curl -X POST 'http://127.0.0.1:8000/api/documents/DOCUMENT_ID/reprocess?mode=rules'
+
+# Replace one saved PDF with a new file and rebuild its dependent knowledge.
+curl -X PUT -F 'file=@updated.pdf' -F 'mode=rules' http://127.0.0.1:8000/api/documents/DOCUMENT_ID
+
+# Remove one uploaded PDF and its derived knowledge.
+curl -X DELETE http://127.0.0.1:8000/api/documents/DOCUMENT_ID
+```
+
+Unlike the UI, API delete/replace requests do not show a confirmation dialog. Collection reset requires `POST /api/collection/reset` with JSON `{"confirm": true}`. Identical upload bytes return `duplicate: true` instead of another job, even if the filename changed. Reprocess is the explicit way to rerun a saved PDF.
+
+Common error responses: `400` invalid PDF signature; `404` unknown document/page; `409` active job, conflicting replacement or unavailable source; `413` file exceeds 30 MB; `422` unreadable/password-protected PDF, unsupported page count, or invalid request fields. A successful upload response means the job was accepted, not that useful facts were found.
+
+## Configuration and saved data
+
+| Setting | Default | Purpose |
+| --- | --- | --- |
+| `FACTWEAVE_DATA_DIR` | `data` relative to the working directory | Directory containing the SQLite database and uploaded PDFs |
+| `OLLAMA_URL` | `http://127.0.0.1:11434` | Optional local model server |
+| `OLLAMA_MODEL` | `qwen2.5:7b` | Optional model name |
+| Uvicorn `--host` / `--port` | Commands use `127.0.0.1:8000` | Local web-server address; use one worker |
+
+Set environment variables **before starting the server**. `.env.example` is a reference file; this application does not automatically load a `.env` file.
+
+For an isolated evaluator collection on Windows:
+
+```powershell
+$env:FACTWEAVE_DATA_DIR = "data/evaluator"
+.venv\Scripts\python -m uvicorn app.main:app --host 127.0.0.1 --port 8000
+```
+
+On macOS/Linux, use `export FACTWEAVE_DATA_DIR=data/evaluator` before the normal start command. Stop any existing server on that port first. To return to the original directory, remove the variable (`Remove-Item Env:FACTWEAVE_DATA_DIR` in PowerShell or `unset FACTWEAVE_DATA_DIR` in bash) and restart.
+
+Uploaded files are stored under generated IDs, not their display filenames. `knowledge.sqlite3` contains the persistent knowledge layer; generated PDF copies provide the original evidence. Exported JSON is useful for inspecting results but is **not** a restore/import format. To back up or move the application state, stop the server and copy the entire configured data directory, including database files and PDFs; restore it with the server stopped. Git does not back up this directory.
+
+## Troubleshooting
+
+| Symptom | What to check |
+| --- | --- |
+| Localhost does not open / connection refused | Start the server from the repository directory, keep its terminal open, and visit `http://127.0.0.1:8000` using HTTP. Check `/api/health`. A GitHub push does not host the app |
+| Port 8000 is already in use | Use the existing server if it is this app, or start with `--port 8001` and visit port 8001 instead |
+| `No module named ...` | Install `requirements.txt` using the same virtual-environment Python used to start Uvicorn |
+| Cannot import `app.main` | Change into the repository folder before starting Uvicorn |
+| PDF processed but no facts | Processing recovered pages, but supported claims may not have been extracted. Inspect Review queue and source text; scans require OCR, which is not implemented |
+| Facts exist but no connections | At least two documents need comparable claims. Clear filters, inspect pair diagnostics, and check subject/metric/context differences. Uploading unrelated PDFs does not require a relationship |
+| New code has no effect on saved results | Restart the server and use Reprocess. Duplicate uploads retain their prior extraction |
+| Facts appear but status is `needs_review` | Expected when some statements were extracted and others were skipped. Open the review findings |
+| Ollama extraction fails | Check that Ollama is running and the configured model is installed, or Reprocess using offline mode. Live model quality has not been evaluated |
+| Replace/Delete/Clear is disabled | Wait for the affected processing job(s) to finish |
+| Interrupted processing after restart | The job is marked failed. Retry it; previously completed documents remain saved |
+| UI looks outdated | Refresh the page; use Ctrl+F5 if static assets are cached |
+
 ### Optional local model
 
 Install/start [Ollama](https://ollama.com/), run `ollama pull qwen2.5:7b`, and select **Local model · Ollama** before uploading. Optional shell variables: `OLLAMA_URL` (default `http://127.0.0.1:11434`) and `OLLAMA_MODEL` (default `qwen2.5:7b`). `.env.example` documents them; `.env` is not auto-loaded. A remote endpoint receives extracted text, so use a local endpoint for local-only processing.
@@ -101,11 +252,12 @@ pip install -r requirements-dev.txt
 python -m pytest -q
 ```
 
-On Windows without environment activation, prefix commands with `.venv\Scripts\python -m`. The suite has 71 tests. The sample PDFs are committed; regenerate with `python scripts/create_samples.py`. To record the actual UI interactions and run browser checks:
+On Windows without environment activation, use `.venv\Scripts\python -m pip install -r requirements-dev.txt` and `.venv\Scripts\python -m pytest -q`. For scripts, use `.venv\Scripts\python scripts/SCRIPT_NAME.py`. The suite has 71 tests. The sample PDFs are committed; regenerate with `python scripts/create_samples.py`. To record the actual UI interactions and run browser checks:
 
 ```bash
 pip install playwright
 playwright install chromium ffmpeg
+python scripts/check_collection_ui.py
 python scripts/record_demo.py
 ```
 
@@ -119,6 +271,42 @@ The video includes the four synthetic cases plus real Delhivery corroboration an
 
 ## Approach
 
+### What happens after an upload
+
+```mermaid
+flowchart TD
+    A[Upload PDF] --> B[Validate and hash file]
+    B --> C[Store original and queue job]
+    C --> D[Read page text and reconstruct nearby prose fragments]
+    D --> E[Extract supported claims and record skipped content]
+    E --> F[Attach quotes, pages, rectangles and context spans]
+    F --> G[Normalize values, predicates and context]
+    G --> H[Retrieve same-predicate facts from completed PDFs]
+    H --> I[Check entity identity, aliases, units and qualifiers]
+    I --> J[Save explained relationships]
+    J --> K[Show facts, document pairs, evidence and review findings]
+```
+
+1. **Validate and deduplicate.** Check PDF signature, readability, encryption, size and page count. SHA-256 identifies repeated content regardless of filename.
+2. **Extract text.** PyMuPDF reads text blocks and coordinates. Nearby fragments with compatible column geometry may be joined. Original fragments remain separate grounding spans.
+3. **Extract claims.** Offline mode combines general explicit-claim grammar, a statistical vocabulary, contextual business prose, and geometric KPI/simple-table extraction. Predicates are stored dynamically rather than as fixed database columns. Local-model mode uses the optional Ollama adapter instead of the offline prose passes; it is not an automatic fallback.
+4. **Retain context and evidence.** Keep subject, metric, raw value, period/scope, qualifiers, exact normalized quotation, page number and enclosing rectangle. Inferred organization/country or reporting-period context includes its own evidence span. Unnamed organizations remain unresolved.
+5. **Normalize conservatively.** Use decimal arithmetic for quantities/scales, selected metric aliases and compatible unit conversions. No exchange rates are assumed. Bounds, estimates, missing units and ambiguous symbols remain visible.
+6. **Compare incrementally.** Retrieve same-predicate candidates from other completed documents. Check exact entity identity or source-grounded aliases, then evaluate context and values. New PDFs do not rebuild the entire existing collection. Reprocessing removes and rebuilds only that document's derived results and affected links.
+7. **Expose the result.** Persist claims, comparisons and review findings in SQLite. The browser polls snapshots and lets a reviewer inspect both source claims and the comparison trace.
+
+### What is stored
+
+| Record | Main contents |
+| --- | --- |
+| Document | ID, original display name, content hash, mode, status and page progress |
+| Page | Extracted text, page number, width and height |
+| Fact | Subject/key, predicate, raw and normalized value, context, quote, page/rectangle, method and heuristic confidence |
+| Relationship | Two fact IDs, kind, reasoning steps, confidence and caveat |
+| Issue | Source document/page, optional quote/rectangle, skipped-content category and explanation |
+
+Evidence character offsets refer to whitespace-normalized block text, not PDF byte offsets. Rectangles surround source blocks rather than precisely highlighting every word. A quote appearing in the PDF proves its textual source, not that the parser understood it correctly.
+
 - **Evidence first:** retain the source PDF, page, exact whitespace-normalized quote, character offsets and enclosing source-block coordinates.
 - **Understandable extraction:** general English grammar and geometric KPI/simple-table extraction support explicit claims; predicates can arise from document text. Optional Ollama supports broader phrasing with strict substring grounding.
 - **Statistical prose:** join nearby text fragments within a column; recognize common growth/inflation/trade measures and `per cent` wording. A dominant country can supply an explicitly labeled, separately grounded inferred subject. Estimates and forecasts remain qualified claims. No filenames select extraction rules.
@@ -130,6 +318,34 @@ The video includes the four synthetic cases plus real Delhivery corroboration an
 Architecture: **FastAPI + PyMuPDF + SQLite + vanilla HTML/CSS/JavaScript**, with optional Ollama. A graph database is unnecessary for this prototype; the useful part is grounded extraction and explanation. See [engineering notes](docs/APPROACH.md) for architecture, trade-offs, actual bugs and references.
 
 **AI tools used:** OpenAI Codex assisted with architecture, implementation, test design, debugging, documentation and the scripted demo. No paid LLM is used by the default runtime. Review and understand the implementation before presenting it.
+
+## Repository guide
+
+| Path | Responsibility |
+| --- | --- |
+| `app/main.py` | FastAPI routes, upload validation, application startup, PDF/page/export endpoints |
+| `app/pipeline.py` | Single-worker processing, page persistence and incremental comparison |
+| `app/extraction.py` | General grammar, value normalization and optional Ollama adapter |
+| `app/statistics.py` | Column-fragment reconstruction, statistical prose and inferred country context |
+| `app/contextual.py` | Organization context, source-grounded aliases, business claims, date definitions and leadership events |
+| `app/layout.py` | Geometric KPI cards and conservative simple-table extraction |
+| `app/comparison.py` | Entity checks and explained corroboration/contradiction/reconciliation/uncertainty decisions |
+| `app/store.py` | SQLite schema, connections, snapshots and document-pair summaries |
+| `app/collection.py` | Coordinated document-file/database removal and recovery |
+| `static/index.html`, `static/app.js`, `static/style.css` | Browser interface, polling, filters, collection controls and evidence viewer |
+| `samples/` | Three committed synthetic demonstration PDFs |
+| `scripts/create_samples.py` | Regenerate synthetic PDFs |
+| `scripts/evaluate_datasets.py` | Process supplied local dataset folders in isolated databases and check grounding |
+| `scripts/check_collection_ui.py` | Browser checks for document management and connection navigation |
+| `scripts/record_demo.py` | Record the captioned demo using an isolated app instance |
+| `tests/` | API, reasoning, layout, statistics and contextual-extraction regression tests |
+| `docs/` | Approach, four cases, evaluation outputs, screenshots and demo video |
+| `requirements.txt`, `requirements-dev.txt` | Pinned runtime and development dependencies |
+| `start.ps1` | Windows helper that installs dependencies and starts Uvicorn in the foreground |
+| `.github/workflows/tests.yml` | Automated test workflow |
+| `.env.example`, `.gitignore` | Configuration reference and local-data exclusions |
+
+To extend the prototype, start with a missed source sentence and a regression test, then update the relevant extractor. Preserve its quote/context spans and review comparison behavior before increasing coverage. Changes to metric aliases or entity matching can affect many links, so test both matches and cases that must remain separate.
 
 ## Limitations and Next Steps
 
