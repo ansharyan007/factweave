@@ -17,7 +17,7 @@
       "uncertain_value": 5,
       "no_extractable_text": 2
     },
-    "seconds": 12.89,
+    "seconds": 15.11,
     "evidence_checks": "all fact and context spans found in source pages",
     "quality_note": "Automated grounding check, not a precision/recall score. Layout ownership and context are heuristic."
   },
@@ -38,7 +38,7 @@
       "no_extractable_text": 1,
       "uncertain_parse": 1
     },
-    "seconds": 5.13,
+    "seconds": 5.78,
     "evidence_checks": "all fact and context spans found in source pages",
     "quality_note": "Automated grounding check, not a precision/recall score. Layout ownership and context are heuristic."
   }

@@ -63,8 +63,12 @@ UNITS = {"percent": "%", "kilogram": "kg", "kilograms": "kg", "g": "g", "grams":
 
 def normalize_value(raw: str, predicate: str) -> dict:
     raw = clean(raw).rstrip(".")
+    original_raw = raw
     raw = re.sub(r"\bper cent\b", "percent", raw, flags=re.I)
     raw = re.sub(r"US\$", "USD", raw, flags=re.I)
+    rupee_symbol = bool(re.match(r"^Rs\.?\s*\d", raw, re.I))
+    if rupee_symbol:
+        raw = re.sub(r"^Rs\.?\s*", "INR ", raw, flags=re.I)
     match = NUMBER.fullmatch(raw)
     if not match:
         value = canonical(raw)
@@ -85,6 +89,8 @@ def normalize_value(raw: str, predicate: str) -> dict:
     value *= multiplier
     unit = (currency or unit or ("count" if predicate == "employees" else "number")).lower()
     unit = UNITS.get(unit, unit)
+    if rupee_symbol:
+        unit = 'rs'
     # $ does not imply USD. A currency symbol can be ambiguous across countries.
     unit = {"€": "eur", "£": "gbp", "₹": "inr"}.get(unit, unit)
     conversion = {"g": ("kg", "0.001"), "km": ("m", "1000"), "tonne": ("kg", "1000"),
@@ -96,7 +102,7 @@ def normalize_value(raw: str, predicate: str) -> dict:
     normalized = format(value.normalize(), "f")
     return {"kind": "number", "value": normalized, "unit": unit,
             "resolution": str(resolution), "scaled": bool(scale),
-            "normalization": f"{raw} → {normalized} {unit}; decimal arithmetic, no currency conversion."}
+            "normalization": f"{original_raw} → {normalized} {unit}; decimal arithmetic, no currency conversion." + (" Rs denotes an unspecified rupee currency, not automatically INR." if rupee_symbol else "")}
 
 
 def context(text: str) -> dict:

@@ -46,6 +46,12 @@ def main():
                 page.locator('#file-input').set_input_files([str(directory/'initial.pdf'),str(directory/'supporting.pdf')])
                 page.wait_for_function("document.querySelector('#stat-facts').textContent === '2'")
                 assert page.locator('.badge.contradicts').count() == 1
+                assert page.locator('[data-pair]').count() == 1
+                page.locator('[data-pair]').click()
+                assert page.locator('#view-label').inner_text() == 'Relationships'
+                assert page.locator('.relation-card').count() == 1
+                page.locator('#all-pairs').click()
+                page.locator('[data-view="overview"]').click()
                 assert '1 facts' in page.locator('.doc-meta').first.inner_text()
                 old_fact_ids = {f['id'] for f in httpx.get(URL+'/api/knowledge').json()['facts']}
                 page.locator('[data-reprocess]').first.click()
@@ -92,7 +98,7 @@ def main():
                 page.wait_for_function("document.querySelector('#stat-facts').textContent === '13'")
                 assert not errors, errors
                 browser.close()
-            print('PASS: replace, invalid replacement, fresh links, delete, cancel, reset, persistence, reupload, demo reload, mobile, zero browser errors.')
+            print('PASS: document-pair navigation, reprocess, replace, invalid replacement, fresh links, delete, cancel, reset, persistence, reupload, demo reload, mobile, zero browser errors.')
         finally:
             server.should_exit = True
             thread.join(timeout=15)

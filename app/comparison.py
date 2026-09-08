@@ -1,9 +1,35 @@
 """Explainable pair decisions. Never pick a winner or infer truth from repetition."""
 from decimal import Decimal
+import re
+
+from .extraction import canonical
+
+
+def entity_match(left, right):
+    if left['subject_key'] == right['subject_key']:
+        return 'exact'
+    if left['context'].get('subject_unresolved') or right['context'].get('subject_unresolved'):
+        a, b = left['normalized'], right['normalized']
+        if a['kind'] == b['kind'] and a['value'] == b['value'] and a['unit'] == b['unit']:
+            return 'unresolved'
+        return None
+    legal = r'\b(?:pvt|private|ltd|limited|inc|corporation|plc)\b'
+    # Preserve the pre-existing guarantee: distinct explicit legal forms do not
+    # merge merely because an organization name has the same stem.
+    la = re.findall(legal, canonical(left['subject']))
+    lb = re.findall(legal, canonical(right['subject']))
+    if la and lb and la != lb:
+        return None
+    a = {left['subject_key']} | {canonical(n) for n in left['context'].get('subject_aliases', [])}
+    b = {right['subject_key']} | {canonical(n) for n in right['context'].get('subject_aliases', [])}
+    primary_a = {left['subject_key'], canonical(re.sub(r'\s+(?:(?:Pvt\.?|Private)\s+)?(?:Ltd\.?|Limited|Inc\.?|Corporation|PLC)$', '', left['subject'], flags=re.I))}
+    primary_b = {right['subject_key'], canonical(re.sub(r'\s+(?:(?:Pvt\.?|Private)\s+)?(?:Ltd\.?|Limited|Inc\.?|Corporation|PLC)$', '', right['subject'], flags=re.I))}
+    return 'alias' if (primary_a & b) or (primary_b & a) else None
 
 
 def compare(left: dict, right: dict) -> dict | None:
-    if left["subject_key"] != right["subject_key"] or left["predicate"] != right["predicate"]:
+    match = entity_match(left, right)
+    if not match or left["predicate"] != right["predicate"]:
         return None
     a, b = left["normalized"], right["normalized"]
     ca, cb = left["context"], right["context"]
@@ -13,6 +39,21 @@ def compare(left: dict, right: dict) -> dict | None:
     def result(kind, reason, confidence):
         return {"kind": kind, "reason": reason, "steps": steps + [reason], "confidence": confidence,
                 "caveat": "A relationship between documented claims; not an independent verification of truth."}
+
+    if match == 'unresolved':
+        steps[0] = 'Matching metric and value, but at least one document does not name its organization.'
+        return result('uncertain', 'Possible connection: the same metric and value appear in both PDFs, but organization identity is unresolved. This is not corroboration until the unnamed source is identified.', 0.3)
+    if match == 'alias':
+        steps[0] = 'Entity names align through a document-grounded short name or omitted legal suffix; inspect the organization evidence.'
+    if left['predicate'] == 'chief executive role status':
+        if ca.get('organization') and cb.get('organization') and canonical(ca['organization']) != canonical(cb['organization']):
+            return result('uncertain', 'The same person is mentioned, but the organizations need alignment.', 0.4)
+        if a['value'] == b['value'] == 'resigned' and ca['period'] and ca['period'] == cb['period']:
+            return result('corroborates', 'Both sources document the same named person resigning on the same explicit date. Employer identity may still need review.', 0.8)
+        return result('uncertain', 'Related leadership claims: compare appointment/resignation dates, employer identity, and interim versus permanent status. A role transition is not automatically a contradiction.', 0.5)
+
+    if ca.get('value_qualifier') or cb.get('value_qualifier'):
+        return result('uncertain', 'A bound or approximate count is preserved in at least one claim. It cannot be treated as an exact conflicting or corroborating value.', 0.5)
 
     assertions = (ca.get("assertion_type", "reported"), cb.get("assertion_type", "reported"))
     if "forecast" in assertions or "estimate" in assertions:
@@ -27,7 +68,9 @@ def compare(left: dict, right: dict) -> dict | None:
         return result("uncertain", "Value types are incompatible or ambiguous; review the source.", 0.35)
     if a["unit"] != b["unit"]:
         return result("uncertain", "Units or currencies differ. No exchange rate or missing unit is assumed.", 0.45)
-    if a["unit"] in ("$", "tons"):
+    if ca.get('period_end') and cb.get('period_end') and ca['period_end'] != cb['period_end'] and ca.get('period_kind') in {'fiscal','calendar'} and cb.get('period_kind') in {'fiscal','calendar'}:
+        return result('reconciled', f"The sources explicitly define different reporting windows: {ca['period']} ending {ca['period_end']} versus {cb['period']} ending {cb['period_end']}. These totals need not agree; overlapping windows do not support a growth calculation. Currency conventions still need checking.", 0.8)
+    if a["unit"] in ("$", "tons", "rs"):
         return result("uncertain", "Currency symbol or ton definition is ambiguous without an explicit convention.", 0.4)
     for field in ("period", "scope"):
         steps.append(f"{field.title()}: {ca[field] or 'unspecified'} ↔ {cb[field] or 'unspecified'}.")

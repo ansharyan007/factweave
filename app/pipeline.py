@@ -11,6 +11,7 @@ from .comparison import compare
 from .layout import document_subject, extract_layout
 from .extraction import clean, extract_model, extract_rules
 from .statistics import country_subject, extract_statistics, reading_blocks
+from .contextual import organization_context, extract_contextual, reporting_periods
 
 WORKER = ThreadPoolExecutor(max_workers=1, thread_name_prefix="pdf-worker")
 
@@ -27,6 +28,8 @@ def process(document_id: str):
         with pymupdf.open(store.data_dir() / f"{document_id}.pdf") as pdf:
             subject = document_subject(pdf) if document["mode"] == "rules" else None
             country = country_subject(pdf) if document["mode"] == "rules" else None
+            organization = organization_context(pdf) if document["mode"] == "rules" else None
+            periods = reporting_periods(pdf) if document['mode'] == 'rules' else {}
             for index in range(len(pdf)):
                 page = pdf[index]
                 blocks = [b for b in page.get_text("blocks", sort=True) if b[6] == 0]
@@ -54,6 +57,10 @@ def process(document_id: str):
                             extra = [f for f in extract_statistics(text, country)
                                      if not any(f["quote"] == old["quote"] for old in facts)]
                             facts.extend(extra)
+                            contextual = [f for f in extract_contextual(text, organization, document_id)
+                                          if not any(f['quote'] == old['quote'] and f['predicate'] == old['predicate'] for old in facts)]
+                            facts.extend(contextual)
+                            extra.extend(contextual)
                             recovered = {f["quote"] for f in extra}
                             issues = [i for i in issues if i.get("quote") not in recovered]
                     except Exception as exc:
@@ -62,6 +69,10 @@ def process(document_id: str):
                                              "reason": f"Extractor failed ({type(exc).__name__}); this block needs review."}]
                     bbox = list(block[:4])
                     for fact in facts:
+                        definition = periods.get(fact['context'].get('period'))
+                        if definition:
+                            fact['context'].update({k: v for k,v in definition.items() if k != 'anchor'})
+                            fact.setdefault('evidence_parts', []).append(dict(definition['anchor']))
                         start = text.find(fact["quote"])
                         if start < 0:
                             continue
@@ -90,8 +101,8 @@ def process(document_id: str):
                     db.execute("INSERT INTO pages VALUES(?,?,?,?,?)", (document_id, index + 1, page_text, page.rect.width, page.rect.height))
                     for fact in page_facts:
                         # Only compare indexed candidates; no global all-pairs rebuild.
-                        candidates = db.execute("SELECT f.payload FROM facts f JOIN documents d ON d.id=f.document_id WHERE f.subject_key=? AND f.predicate=? AND f.document_id<>? AND d.status IN ('complete','needs_review')",
-                                                (fact["subject_key"], fact["predicate"], document_id)).fetchall()
+                        candidates = db.execute("SELECT f.payload FROM facts f JOIN documents d ON d.id=f.document_id WHERE f.predicate=? AND f.document_id<>? AND d.status IN ('complete','needs_review')",
+                                                (fact["predicate"], document_id)).fetchall()
                         db.execute("INSERT INTO facts VALUES(?,?,?,?,?,?)", (fact["id"], document_id, index + 1, fact["subject_key"], fact["predicate"], json.dumps(fact)))
                         for candidate in candidates:
                             previous = json.loads(candidate["payload"])

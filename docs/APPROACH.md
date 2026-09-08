@@ -48,7 +48,7 @@ Confidence scores are heuristic labels, not calibrated probabilities. No fact wi
 
 ## Storage and scaling
 
-SQLite tables hold documents, pages, facts, relationships and issues. Flexible JSON payloads support new predicates without schema migrations. Indexed entity/predicate columns retrieve candidates. UUID filenames separate storage paths from display names. SHA-256 deduplication uses a write transaction, including concurrent uploads.
+SQLite tables hold documents, pages, facts, relationships and issues. Flexible JSON payloads support new predicates without schema migrations. An indexed predicate column retrieves candidates across completed documents. Entity checks then admit exact names or source-grounded aliases while retaining distinctions between conflicting legal forms. Unnamed organizations can yield only uncertain same-metric/same-value candidate links. UUID filenames separate storage paths from display names. SHA-256 deduplication uses a write transaction, including concurrent uploads.
 
 One worker processes PDFs page by page, commits progress, and only compares new facts with matching completed stored facts. Existing fact IDs remain stable across new uploads. Partial/failed jobs are hidden from the knowledge snapshot. Interrupted jobs become visibly failed at startup and can be retried. Run only one Uvicorn process.
 
@@ -70,3 +70,16 @@ Primary references: [FastAPI uploads](https://fastapi.tiangolo.com/tutorial/requ
 ## Layout extension and real evaluation
 
 A document-independent geometric extractor pairs prominent values with nearby aligned metric labels and handles simple rows whose every numeric cell aligns uniquely with an explicit period header. Partial/grouped header mappings and repeated subrow labels are rejected. Separate evidence spans retain inferred document subject, metric, value and period. Layout ownership remains heuristic. Displayed precision can reconcile scaled figures whose rounding intervals overlap. See [Real Data](REAL_DATA.md) for the supplied-dataset results and a false wage comparison discovered and fixed during evaluation.
+
+
+## Contextual prose and connection discoverability
+
+A second extraction pass handles explicit business prose and references to an organization introduced elsewhere in the same PDF. Its owner detector looks at the first 12 pages and abstains when competing company names occur. The full name, observed short names, and subject-anchor quote remain available as evidence. This is a heuristic document context, not general coreference resolution.
+
+English day-month-year dates and explicit fiscal/calendar period definitions are retained. Definitions have their own page/rectangle/quote. Counts described as roughly, over, or more than remain qualified; interim leadership status is separate from active/resigned role status. `Rs.` is scale-normalized without assuming a national currency. Bare board filings do not inherit an employer from another PDF.
+
+The matcher retrieves candidates by predicate instead of requiring the subject string to be identical in SQL. It still rejects unrelated entities, shared short aliases between distinct full names, and conflicting legal suffixes. Potential links involving an unnamed organization require equal normalized metric/value/unit and are explicitly uncertain. Comparing broader predicates or values alone is not semantic entailment.
+
+Knowledge snapshots include document-pair relationship counts and a diagnostic for each source. Pair buttons filter the evidence cards. Uploads clear stale search and pair filters. Regression tests cover arbitrary filenames, new company/person names, reversed upload order, incremental preservation, reprocessing, pair cleanup and exact source grounding. Browser checks cover pair navigation, filtering and a narrow mobile viewport.
+
+Known gaps include broad paraphrases, address/city alias resolution, complex discourse, multiple employers for identically named people, and full temporal entailment. A matched resignation date is agreement between person/event claims with an employer caveat; it does not independently verify identity or truth.

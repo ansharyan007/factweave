@@ -19,6 +19,7 @@ let view = "overview",
   limit = 24,
   busy = false,
   signature = "";
+let selectedPair = null;
 let replacementId = null,
   refreshVersion = 0,
   evidenceDocumentId = null;
@@ -59,6 +60,7 @@ async function refresh() {
     const nextSignature = JSON.stringify(next);
     if (nextSignature !== signature) {
       state = next;
+      if (selectedPair && !selectedPair.every(id => state.documents.some(d => d.id === id))) selectedPair = null;
       signature = nextSignature;
       if (
         evidenceDocumentId &&
@@ -126,7 +128,7 @@ function render() {
     ? state.documents
         .map(
           (doc) =>
-            `<div class="document-row"><span class="pdf-icon">PDF</span><div class="doc-info"><div class="doc-name">${esc(doc.name)}</div><div class="doc-meta">${doc.pages} page${doc.pages === 1 ? "" : "s"} · ${esc(doc.mode)} · ${doc.processed_pages}/${doc.pages} processed &middot; ${state.facts.filter(f => f.document_id === doc.id).length} facts${doc.error ? " · " + esc(doc.error) : ""}</div></div><span class="doc-state ${doc.status}">${esc(doc.status.replaceAll("_", " "))}</span><div class="document-actions">${doc.status === "failed" ? `<button class="secondary" data-retry="${doc.id}">Retry</button>` : ""}<button class="secondary" data-reprocess="${doc.id}">Reprocess</button><button class="secondary" data-replace="${doc.id}" aria-label="Replace ${esc(doc.name)}" ${busy || ["queued", "processing"].includes(doc.status) ? 'disabled title="Wait for processing to finish"' : ""}>Replace</button><button class="secondary danger" data-delete="${doc.id}" aria-label="Delete ${esc(doc.name)}" ${busy || ["queued", "processing"].includes(doc.status) ? 'disabled title="Wait for processing to finish"' : ""}>Delete</button></div></div>`,
+            `<div class="document-row"><span class="pdf-icon">PDF</span><div class="doc-info"><div class="doc-name">${esc(doc.name)}</div><div class="doc-meta">${doc.pages} page${doc.pages === 1 ? "" : "s"} · ${esc(doc.mode)} · ${doc.processed_pages}/${doc.pages} processed &middot; ${doc.fact_count ?? state.facts.filter(f => f.document_id === doc.id).length} facts &middot; ${doc.connection_count ?? 0} connections${doc.error ? " · " + esc(doc.error) : ""}</div><small>${esc(doc.connection_diagnostic || "")}</small></div><span class="doc-state ${doc.status}">${esc(doc.status.replaceAll("_", " "))}</span><div class="document-actions">${doc.status === "failed" ? `<button class="secondary" data-retry="${doc.id}">Retry</button>` : ""}<button class="secondary" data-reprocess="${doc.id}">Reprocess</button><button class="secondary" data-replace="${doc.id}" aria-label="Replace ${esc(doc.name)}" ${busy || ["queued", "processing"].includes(doc.status) ? 'disabled title="Wait for processing to finish"' : ""}>Replace</button><button class="secondary danger" data-delete="${doc.id}" aria-label="Delete ${esc(doc.name)}" ${busy || ["queued", "processing"].includes(doc.status) ? 'disabled title="Wait for processing to finish"' : ""}>Delete</button></div></div>`,
         )
         .join("")
     : '<div class="empty"><strong>Your source library starts here</strong>Upload PDFs or load the synthetic demo to follow a claim back to its evidence.</div>';
@@ -137,6 +139,10 @@ function render() {
       .map((p) => `<option value="${esc(p)}">${esc(p)}</option>`)
       .join("");
   $("#predicate-filter").value = previous;
+  $("#connection-summary").hidden = view === "facts" || view === "issues";
+  $("#connection-summary").innerHTML = `<h3>Connected documents</h3><p class="muted">Connections include agreement between claims and possible matches needing context. Select a pair to inspect its evidence.</p>` +
+    (state.document_connections || []).map(pair => `<button class="secondary" data-pair="${pair.document_ids.join("|")}">${pair.document_ids.map(id => esc(state.documents.find(d => d.id === id)?.name)).join(" &harr; ")}<br>${Object.entries(pair.kinds).map(([kind, count]) => `${count} ${esc(labels[kind])}`).join(" &middot; ")}</button>`).join(" ") +
+    (selectedPair ? '<p><button class="secondary" id="all-pairs">Show all document pairs</button></p>' : '');
   syncControls();
   renderResults();
 }
@@ -194,6 +200,7 @@ function renderResults() {
       const f = state.facts.find((f) => f.id === r.left_id),
         g = state.facts.find((f) => f.id === r.right_id);
       return (
+        (!selectedPair || selectedPair.includes(f.document_id) && selectedPair.includes(g.document_id)) &&
         (kind === "all" || r.kind === kind) &&
         (!predicate || f.predicate === predicate) &&
         JSON.stringify([r, f, g]).toLowerCase().includes(search)
@@ -208,6 +215,12 @@ function renderResults() {
 }
 async function uploadFiles(files) {
   if (busy) return;
+  selectedPair = null;
+  kind = "all";
+  $("#search").value = "";
+  $("#predicate-filter").value = "";
+  document.querySelectorAll('[data-kind]').forEach(b => b.classList.toggle('active', b.dataset.kind === 'all'));
+  setView("overview");
   busy = true;
   syncControls();
   try {
@@ -291,6 +304,18 @@ $("#demo-button").addEventListener("click", async () => {
       "Synthetic demo PDFs queued. These are fictional examples, not the assignment starter documents.",
     );
   });
+});
+$("#connection-summary").addEventListener("click", event => {
+  const pair = event.target.closest("[data-pair]");
+  if (pair || event.target.closest("#all-pairs")) {
+    selectedPair = pair ? pair.dataset.pair.split("|") : null;
+    kind = "all";
+    $("#search").value = "";
+    $("#predicate-filter").value = "";
+    document.querySelectorAll('[data-kind]').forEach(b => b.classList.toggle('active', b.dataset.kind === 'all'));
+    setView("relations");
+    $("#results-title").scrollIntoView({block: "start"});
+  }
 });
 $("#results").addEventListener("click", (event) => {
   const button = event.target.closest("[data-evidence]");

@@ -46,6 +46,18 @@ File removal and database changes are coordinated: failed changes restore staged
 
 To reproduce the browser checks using an isolated temporary collection, install Playwright as below and run `python scripts/check_collection_ui.py`. The original demo video predates these management controls; [this screenshot](docs/collection-management.png) shows the new controls.
 
+### Inspect connections from new PDFs
+
+Every upload is compared with the completed documents already in the collection. **Connected documents** in Overview and Relationships lists each matched PDF pair with counts by relationship type. Select a pair to inspect both quotations, source pages and reasoning. Uploading resets stale search/pair filters so the new results are discoverable.
+
+Source-library rows show fact and connection counts and explain whether a PDF is still processing, yielded no supported claims, or has no comparable claims in another document. Use **Reprocess** to upgrade existing results after a parser change. It preserves the original PDF and document ID.
+
+The contextual prose extractor handles company references, document-grounded short names, financial/date wording, headcount, approximate customer/employee counts, founding years, and CEO appointment/resignation claims. It preserves interim status and qualifications. An unnamed organization stays unresolved; a matching metric/value is only a *possible* connection. `Rs.` is an unspecified rupee currency, not automatically INR. Separately quoted reporting-period definitions explain why financial-year and calendar-year totals need not agree.
+
+Additional-upload validation: five one-page business documents previously produced zero facts. The revised run produced **21 facts and 16 connections across 8 PDF pairs**: 2 corroborations, 3 contextual reconciliations and 11 uncertain links. Automated tests also upload renamed, different-company fixtures in both orders and verify preservation of existing facts, evidence grounding and removal of stale pairs.
+
+The app accepts arbitrary PDF filenames and contents, but it cannot promise a meaningful connection for every pair of PDFs. Unrelated material, scans without OCR, and unsupported grammar may yield none. It reports these limitations instead of inventing links.
+
 ### API
 
 Interactive API docs: **http://127.0.0.1:8000/docs**.
@@ -89,7 +101,7 @@ pip install -r requirements-dev.txt
 python -m pytest -q
 ```
 
-On Windows without environment activation, prefix commands with `.venv\Scripts\python -m`. The suite has 60 tests. The sample PDFs are committed; regenerate with `python scripts/create_samples.py`. To record the actual UI interactions and run browser checks:
+On Windows without environment activation, prefix commands with `.venv\Scripts\python -m`. The suite has 71 tests. The sample PDFs are committed; regenerate with `python scripts/create_samples.py`. To record the actual UI interactions and run browser checks:
 
 ```bash
 pip install playwright
@@ -112,7 +124,7 @@ The video includes the four synthetic cases plus real Delhivery corroboration an
 - **Statistical prose:** join nearby text fragments within a column; recognize common growth/inflation/trade measures and `per cent` wording. A dominant country can supply an explicitly labeled, separately grounded inferred subject. Estimates and forecasts remain qualified claims. No filenames select extraction rules.
 - **Context before conflict:** normalize values and units, align explicit periods/scopes, and abstain when comparison is unsafe.
 - **Explain each connection:** every relationship carries both source links and a decision trace. Agreement is not proof; confidence is heuristic.
-- **Incremental storage:** SQLite indexes entity/predicate candidates. New uploads preserve existing facts. Content hashing prevents duplicate evidence inflation. Flexible payloads accept new fact types.
+- **Incremental storage:** SQLite retrieves indexed predicate candidates, then checks entity identity and document-grounded aliases. New uploads preserve existing facts. Content hashing prevents duplicate evidence inflation. Flexible payloads accept new fact types.
 - **Visible failures:** scans, ambiguous statements, unsupported qualifiers and model errors enter a review queue.
 
 Architecture: **FastAPI + PyMuPDF + SQLite + vanilla HTML/CSS/JavaScript**, with optional Ollama. A graph database is unnecessary for this prototype; the useful part is grounded extraction and explanation. See [engineering notes](docs/APPROACH.md) for architecture, trade-offs, actual bugs and references.

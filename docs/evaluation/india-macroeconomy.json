@@ -1,7 +1,7 @@
 {
   "documents": [
     {
-      "id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "d2fc837e185b4feea7e842cfcb904081",
       "name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "sha256": "86f2e79a3b7b4a3698907897297b9e17fe06d39c074d52e68303066d18a2cf71",
       "status": "needs_review",
@@ -9,10 +9,13 @@
       "processed_pages": 89,
       "mode": "rules",
       "error": null,
-      "created_at": "2026-09-08 10:46:06"
+      "created_at": "2026-09-08 11:04:15",
+      "fact_count": 11,
+      "connection_count": 22,
+      "connection_diagnostic": "Open a document pair to inspect the matched claims and uncertainty."
     },
     {
-      "id": "bc650b381bca4ac0ba2d24714ac2790a",
+      "id": "4233a03d64d54a12ae02c77eac7fe878",
       "name": "02-rbi-annual-report-2024-25-excerpt.pdf",
       "sha256": "73209a2caa2f5671f2feae065d01602302daaaac9e8230c9c471d99243fd079e",
       "status": "needs_review",
@@ -20,10 +23,13 @@
       "processed_pages": 100,
       "mode": "rules",
       "error": null,
-      "created_at": "2026-09-08 10:46:07"
+      "created_at": "2026-09-08 11:04:16",
+      "fact_count": 7,
+      "connection_count": 18,
+      "connection_diagnostic": "Open a document pair to inspect the matched claims and uncertainty."
     },
     {
-      "id": "0625c3c0322a4a3d85759914168c80b3",
+      "id": "0fc1f1f7b7e34232999660e5bc6b263d",
       "name": "03-imf-india-2025-article-iv-excerpt.pdf",
       "sha256": "f6d3cfecafd9548920349b29b1137d645c20073434d0ac66485ead9738a0ea4d",
       "status": "needs_review",
@@ -31,7 +37,10 @@
       "processed_pages": 95,
       "mode": "rules",
       "error": null,
-      "created_at": "2026-09-08 10:46:07"
+      "created_at": "2026-09-08 11:04:16",
+      "fact_count": 13,
+      "connection_count": 20,
+      "connection_diagnostic": "Open a document pair to inspect the matched claims and uncertainty."
     }
   ],
   "facts": [
@@ -47,7 +56,7 @@
         "unit": "%",
         "resolution": "0.1",
         "scaled": false,
-        "normalization": "6.4 percent \u2192 6.4 %; decimal arithmetic, no currency conversion."
+        "normalization": "6.4 per cent \u2192 6.4 %; decimal arithmetic, no currency conversion."
       },
       "context": {
         "period": "FY2025",
@@ -64,8 +73,8 @@
       "method": "statistical prose",
       "confidence": 0.65,
       "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score.",
-      "id": "c015bcc6719b4de4b0062e21cc4ffa12",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "fbf86b7fbb8d447c8b0fc42d6fd2c01f",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 4,
       "bbox": [
@@ -101,8 +110,8 @@
       "method": "rules",
       "confidence": 0.78,
       "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score.",
-      "id": "3e633cbd06e44dfab4a97453db91c54e",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "d4fee56afb4d436dbc21ef2758b3f5fd",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 8,
       "bbox": [
@@ -127,7 +136,7 @@
         "unit": "%",
         "resolution": "0.1",
         "scaled": false,
-        "normalization": "6.4 percent \u2192 6.4 %; decimal arithmetic, no currency conversion."
+        "normalization": "6.4 per cent \u2192 6.4 %; decimal arithmetic, no currency conversion."
       },
       "context": {
         "period": "FY2025",
@@ -155,11 +164,11 @@
             378.3110046386719,
             455.4224853515625
           ],
-          "document_id": "07a0e725ba864b449c52cb29be197d16"
+          "document_id": "d2fc837e185b4feea7e842cfcb904081"
         }
       ],
-      "id": "7f93a8ec76b247958dc21266a2a1209f",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "2959fb8a140843eb95a6270763bb2205",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 14,
       "bbox": [
@@ -184,7 +193,7 @@
         "unit": "%",
         "resolution": "0.1",
         "scaled": false,
-        "normalization": "6.4 percent \u2192 6.4 %; decimal arithmetic, no currency conversion."
+        "normalization": "6.4 per cent \u2192 6.4 %; decimal arithmetic, no currency conversion."
       },
       "context": {
         "period": null,
@@ -210,11 +219,11 @@
             378.3110046386719,
             455.4224853515625
           ],
-          "document_id": "07a0e725ba864b449c52cb29be197d16"
+          "document_id": "d2fc837e185b4feea7e842cfcb904081"
         }
       ],
-      "id": "aafdf11496454a2db1ff2f8e88b4e309",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "77d9ce7b169e4b6cba1d75ee510cfe49",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 14,
       "bbox": [
@@ -239,7 +248,7 @@
         "unit": "%",
         "resolution": "0.1",
         "scaled": false,
-        "normalization": "6.2 percent \u2192 6.2 %; decimal arithmetic, no currency conversion."
+        "normalization": "6.2 per cent \u2192 6.2 %; decimal arithmetic, no currency conversion."
       },
       "context": {
         "period": "FY2025",
@@ -267,11 +276,11 @@
             378.3110046386719,
             455.4224853515625
           ],
-          "document_id": "07a0e725ba864b449c52cb29be197d16"
+          "document_id": "d2fc837e185b4feea7e842cfcb904081"
         }
       ],
-      "id": "7cd40746883a402ba844499721b2ecc3",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "8180ac93b25d4ff9878ca9a0f8f5a5b9",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 14,
       "bbox": [
@@ -296,7 +305,7 @@
         "unit": "%",
         "resolution": "0.1",
         "scaled": false,
-        "normalization": "6.2 percent \u2192 6.2 %; decimal arithmetic, no currency conversion."
+        "normalization": "6.2 per cent \u2192 6.2 %; decimal arithmetic, no currency conversion."
       },
       "context": {
         "period": "H1FY25",
@@ -324,11 +333,11 @@
             378.3110046386719,
             455.4224853515625
           ],
-          "document_id": "07a0e725ba864b449c52cb29be197d16"
+          "document_id": "d2fc837e185b4feea7e842cfcb904081"
         }
       ],
-      "id": "0bc8d54a74c94c3c86face477cd8597b",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "3522e90254cd4d219a42e507d6d648ac",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 17,
       "bbox": [
@@ -353,7 +362,7 @@
         "unit": "%",
         "resolution": "1",
         "scaled": false,
-        "normalization": "6 percent \u2192 6 %; decimal arithmetic, no currency conversion."
+        "normalization": "6 per cent \u2192 6 %; decimal arithmetic, no currency conversion."
       },
       "context": {
         "period": "H1FY25",
@@ -381,11 +390,11 @@
             378.3110046386719,
             455.4224853515625
           ],
-          "document_id": "07a0e725ba864b449c52cb29be197d16"
+          "document_id": "d2fc837e185b4feea7e842cfcb904081"
         }
       ],
-      "id": "2fc8c564779f428ea48084ed9dde04e1",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "c72361301fd14267a4b61317b8051b86",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 18,
       "bbox": [
@@ -410,7 +419,7 @@
         "unit": "%",
         "resolution": "0.1",
         "scaled": false,
-        "normalization": "6.0 percent \u2192 6 %; decimal arithmetic, no currency conversion."
+        "normalization": "6.0 per cent \u2192 6 %; decimal arithmetic, no currency conversion."
       },
       "context": {
         "period": null,
@@ -436,11 +445,11 @@
             378.3110046386719,
             455.4224853515625
           ],
-          "document_id": "07a0e725ba864b449c52cb29be197d16"
+          "document_id": "d2fc837e185b4feea7e842cfcb904081"
         }
       ],
-      "id": "f5b54e00a6b84371bafc8534281dbbfd",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "64295dd30b694c49bf0171dc1c6bc28d",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 20,
       "bbox": [
@@ -465,7 +474,7 @@
         "unit": "%",
         "resolution": "0.1",
         "scaled": false,
-        "normalization": "1.6 percent \u2192 1.6 %; decimal arithmetic, no currency conversion."
+        "normalization": "1.6 per cent \u2192 1.6 %; decimal arithmetic, no currency conversion."
       },
       "context": {
         "period": "APRIL/DECEMBER2024",
@@ -482,8 +491,8 @@
       "method": "statistical prose",
       "confidence": 0.65,
       "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score.",
-      "id": "1670bd2850f741aba9a47a05575da1e9",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "5744a73b73f747b9be3d770d38846cf5",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 29,
       "bbox": [
@@ -508,7 +517,7 @@
         "unit": "%",
         "resolution": "0.1",
         "scaled": false,
-        "normalization": "5.2 percent \u2192 5.2 %; decimal arithmetic, no currency conversion."
+        "normalization": "5.2 per cent \u2192 5.2 %; decimal arithmetic, no currency conversion."
       },
       "context": {
         "period": "APRIL/DECEMBER2024",
@@ -536,11 +545,11 @@
             378.3110046386719,
             455.4224853515625
           ],
-          "document_id": "07a0e725ba864b449c52cb29be197d16"
+          "document_id": "d2fc837e185b4feea7e842cfcb904081"
         }
       ],
-      "id": "a65f00f68e7a46e08db25d5aeb68e336",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "ca9fa6ca39834b489065666bf0c91e58",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 51,
       "bbox": [
@@ -565,7 +574,7 @@
         "unit": "%",
         "resolution": "0.1",
         "scaled": false,
-        "normalization": "4.4 percent \u2192 4.4 %; decimal arithmetic, no currency conversion."
+        "normalization": "4.4 per cent \u2192 4.4 %; decimal arithmetic, no currency conversion."
       },
       "context": {
         "period": "FY2025",
@@ -593,7 +602,7 @@
             378.3110046386719,
             455.4224853515625
           ],
-          "document_id": "07a0e725ba864b449c52cb29be197d16"
+          "document_id": "d2fc837e185b4feea7e842cfcb904081"
         },
         {
           "role": "joined source fragment",
@@ -605,7 +614,7 @@
             302.9330139160156,
             507.6044921875
           ],
-          "document_id": "07a0e725ba864b449c52cb29be197d16"
+          "document_id": "d2fc837e185b4feea7e842cfcb904081"
         },
         {
           "role": "joined source fragment",
@@ -617,11 +626,11 @@
             518.8895874023438,
             608.578369140625
           ],
-          "document_id": "07a0e725ba864b449c52cb29be197d16"
+          "document_id": "d2fc837e185b4feea7e842cfcb904081"
         }
       ],
-      "id": "24c860008336483da0ec2044b516548a",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "c18bdf55fb63409294464e2b96c8a2fd",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 87,
       "bbox": [
@@ -646,7 +655,7 @@
         "unit": "%",
         "resolution": "0.1",
         "scaled": false,
-        "normalization": "4.3 percent \u2192 4.3 %; decimal arithmetic, no currency conversion."
+        "normalization": "4.3 per cent \u2192 4.3 %; decimal arithmetic, no currency conversion."
       },
       "context": {
         "period": "2024/25",
@@ -674,7 +683,7 @@
             559.6963500976562,
             144.43258666992188
           ],
-          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+          "document_id": "4233a03d64d54a12ae02c77eac7fe878"
         },
         {
           "role": "joined source fragment",
@@ -686,7 +695,7 @@
             562.7347412109375,
             512.309326171875
           ],
-          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+          "document_id": "4233a03d64d54a12ae02c77eac7fe878"
         },
         {
           "role": "joined source fragment",
@@ -698,7 +707,7 @@
             562.713623046875,
             528.996337890625
           ],
-          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+          "document_id": "4233a03d64d54a12ae02c77eac7fe878"
         },
         {
           "role": "joined source fragment",
@@ -710,7 +719,7 @@
             562.74658203125,
             545.683349609375
           ],
-          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+          "document_id": "4233a03d64d54a12ae02c77eac7fe878"
         },
         {
           "role": "joined source fragment",
@@ -722,7 +731,7 @@
             562.7433471679688,
             562.370361328125
           ],
-          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+          "document_id": "4233a03d64d54a12ae02c77eac7fe878"
         },
         {
           "role": "joined source fragment",
@@ -734,7 +743,7 @@
             562.7312622070312,
             579.0573120117188
           ],
-          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+          "document_id": "4233a03d64d54a12ae02c77eac7fe878"
         },
         {
           "role": "joined source fragment",
@@ -746,11 +755,11 @@
             562.7224731445312,
             595.7443237304688
           ],
-          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+          "document_id": "4233a03d64d54a12ae02c77eac7fe878"
         }
       ],
-      "id": "772b828f2406441ea5dfff24728757b4",
-      "document_id": "bc650b381bca4ac0ba2d24714ac2790a",
+      "id": "2df04653b9db4df9b211248f63149db3",
+      "document_id": "4233a03d64d54a12ae02c77eac7fe878",
       "document_name": "02-rbi-annual-report-2024-25-excerpt.pdf",
       "page": 8,
       "bbox": [
@@ -775,7 +784,7 @@
         "unit": "%",
         "resolution": "0.1",
         "scaled": false,
-        "normalization": "6.5 percent \u2192 6.5 %; decimal arithmetic, no currency conversion."
+        "normalization": "6.5 per cent \u2192 6.5 %; decimal arithmetic, no currency conversion."
       },
       "context": {
         "period": "2024/25",
@@ -803,7 +812,7 @@
             559.6963500976562,
             144.43258666992188
           ],
-          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+          "document_id": "4233a03d64d54a12ae02c77eac7fe878"
         },
         {
           "role": "joined source fragment",
@@ -815,7 +824,7 @@
             296.3021240234375,
             662.5031127929688
           ],
-          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+          "document_id": "4233a03d64d54a12ae02c77eac7fe878"
         },
         {
           "role": "joined source fragment",
@@ -827,11 +836,11 @@
             296.2999267578125,
             679.0140991210938
           ],
-          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+          "document_id": "4233a03d64d54a12ae02c77eac7fe878"
         }
       ],
-      "id": "07dc55a2168a4d9a849335a3c379fcc5",
-      "document_id": "bc650b381bca4ac0ba2d24714ac2790a",
+      "id": "6aea1ffbfdee41139aac8115c7ad5b81",
+      "document_id": "4233a03d64d54a12ae02c77eac7fe878",
       "document_name": "02-rbi-annual-report-2024-25-excerpt.pdf",
       "page": 8,
       "bbox": [
@@ -856,7 +865,7 @@
         "unit": "%",
         "resolution": "0.1",
         "scaled": false,
-        "normalization": "6.2 percent \u2192 6.2 %; decimal arithmetic, no currency conversion."
+        "normalization": "6.2 per cent \u2192 6.2 %; decimal arithmetic, no currency conversion."
       },
       "context": {
         "period": null,
@@ -882,7 +891,7 @@
             559.6963500976562,
             144.43258666992188
           ],
-          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+          "document_id": "4233a03d64d54a12ae02c77eac7fe878"
         },
         {
           "role": "joined source fragment",
@@ -894,7 +903,7 @@
             562.7481079101562,
             427.4590148925781
           ],
-          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+          "document_id": "4233a03d64d54a12ae02c77eac7fe878"
         },
         {
           "role": "joined source fragment",
@@ -906,7 +915,7 @@
             562.7371826171875,
             444.0690002441406
           ],
-          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+          "document_id": "4233a03d64d54a12ae02c77eac7fe878"
         },
         {
           "role": "joined source fragment",
@@ -918,7 +927,7 @@
             562.7385864257812,
             460.6789855957031
           ],
-          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+          "document_id": "4233a03d64d54a12ae02c77eac7fe878"
         },
         {
           "role": "joined source fragment",
@@ -930,7 +939,7 @@
             562.75048828125,
             477.2889709472656
           ],
-          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+          "document_id": "4233a03d64d54a12ae02c77eac7fe878"
         },
         {
           "role": "joined source fragment",
@@ -942,7 +951,7 @@
             562.7514038085938,
             493.8989562988281
           ],
-          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+          "document_id": "4233a03d64d54a12ae02c77eac7fe878"
         },
         {
           "role": "joined source fragment",
@@ -954,7 +963,7 @@
             562.727294921875,
             510.5089416503906
           ],
-          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+          "document_id": "4233a03d64d54a12ae02c77eac7fe878"
         },
         {
           "role": "joined source fragment",
@@ -966,7 +975,7 @@
             562.7261962890625,
             527.1189575195312
           ],
-          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+          "document_id": "4233a03d64d54a12ae02c77eac7fe878"
         },
         {
           "role": "joined source fragment",
@@ -978,7 +987,7 @@
             562.7109985351562,
             543.7289428710938
           ],
-          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+          "document_id": "4233a03d64d54a12ae02c77eac7fe878"
         },
         {
           "role": "joined source fragment",
@@ -990,7 +999,7 @@
             562.7349243164062,
             560.3389892578125
           ],
-          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+          "document_id": "4233a03d64d54a12ae02c77eac7fe878"
         },
         {
           "role": "joined source fragment",
@@ -1002,7 +1011,7 @@
             562.7218017578125,
             576.948974609375
           ],
-          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+          "document_id": "4233a03d64d54a12ae02c77eac7fe878"
         },
         {
           "role": "joined source fragment",
@@ -1014,7 +1023,7 @@
             562.7327270507812,
             593.5589599609375
           ],
-          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+          "document_id": "4233a03d64d54a12ae02c77eac7fe878"
         },
         {
           "role": "joined source fragment",
@@ -1026,7 +1035,7 @@
             562.7196655273438,
             610.1689453125
           ],
-          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+          "document_id": "4233a03d64d54a12ae02c77eac7fe878"
         },
         {
           "role": "joined source fragment",
@@ -1038,11 +1047,11 @@
             445.01727294921875,
             626.7789306640625
           ],
-          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+          "document_id": "4233a03d64d54a12ae02c77eac7fe878"
         }
       ],
-      "id": "1bff2e519c4641e1a3901ca1f6628621",
-      "document_id": "bc650b381bca4ac0ba2d24714ac2790a",
+      "id": "b3e5496e3c5548fcad3229229d38c91a",
+      "document_id": "4233a03d64d54a12ae02c77eac7fe878",
       "document_name": "02-rbi-annual-report-2024-25-excerpt.pdf",
       "page": 11,
       "bbox": [
@@ -1067,7 +1076,7 @@
         "unit": "%",
         "resolution": "0.1",
         "scaled": false,
-        "normalization": "6.5 percent \u2192 6.5 %; decimal arithmetic, no currency conversion."
+        "normalization": "6.5 per cent \u2192 6.5 %; decimal arithmetic, no currency conversion."
       },
       "context": {
         "period": "2024/25",
@@ -1095,7 +1104,7 @@
             559.6963500976562,
             144.43258666992188
           ],
-          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+          "document_id": "4233a03d64d54a12ae02c77eac7fe878"
         },
         {
           "role": "joined source fragment",
@@ -1107,7 +1116,7 @@
             562.7407836914062,
             520.50244140625
           ],
-          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+          "document_id": "4233a03d64d54a12ae02c77eac7fe878"
         },
         {
           "role": "joined source fragment",
@@ -1119,7 +1128,7 @@
             562.7540893554688,
             537.033447265625
           ],
-          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+          "document_id": "4233a03d64d54a12ae02c77eac7fe878"
         },
         {
           "role": "joined source fragment",
@@ -1131,7 +1140,7 @@
             562.7243041992188,
             553.555419921875
           ],
-          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+          "document_id": "4233a03d64d54a12ae02c77eac7fe878"
         },
         {
           "role": "joined source fragment",
@@ -1143,7 +1152,7 @@
             562.7286987304688,
             570.077392578125
           ],
-          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+          "document_id": "4233a03d64d54a12ae02c77eac7fe878"
         },
         {
           "role": "joined source fragment",
@@ -1155,7 +1164,7 @@
             562.71875,
             586.5994262695312
           ],
-          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+          "document_id": "4233a03d64d54a12ae02c77eac7fe878"
         },
         {
           "role": "joined source fragment",
@@ -1167,7 +1176,7 @@
             562.7175903320312,
             603.1214599609375
           ],
-          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+          "document_id": "4233a03d64d54a12ae02c77eac7fe878"
         },
         {
           "role": "joined source fragment",
@@ -1179,7 +1188,7 @@
             562.7142944335938,
             619.8414306640625
           ],
-          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+          "document_id": "4233a03d64d54a12ae02c77eac7fe878"
         },
         {
           "role": "joined source fragment",
@@ -1191,11 +1200,11 @@
             469.5399169921875,
             636.5614013671875
           ],
-          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+          "document_id": "4233a03d64d54a12ae02c77eac7fe878"
         }
       ],
-      "id": "e12ae088a06648c58572aa9a4bd336bf",
-      "document_id": "bc650b381bca4ac0ba2d24714ac2790a",
+      "id": "a7dc83e04edb4da8a796a72c0537c731",
+      "document_id": "4233a03d64d54a12ae02c77eac7fe878",
       "document_name": "02-rbi-annual-report-2024-25-excerpt.pdf",
       "page": 22,
       "bbox": [
@@ -1220,7 +1229,7 @@
         "unit": "%",
         "resolution": "0.1",
         "scaled": false,
-        "normalization": "10.2 percent \u2192 10.2 %; decimal arithmetic, no currency conversion."
+        "normalization": "10.2 per cent \u2192 10.2 %; decimal arithmetic, no currency conversion."
       },
       "context": {
         "period": "AUGUST2024/MARCH2025",
@@ -1249,11 +1258,11 @@
             559.6963500976562,
             144.43258666992188
           ],
-          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+          "document_id": "4233a03d64d54a12ae02c77eac7fe878"
         }
       ],
-      "id": "881ea395da8646b790a09142dbf0296d",
-      "document_id": "bc650b381bca4ac0ba2d24714ac2790a",
+      "id": "060d7e6446ea45d6b17113f3f603e50a",
+      "document_id": "4233a03d64d54a12ae02c77eac7fe878",
       "document_name": "02-rbi-annual-report-2024-25-excerpt.pdf",
       "page": 46,
       "bbox": [
@@ -1278,7 +1287,7 @@
         "unit": "%",
         "resolution": "0.1",
         "scaled": false,
-        "normalization": "1.5 percent \u2192 1.5 %; decimal arithmetic, no currency conversion."
+        "normalization": "1.5 per cent \u2192 1.5 %; decimal arithmetic, no currency conversion."
       },
       "context": {
         "period": "MARCH2025",
@@ -1306,11 +1315,11 @@
             559.6963500976562,
             144.43258666992188
           ],
-          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+          "document_id": "4233a03d64d54a12ae02c77eac7fe878"
         }
       ],
-      "id": "6e95841adf584f589a24ce5c61340c18",
-      "document_id": "bc650b381bca4ac0ba2d24714ac2790a",
+      "id": "6ea0321c4a0c404796c8d65f63ec672f",
+      "document_id": "4233a03d64d54a12ae02c77eac7fe878",
       "document_name": "02-rbi-annual-report-2024-25-excerpt.pdf",
       "page": 46,
       "bbox": [
@@ -1335,7 +1344,7 @@
         "unit": "%",
         "resolution": "0.1",
         "scaled": false,
-        "normalization": "6.2 percent \u2192 6.2 %; decimal arithmetic, no currency conversion."
+        "normalization": "6.2 per cent \u2192 6.2 %; decimal arithmetic, no currency conversion."
       },
       "context": {
         "period": "2024/25",
@@ -1363,7 +1372,7 @@
             559.6963500976562,
             144.43258666992188
           ],
-          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+          "document_id": "4233a03d64d54a12ae02c77eac7fe878"
         },
         {
           "role": "joined source fragment",
@@ -1375,7 +1384,7 @@
             166.26638793945312,
             100.49351501464844
           ],
-          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+          "document_id": "4233a03d64d54a12ae02c77eac7fe878"
         },
         {
           "role": "joined source fragment",
@@ -1387,7 +1396,7 @@
             296.2677307128906,
             123.31852722167969
           ],
-          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+          "document_id": "4233a03d64d54a12ae02c77eac7fe878"
         },
         {
           "role": "joined source fragment",
@@ -1399,7 +1408,7 @@
             296.2853088378906,
             140.46751403808594
           ],
-          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+          "document_id": "4233a03d64d54a12ae02c77eac7fe878"
         },
         {
           "role": "joined source fragment",
@@ -1411,7 +1420,7 @@
             296.2545471191406,
             157.6165008544922
           ],
-          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+          "document_id": "4233a03d64d54a12ae02c77eac7fe878"
         },
         {
           "role": "joined source fragment",
@@ -1423,7 +1432,7 @@
             293.20751953125,
             174.76548767089844
           ],
-          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+          "document_id": "4233a03d64d54a12ae02c77eac7fe878"
         },
         {
           "role": "joined source fragment",
@@ -1435,7 +1444,7 @@
             296.28533935546875,
             191.9144744873047
           ],
-          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+          "document_id": "4233a03d64d54a12ae02c77eac7fe878"
         },
         {
           "role": "joined source fragment",
@@ -1447,7 +1456,7 @@
             296.25567626953125,
             209.06346130371094
           ],
-          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+          "document_id": "4233a03d64d54a12ae02c77eac7fe878"
         },
         {
           "role": "joined source fragment",
@@ -1459,7 +1468,7 @@
             296.26776123046875,
             226.2124481201172
           ],
-          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+          "document_id": "4233a03d64d54a12ae02c77eac7fe878"
         },
         {
           "role": "joined source fragment",
@@ -1471,11 +1480,11 @@
             188.6513671875,
             243.36143493652344
           ],
-          "document_id": "bc650b381bca4ac0ba2d24714ac2790a"
+          "document_id": "4233a03d64d54a12ae02c77eac7fe878"
         }
       ],
-      "id": "5b540fcf397e46d98eedfeed643b4f5b",
-      "document_id": "bc650b381bca4ac0ba2d24714ac2790a",
+      "id": "89b3d4c0830048338f261c74f89ce430",
+      "document_id": "4233a03d64d54a12ae02c77eac7fe878",
       "document_name": "02-rbi-annual-report-2024-25-excerpt.pdf",
       "page": 77,
       "bbox": [
@@ -1528,11 +1537,11 @@
             541.0109252929688,
             296.59014892578125
           ],
-          "document_id": "0625c3c0322a4a3d85759914168c80b3"
+          "document_id": "0fc1f1f7b7e34232999660e5bc6b263d"
         }
       ],
-      "id": "98e12bea27de4bb59122d95fed961a00",
-      "document_id": "0625c3c0322a4a3d85759914168c80b3",
+      "id": "70592ef416d84acc888b9fc388f67d93",
+      "document_id": "0fc1f1f7b7e34232999660e5bc6b263d",
       "document_name": "03-imf-india-2025-article-iv-excerpt.pdf",
       "page": 3,
       "bbox": [
@@ -1585,11 +1594,11 @@
             541.0109252929688,
             296.59014892578125
           ],
-          "document_id": "0625c3c0322a4a3d85759914168c80b3"
+          "document_id": "0fc1f1f7b7e34232999660e5bc6b263d"
         }
       ],
-      "id": "7ce85f6d865a402db825a264e9844605",
-      "document_id": "0625c3c0322a4a3d85759914168c80b3",
+      "id": "da2b2cecf8964e13afb61a2d728ff804",
+      "document_id": "0fc1f1f7b7e34232999660e5bc6b263d",
       "document_name": "03-imf-india-2025-article-iv-excerpt.pdf",
       "page": 3,
       "bbox": [
@@ -1631,8 +1640,8 @@
       "method": "statistical prose",
       "confidence": 0.65,
       "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score.",
-      "id": "3e828420e93e4d139c1f7785aed01a04",
-      "document_id": "0625c3c0322a4a3d85759914168c80b3",
+      "id": "c7d71766663a4c95980fd53a9ae2dc92",
+      "document_id": "0fc1f1f7b7e34232999660e5bc6b263d",
       "document_name": "03-imf-india-2025-article-iv-excerpt.pdf",
       "page": 10,
       "bbox": [
@@ -1683,11 +1692,11 @@
             541.0109252929688,
             296.59014892578125
           ],
-          "document_id": "0625c3c0322a4a3d85759914168c80b3"
+          "document_id": "0fc1f1f7b7e34232999660e5bc6b263d"
         }
       ],
-      "id": "8ddffee9b88a401ba157bef26b21b270",
-      "document_id": "0625c3c0322a4a3d85759914168c80b3",
+      "id": "0e3e109edf3f4b9b90f7a4fb2f903557",
+      "document_id": "0fc1f1f7b7e34232999660e5bc6b263d",
       "document_name": "03-imf-india-2025-article-iv-excerpt.pdf",
       "page": 10,
       "bbox": [
@@ -1740,11 +1749,11 @@
             541.0109252929688,
             296.59014892578125
           ],
-          "document_id": "0625c3c0322a4a3d85759914168c80b3"
+          "document_id": "0fc1f1f7b7e34232999660e5bc6b263d"
         }
       ],
-      "id": "766a4c0ee89444e7afee8a73245cebb4",
-      "document_id": "0625c3c0322a4a3d85759914168c80b3",
+      "id": "f099e01d928e453da1ba2b448a03e752",
+      "document_id": "0fc1f1f7b7e34232999660e5bc6b263d",
       "document_name": "03-imf-india-2025-article-iv-excerpt.pdf",
       "page": 10,
       "bbox": [
@@ -1797,11 +1806,11 @@
             541.0109252929688,
             296.59014892578125
           ],
-          "document_id": "0625c3c0322a4a3d85759914168c80b3"
+          "document_id": "0fc1f1f7b7e34232999660e5bc6b263d"
         }
       ],
-      "id": "e02962b66ce94f5385832c399c367b49",
-      "document_id": "0625c3c0322a4a3d85759914168c80b3",
+      "id": "9902b59d3d374b06afbac59dfabde021",
+      "document_id": "0fc1f1f7b7e34232999660e5bc6b263d",
       "document_name": "03-imf-india-2025-article-iv-excerpt.pdf",
       "page": 10,
       "bbox": [
@@ -1854,11 +1863,11 @@
             541.0109252929688,
             296.59014892578125
           ],
-          "document_id": "0625c3c0322a4a3d85759914168c80b3"
+          "document_id": "0fc1f1f7b7e34232999660e5bc6b263d"
         }
       ],
-      "id": "87a5ab028659453989fd683ed4d1e903",
-      "document_id": "0625c3c0322a4a3d85759914168c80b3",
+      "id": "59fb0d9bee014638a317bb99497e89ff",
+      "document_id": "0fc1f1f7b7e34232999660e5bc6b263d",
       "document_name": "03-imf-india-2025-article-iv-excerpt.pdf",
       "page": 10,
       "bbox": [
@@ -1909,11 +1918,11 @@
             541.0109252929688,
             296.59014892578125
           ],
-          "document_id": "0625c3c0322a4a3d85759914168c80b3"
+          "document_id": "0fc1f1f7b7e34232999660e5bc6b263d"
         }
       ],
-      "id": "933d782c141c4f6e91fdb25b39ea7f1d",
-      "document_id": "0625c3c0322a4a3d85759914168c80b3",
+      "id": "83300e5c379b4aa5839bdd3da7f7221f",
+      "document_id": "0fc1f1f7b7e34232999660e5bc6b263d",
       "document_name": "03-imf-india-2025-article-iv-excerpt.pdf",
       "page": 10,
       "bbox": [
@@ -1964,11 +1973,11 @@
             541.0109252929688,
             296.59014892578125
           ],
-          "document_id": "0625c3c0322a4a3d85759914168c80b3"
+          "document_id": "0fc1f1f7b7e34232999660e5bc6b263d"
         }
       ],
-      "id": "b07011d2600247d4804ae1c69b6827c1",
-      "document_id": "0625c3c0322a4a3d85759914168c80b3",
+      "id": "080eb5bd5b644dfab7fabfbb48d92ba9",
+      "document_id": "0fc1f1f7b7e34232999660e5bc6b263d",
       "document_name": "03-imf-india-2025-article-iv-excerpt.pdf",
       "page": 10,
       "bbox": [
@@ -2004,8 +2013,8 @@
       "method": "rules",
       "confidence": 0.78,
       "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score.",
-      "id": "4be54b8c3ea645319250246c1a944b93",
-      "document_id": "0625c3c0322a4a3d85759914168c80b3",
+      "id": "c2d773f73b2c4244a3bcc3ccfbf25ee6",
+      "document_id": "0fc1f1f7b7e34232999660e5bc6b263d",
       "document_name": "03-imf-india-2025-article-iv-excerpt.pdf",
       "page": 32,
       "bbox": [
@@ -2041,8 +2050,8 @@
       "method": "rules",
       "confidence": 0.78,
       "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score.",
-      "id": "6c53e9c728c2499d834f5a719e785ad0",
-      "document_id": "0625c3c0322a4a3d85759914168c80b3",
+      "id": "26cb3ee5c05241c98b6aee1807645538",
+      "document_id": "0fc1f1f7b7e34232999660e5bc6b263d",
       "document_name": "03-imf-india-2025-article-iv-excerpt.pdf",
       "page": 34,
       "bbox": [
@@ -2078,8 +2087,8 @@
       "method": "rules",
       "confidence": 0.78,
       "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score.",
-      "id": "13911612bb5d4fb9871aaf0321d2e802",
-      "document_id": "0625c3c0322a4a3d85759914168c80b3",
+      "id": "24be10149a734ea28ca2370a58bd3f72",
+      "document_id": "0fc1f1f7b7e34232999660e5bc6b263d",
       "document_name": "03-imf-india-2025-article-iv-excerpt.pdf",
       "page": 37,
       "bbox": [
@@ -2115,8 +2124,8 @@
       "method": "rules",
       "confidence": 0.78,
       "confidence_note": "Heuristic extraction confidence, not a calibrated probability or truth score.",
-      "id": "42b4c2b706614c4db89c025fae90f1d3",
-      "document_id": "0625c3c0322a4a3d85759914168c80b3",
+      "id": "88dc7b1e11f84ebab7280d63bbe9ff10",
+      "document_id": "0fc1f1f7b7e34232999660e5bc6b263d",
       "document_name": "03-imf-india-2025-article-iv-excerpt.pdf",
       "page": 92,
       "bbox": [
@@ -2137,16 +2146,16 @@
       "steps": [
         "Same conservative entity key: india.",
         "Same normalized predicate: industrial sector growth.",
-        "6.2 percent \u2192 6.2 %; decimal arithmetic, no currency conversion.",
-        "4.3 percent \u2192 4.3 %; decimal arithmetic, no currency conversion.",
+        "6.2 per cent \u2192 6.2 %; decimal arithmetic, no currency conversion.",
+        "4.3 per cent \u2192 4.3 %; decimal arithmetic, no currency conversion.",
         "Claim qualifications: estimate versus reported.",
         "At least one claim is an estimate or forecast. Publication dates and revision history must be aligned before treating differences as contradictions."
       ],
       "confidence": 0.5,
       "caveat": "A relationship between documented claims; not an independent verification of truth.",
-      "id": "57102810f10b44699bd50d5098f76e82",
-      "left_id": "7cd40746883a402ba844499721b2ecc3",
-      "right_id": "772b828f2406441ea5dfff24728757b4"
+      "id": "e58d6bb780344041ad2e0eaa781b1f34",
+      "left_id": "8180ac93b25d4ff9878ca9a0f8f5a5b9",
+      "right_id": "2df04653b9db4df9b211248f63149db3"
     },
     {
       "kind": "uncertain",
@@ -2154,17 +2163,17 @@
       "steps": [
         "Same conservative entity key: india.",
         "Same normalized predicate: industrial sector growth.",
-        "6 percent \u2192 6 %; decimal arithmetic, no currency conversion.",
-        "4.3 percent \u2192 4.3 %; decimal arithmetic, no currency conversion.",
+        "6 per cent \u2192 6 %; decimal arithmetic, no currency conversion.",
+        "4.3 per cent \u2192 4.3 %; decimal arithmetic, no currency conversion.",
         "Period: H1FY25 \u2194 2024/25.",
         "Scope: unspecified \u2194 unspecified.",
         "The periods have different granularity and may overlap; a quarter or month cannot be equated with an annual measure."
       ],
       "confidence": 0.45,
       "caveat": "A relationship between documented claims; not an independent verification of truth.",
-      "id": "641584b10e6141499a928124e81ce6e3",
-      "left_id": "2fc8c564779f428ea48084ed9dde04e1",
-      "right_id": "772b828f2406441ea5dfff24728757b4"
+      "id": "bd5f208855944e939efdf4f4589e5973",
+      "left_id": "c72361301fd14267a4b61317b8051b86",
+      "right_id": "2df04653b9db4df9b211248f63149db3"
     },
     {
       "kind": "uncertain",
@@ -2172,16 +2181,16 @@
       "steps": [
         "Same conservative entity key: india.",
         "Same normalized predicate: real gdp growth.",
-        "6.4 percent \u2192 6.4 %; decimal arithmetic, no currency conversion.",
-        "6.5 percent \u2192 6.5 %; decimal arithmetic, no currency conversion.",
+        "6.4 per cent \u2192 6.4 %; decimal arithmetic, no currency conversion.",
+        "6.5 per cent \u2192 6.5 %; decimal arithmetic, no currency conversion.",
         "Claim qualifications: estimate versus reported.",
         "At least one claim is an estimate or forecast. Publication dates and revision history must be aligned before treating differences as contradictions."
       ],
       "confidence": 0.5,
       "caveat": "A relationship between documented claims; not an independent verification of truth.",
-      "id": "e020f85afd6449b887491768dd01b97f",
-      "left_id": "c015bcc6719b4de4b0062e21cc4ffa12",
-      "right_id": "07dc55a2168a4d9a849335a3c379fcc5"
+      "id": "2b5b9f0944cf402a976a745b0e3d540d",
+      "left_id": "fbf86b7fbb8d447c8b0fc42d6fd2c01f",
+      "right_id": "6aea1ffbfdee41139aac8115c7ad5b81"
     },
     {
       "kind": "uncertain",
@@ -2189,16 +2198,16 @@
       "steps": [
         "Same conservative entity key: india.",
         "Same normalized predicate: real gdp growth.",
-        "6.4 percent \u2192 6.4 %; decimal arithmetic, no currency conversion.",
-        "6.5 percent \u2192 6.5 %; decimal arithmetic, no currency conversion.",
+        "6.4 per cent \u2192 6.4 %; decimal arithmetic, no currency conversion.",
+        "6.5 per cent \u2192 6.5 %; decimal arithmetic, no currency conversion.",
         "Claim qualifications: estimate versus reported.",
         "At least one claim is an estimate or forecast. Publication dates and revision history must be aligned before treating differences as contradictions."
       ],
       "confidence": 0.5,
       "caveat": "A relationship between documented claims; not an independent verification of truth.",
-      "id": "9ea1b4e19aba46a4a5238c4c4087299e",
-      "left_id": "7f93a8ec76b247958dc21266a2a1209f",
-      "right_id": "07dc55a2168a4d9a849335a3c379fcc5"
+      "id": "86ce80c0b16844e2a9a80a37e3ccd600",
+      "left_id": "2959fb8a140843eb95a6270763bb2205",
+      "right_id": "6aea1ffbfdee41139aac8115c7ad5b81"
     },
     {
       "kind": "uncertain",
@@ -2206,17 +2215,17 @@
       "steps": [
         "Same conservative entity key: india.",
         "Same normalized predicate: real gdp growth.",
-        "6.0 percent \u2192 6 %; decimal arithmetic, no currency conversion.",
-        "6.5 percent \u2192 6.5 %; decimal arithmetic, no currency conversion.",
+        "6.0 per cent \u2192 6 %; decimal arithmetic, no currency conversion.",
+        "6.5 per cent \u2192 6.5 %; decimal arithmetic, no currency conversion.",
         "Period: unspecified \u2194 2024/25.",
         "Scope: unspecified \u2194 unspecified.",
         "One source omits period; alignment cannot be established."
       ],
       "confidence": 0.45,
       "caveat": "A relationship between documented claims; not an independent verification of truth.",
-      "id": "2617e6982c384ad7b0bacff6e954b312",
-      "left_id": "f5b54e00a6b84371bafc8534281dbbfd",
-      "right_id": "07dc55a2168a4d9a849335a3c379fcc5"
+      "id": "8bc64d68c75341f4b537ffca018fd1e6",
+      "left_id": "64295dd30b694c49bf0171dc1c6bc28d",
+      "right_id": "6aea1ffbfdee41139aac8115c7ad5b81"
     },
     {
       "kind": "uncertain",
@@ -2224,17 +2233,17 @@
       "steps": [
         "Same conservative entity key: india.",
         "Same normalized predicate: merchandise imports growth.",
-        "5.2 percent \u2192 5.2 %; decimal arithmetic, no currency conversion.",
-        "6.2 percent \u2192 6.2 %; decimal arithmetic, no currency conversion.",
+        "5.2 per cent \u2192 5.2 %; decimal arithmetic, no currency conversion.",
+        "6.2 per cent \u2192 6.2 %; decimal arithmetic, no currency conversion.",
         "Period: APRIL/DECEMBER2024 \u2194 unspecified.",
         "Scope: unspecified \u2194 unspecified.",
         "One source omits period; alignment cannot be established."
       ],
       "confidence": 0.45,
       "caveat": "A relationship between documented claims; not an independent verification of truth.",
-      "id": "46c1aa266726438db3fbf828fbbdfa55",
-      "left_id": "a65f00f68e7a46e08db25d5aeb68e336",
-      "right_id": "1bff2e519c4641e1a3901ca1f6628621"
+      "id": "302a29e6090a46eb82c363ac140e2884",
+      "left_id": "ca9fa6ca39834b489065666bf0c91e58",
+      "right_id": "b3e5496e3c5548fcad3229229d38c91a"
     },
     {
       "kind": "uncertain",
@@ -2242,16 +2251,16 @@
       "steps": [
         "Same conservative entity key: india.",
         "Same normalized predicate: real gdp growth.",
-        "6.4 percent \u2192 6.4 %; decimal arithmetic, no currency conversion.",
-        "6.5 percent \u2192 6.5 %; decimal arithmetic, no currency conversion.",
+        "6.4 per cent \u2192 6.4 %; decimal arithmetic, no currency conversion.",
+        "6.5 per cent \u2192 6.5 %; decimal arithmetic, no currency conversion.",
         "Claim qualifications: estimate versus reported.",
         "At least one claim is an estimate or forecast. Publication dates and revision history must be aligned before treating differences as contradictions."
       ],
       "confidence": 0.5,
       "caveat": "A relationship between documented claims; not an independent verification of truth.",
-      "id": "11a5447704a447ac98cdfcd6e33dfa6c",
-      "left_id": "c015bcc6719b4de4b0062e21cc4ffa12",
-      "right_id": "e12ae088a06648c58572aa9a4bd336bf"
+      "id": "a9214352cd7a47b9bb8d1769f0ff8094",
+      "left_id": "fbf86b7fbb8d447c8b0fc42d6fd2c01f",
+      "right_id": "a7dc83e04edb4da8a796a72c0537c731"
     },
     {
       "kind": "uncertain",
@@ -2259,16 +2268,16 @@
       "steps": [
         "Same conservative entity key: india.",
         "Same normalized predicate: real gdp growth.",
-        "6.4 percent \u2192 6.4 %; decimal arithmetic, no currency conversion.",
-        "6.5 percent \u2192 6.5 %; decimal arithmetic, no currency conversion.",
+        "6.4 per cent \u2192 6.4 %; decimal arithmetic, no currency conversion.",
+        "6.5 per cent \u2192 6.5 %; decimal arithmetic, no currency conversion.",
         "Claim qualifications: estimate versus reported.",
         "At least one claim is an estimate or forecast. Publication dates and revision history must be aligned before treating differences as contradictions."
       ],
       "confidence": 0.5,
       "caveat": "A relationship between documented claims; not an independent verification of truth.",
-      "id": "2969ac38d00f427cbf2a55346dc973d8",
-      "left_id": "7f93a8ec76b247958dc21266a2a1209f",
-      "right_id": "e12ae088a06648c58572aa9a4bd336bf"
+      "id": "94be9b047eba4b71b38e6ba2a7052935",
+      "left_id": "2959fb8a140843eb95a6270763bb2205",
+      "right_id": "a7dc83e04edb4da8a796a72c0537c731"
     },
     {
       "kind": "uncertain",
@@ -2276,17 +2285,17 @@
       "steps": [
         "Same conservative entity key: india.",
         "Same normalized predicate: real gdp growth.",
-        "6.0 percent \u2192 6 %; decimal arithmetic, no currency conversion.",
-        "6.5 percent \u2192 6.5 %; decimal arithmetic, no currency conversion.",
+        "6.0 per cent \u2192 6 %; decimal arithmetic, no currency conversion.",
+        "6.5 per cent \u2192 6.5 %; decimal arithmetic, no currency conversion.",
         "Period: unspecified \u2194 2024/25.",
         "Scope: unspecified \u2194 unspecified.",
         "One source omits period; alignment cannot be established."
       ],
       "confidence": 0.45,
       "caveat": "A relationship between documented claims; not an independent verification of truth.",
-      "id": "7020a3b7d317440e9d2dafcddae74e1b",
-      "left_id": "f5b54e00a6b84371bafc8534281dbbfd",
-      "right_id": "e12ae088a06648c58572aa9a4bd336bf"
+      "id": "285a9e18ac9b4b66ad416e3d4cf7891e",
+      "left_id": "64295dd30b694c49bf0171dc1c6bc28d",
+      "right_id": "a7dc83e04edb4da8a796a72c0537c731"
     },
     {
       "kind": "uncertain",
@@ -2294,17 +2303,17 @@
       "steps": [
         "Same conservative entity key: india.",
         "Same normalized predicate: merchandise imports growth.",
-        "5.2 percent \u2192 5.2 %; decimal arithmetic, no currency conversion.",
-        "6.2 percent \u2192 6.2 %; decimal arithmetic, no currency conversion.",
+        "5.2 per cent \u2192 5.2 %; decimal arithmetic, no currency conversion.",
+        "6.2 per cent \u2192 6.2 %; decimal arithmetic, no currency conversion.",
         "Period: APRIL/DECEMBER2024 \u2194 2024/25.",
         "Scope: unspecified \u2194 unspecified.",
         "The periods have different granularity and may overlap; a quarter or month cannot be equated with an annual measure."
       ],
       "confidence": 0.45,
       "caveat": "A relationship between documented claims; not an independent verification of truth.",
-      "id": "e02af6eb5a294c7d83ea20e27d820e60",
-      "left_id": "a65f00f68e7a46e08db25d5aeb68e336",
-      "right_id": "5b540fcf397e46d98eedfeed643b4f5b"
+      "id": "12485dde65f9462ba99064579491842f",
+      "left_id": "ca9fa6ca39834b489065666bf0c91e58",
+      "right_id": "89b3d4c0830048338f261c74f89ce430"
     },
     {
       "kind": "uncertain",
@@ -2312,16 +2321,16 @@
       "steps": [
         "Same conservative entity key: india.",
         "Same normalized predicate: real gdp growth.",
-        "6.4 percent \u2192 6.4 %; decimal arithmetic, no currency conversion.",
+        "6.4 per cent \u2192 6.4 %; decimal arithmetic, no currency conversion.",
         "7.8 percent \u2192 7.8 %; decimal arithmetic, no currency conversion.",
         "Claim qualifications: estimate versus reported.",
         "At least one claim is an estimate or forecast. Publication dates and revision history must be aligned before treating differences as contradictions."
       ],
       "confidence": 0.5,
       "caveat": "A relationship between documented claims; not an independent verification of truth.",
-      "id": "67bc9d48910845bc925a88ec75c671ea",
-      "left_id": "c015bcc6719b4de4b0062e21cc4ffa12",
-      "right_id": "98e12bea27de4bb59122d95fed961a00"
+      "id": "bb88b6752fb04f5d8786a19deac43566",
+      "left_id": "fbf86b7fbb8d447c8b0fc42d6fd2c01f",
+      "right_id": "70592ef416d84acc888b9fc388f67d93"
     },
     {
       "kind": "uncertain",
@@ -2329,16 +2338,16 @@
       "steps": [
         "Same conservative entity key: india.",
         "Same normalized predicate: real gdp growth.",
-        "6.4 percent \u2192 6.4 %; decimal arithmetic, no currency conversion.",
+        "6.4 per cent \u2192 6.4 %; decimal arithmetic, no currency conversion.",
         "7.8 percent \u2192 7.8 %; decimal arithmetic, no currency conversion.",
         "Claim qualifications: estimate versus reported.",
         "At least one claim is an estimate or forecast. Publication dates and revision history must be aligned before treating differences as contradictions."
       ],
       "confidence": 0.5,
       "caveat": "A relationship between documented claims; not an independent verification of truth.",
-      "id": "0755c5b50f8a4d85b261ee28cb9b77a5",
-      "left_id": "7f93a8ec76b247958dc21266a2a1209f",
-      "right_id": "98e12bea27de4bb59122d95fed961a00"
+      "id": "135af07e454440dfae0b64bfc6985eca",
+      "left_id": "2959fb8a140843eb95a6270763bb2205",
+      "right_id": "70592ef416d84acc888b9fc388f67d93"
     },
     {
       "kind": "uncertain",
@@ -2346,7 +2355,7 @@
       "steps": [
         "Same conservative entity key: india.",
         "Same normalized predicate: real gdp growth.",
-        "6.0 percent \u2192 6 %; decimal arithmetic, no currency conversion.",
+        "6.0 per cent \u2192 6 %; decimal arithmetic, no currency conversion.",
         "7.8 percent \u2192 7.8 %; decimal arithmetic, no currency conversion.",
         "Period: unspecified \u2194 THEFIRSTQUARTEROFFY2025/26.",
         "Scope: unspecified \u2194 unspecified.",
@@ -2354,9 +2363,9 @@
       ],
       "confidence": 0.45,
       "caveat": "A relationship between documented claims; not an independent verification of truth.",
-      "id": "9d6eb0fe192441c0b73fbbd5ec9554a4",
-      "left_id": "f5b54e00a6b84371bafc8534281dbbfd",
-      "right_id": "98e12bea27de4bb59122d95fed961a00"
+      "id": "bba7b49f223a4938a504563c16045a19",
+      "left_id": "64295dd30b694c49bf0171dc1c6bc28d",
+      "right_id": "70592ef416d84acc888b9fc388f67d93"
     },
     {
       "kind": "uncertain",
@@ -2364,7 +2373,7 @@
       "steps": [
         "Same conservative entity key: india.",
         "Same normalized predicate: real gdp growth.",
-        "6.5 percent \u2192 6.5 %; decimal arithmetic, no currency conversion.",
+        "6.5 per cent \u2192 6.5 %; decimal arithmetic, no currency conversion.",
         "7.8 percent \u2192 7.8 %; decimal arithmetic, no currency conversion.",
         "Period: 2024/25 \u2194 THEFIRSTQUARTEROFFY2025/26.",
         "Scope: unspecified \u2194 unspecified.",
@@ -2372,9 +2381,9 @@
       ],
       "confidence": 0.45,
       "caveat": "A relationship between documented claims; not an independent verification of truth.",
-      "id": "36d72340e1e545a495a9f5ac47b67321",
-      "left_id": "07dc55a2168a4d9a849335a3c379fcc5",
-      "right_id": "98e12bea27de4bb59122d95fed961a00"
+      "id": "5079688ab6a9464db6d2ce7fd9a7171a",
+      "left_id": "6aea1ffbfdee41139aac8115c7ad5b81",
+      "right_id": "70592ef416d84acc888b9fc388f67d93"
     },
     {
       "kind": "uncertain",
@@ -2382,7 +2391,7 @@
       "steps": [
         "Same conservative entity key: india.",
         "Same normalized predicate: real gdp growth.",
-        "6.5 percent \u2192 6.5 %; decimal arithmetic, no currency conversion.",
+        "6.5 per cent \u2192 6.5 %; decimal arithmetic, no currency conversion.",
         "7.8 percent \u2192 7.8 %; decimal arithmetic, no currency conversion.",
         "Period: 2024/25 \u2194 THEFIRSTQUARTEROFFY2025/26.",
         "Scope: unspecified \u2194 unspecified.",
@@ -2390,9 +2399,9 @@
       ],
       "confidence": 0.45,
       "caveat": "A relationship between documented claims; not an independent verification of truth.",
-      "id": "fbff9c8f84e94938aaf1499463e2e36b",
-      "left_id": "e12ae088a06648c58572aa9a4bd336bf",
-      "right_id": "98e12bea27de4bb59122d95fed961a00"
+      "id": "ad9c051cdba844778fcab130efd4bb98",
+      "left_id": "a7dc83e04edb4da8a796a72c0537c731",
+      "right_id": "70592ef416d84acc888b9fc388f67d93"
     },
     {
       "kind": "uncertain",
@@ -2400,16 +2409,16 @@
       "steps": [
         "Same conservative entity key: india.",
         "Same normalized predicate: real gdp growth.",
-        "6.4 percent \u2192 6.4 %; decimal arithmetic, no currency conversion.",
+        "6.4 per cent \u2192 6.4 %; decimal arithmetic, no currency conversion.",
         "6.6 percent \u2192 6.6 %; decimal arithmetic, no currency conversion.",
         "Claim qualifications: estimate versus forecast.",
         "At least one claim is an estimate or forecast. Publication dates and revision history must be aligned before treating differences as contradictions."
       ],
       "confidence": 0.5,
       "caveat": "A relationship between documented claims; not an independent verification of truth.",
-      "id": "764984a4d11b496a810e5755f5d24af3",
-      "left_id": "c015bcc6719b4de4b0062e21cc4ffa12",
-      "right_id": "7ce85f6d865a402db825a264e9844605"
+      "id": "88de19368da34854a95934dd5146a00a",
+      "left_id": "fbf86b7fbb8d447c8b0fc42d6fd2c01f",
+      "right_id": "da2b2cecf8964e13afb61a2d728ff804"
     },
     {
       "kind": "uncertain",
@@ -2417,16 +2426,16 @@
       "steps": [
         "Same conservative entity key: india.",
         "Same normalized predicate: real gdp growth.",
-        "6.4 percent \u2192 6.4 %; decimal arithmetic, no currency conversion.",
+        "6.4 per cent \u2192 6.4 %; decimal arithmetic, no currency conversion.",
         "6.6 percent \u2192 6.6 %; decimal arithmetic, no currency conversion.",
         "Claim qualifications: estimate versus forecast.",
         "At least one claim is an estimate or forecast. Publication dates and revision history must be aligned before treating differences as contradictions."
       ],
       "confidence": 0.5,
       "caveat": "A relationship between documented claims; not an independent verification of truth.",
-      "id": "12c8f1164ee3418eb2d61d66fc8551af",
-      "left_id": "7f93a8ec76b247958dc21266a2a1209f",
-      "right_id": "7ce85f6d865a402db825a264e9844605"
+      "id": "01eb57078abb40d1911b5c19233ecce4",
+      "left_id": "2959fb8a140843eb95a6270763bb2205",
+      "right_id": "da2b2cecf8964e13afb61a2d728ff804"
     },
     {
       "kind": "uncertain",
@@ -2434,16 +2443,16 @@
       "steps": [
         "Same conservative entity key: india.",
         "Same normalized predicate: real gdp growth.",
-        "6.0 percent \u2192 6 %; decimal arithmetic, no currency conversion.",
+        "6.0 per cent \u2192 6 %; decimal arithmetic, no currency conversion.",
         "6.6 percent \u2192 6.6 %; decimal arithmetic, no currency conversion.",
         "Claim qualifications: reported versus forecast.",
         "At least one claim is an estimate or forecast. Publication dates and revision history must be aligned before treating differences as contradictions."
       ],
       "confidence": 0.5,
       "caveat": "A relationship between documented claims; not an independent verification of truth.",
-      "id": "9c00c0f4379d49fc8b0fe0e61400ea64",
-      "left_id": "f5b54e00a6b84371bafc8534281dbbfd",
-      "right_id": "7ce85f6d865a402db825a264e9844605"
+      "id": "029546ac70ec4678ad22670f28c44e3e",
+      "left_id": "64295dd30b694c49bf0171dc1c6bc28d",
+      "right_id": "da2b2cecf8964e13afb61a2d728ff804"
     },
     {
       "kind": "uncertain",
@@ -2451,16 +2460,16 @@
       "steps": [
         "Same conservative entity key: india.",
         "Same normalized predicate: real gdp growth.",
-        "6.5 percent \u2192 6.5 %; decimal arithmetic, no currency conversion.",
+        "6.5 per cent \u2192 6.5 %; decimal arithmetic, no currency conversion.",
         "6.6 percent \u2192 6.6 %; decimal arithmetic, no currency conversion.",
         "Claim qualifications: reported versus forecast.",
         "At least one claim is an estimate or forecast. Publication dates and revision history must be aligned before treating differences as contradictions."
       ],
       "confidence": 0.5,
       "caveat": "A relationship between documented claims; not an independent verification of truth.",
-      "id": "fb74e1f2784e4e90bf1a5a7ca658acb3",
-      "left_id": "07dc55a2168a4d9a849335a3c379fcc5",
-      "right_id": "7ce85f6d865a402db825a264e9844605"
+      "id": "a0b91aac034d429da6c9d54d6bb2c4c1",
+      "left_id": "6aea1ffbfdee41139aac8115c7ad5b81",
+      "right_id": "da2b2cecf8964e13afb61a2d728ff804"
     },
     {
       "kind": "uncertain",
@@ -2468,16 +2477,16 @@
       "steps": [
         "Same conservative entity key: india.",
         "Same normalized predicate: real gdp growth.",
-        "6.5 percent \u2192 6.5 %; decimal arithmetic, no currency conversion.",
+        "6.5 per cent \u2192 6.5 %; decimal arithmetic, no currency conversion.",
         "6.6 percent \u2192 6.6 %; decimal arithmetic, no currency conversion.",
         "Claim qualifications: reported versus forecast.",
         "At least one claim is an estimate or forecast. Publication dates and revision history must be aligned before treating differences as contradictions."
       ],
       "confidence": 0.5,
       "caveat": "A relationship between documented claims; not an independent verification of truth.",
-      "id": "f13ad75fd6cd43ceae2fd0ff4d656661",
-      "left_id": "e12ae088a06648c58572aa9a4bd336bf",
-      "right_id": "7ce85f6d865a402db825a264e9844605"
+      "id": "52cb6cacb059403ba5981d4e167414f1",
+      "left_id": "a7dc83e04edb4da8a796a72c0537c731",
+      "right_id": "da2b2cecf8964e13afb61a2d728ff804"
     },
     {
       "kind": "uncertain",
@@ -2485,16 +2494,16 @@
       "steps": [
         "Same conservative entity key: india.",
         "Same normalized predicate: real gdp growth.",
-        "6.4 percent \u2192 6.4 %; decimal arithmetic, no currency conversion.",
+        "6.4 per cent \u2192 6.4 %; decimal arithmetic, no currency conversion.",
         "6.5 percent \u2192 6.5 %; decimal arithmetic, no currency conversion.",
         "Claim qualifications: estimate versus reported.",
         "At least one claim is an estimate or forecast. Publication dates and revision history must be aligned before treating differences as contradictions."
       ],
       "confidence": 0.5,
       "caveat": "A relationship between documented claims; not an independent verification of truth.",
-      "id": "3cd12d220b4d4af7a6fa5d7514690f1b",
-      "left_id": "c015bcc6719b4de4b0062e21cc4ffa12",
-      "right_id": "3e828420e93e4d139c1f7785aed01a04"
+      "id": "bdc5f354b1c447c39c1ac51abf4a26a6",
+      "left_id": "fbf86b7fbb8d447c8b0fc42d6fd2c01f",
+      "right_id": "c7d71766663a4c95980fd53a9ae2dc92"
     },
     {
       "kind": "uncertain",
@@ -2502,16 +2511,16 @@
       "steps": [
         "Same conservative entity key: india.",
         "Same normalized predicate: real gdp growth.",
-        "6.4 percent \u2192 6.4 %; decimal arithmetic, no currency conversion.",
+        "6.4 per cent \u2192 6.4 %; decimal arithmetic, no currency conversion.",
         "6.5 percent \u2192 6.5 %; decimal arithmetic, no currency conversion.",
         "Claim qualifications: estimate versus reported.",
         "At least one claim is an estimate or forecast. Publication dates and revision history must be aligned before treating differences as contradictions."
       ],
       "confidence": 0.5,
       "caveat": "A relationship between documented claims; not an independent verification of truth.",
-      "id": "ed8d0d22b40a41afb454e831778f6225",
-      "left_id": "7f93a8ec76b247958dc21266a2a1209f",
-      "right_id": "3e828420e93e4d139c1f7785aed01a04"
+      "id": "93718e9de2c2400b85fbe3924b8a57c8",
+      "left_id": "2959fb8a140843eb95a6270763bb2205",
+      "right_id": "c7d71766663a4c95980fd53a9ae2dc92"
     },
     {
       "kind": "uncertain",
@@ -2519,7 +2528,7 @@
       "steps": [
         "Same conservative entity key: india.",
         "Same normalized predicate: real gdp growth.",
-        "6.0 percent \u2192 6 %; decimal arithmetic, no currency conversion.",
+        "6.0 per cent \u2192 6 %; decimal arithmetic, no currency conversion.",
         "6.5 percent \u2192 6.5 %; decimal arithmetic, no currency conversion.",
         "Period: unspecified \u2194 FY2024/25.",
         "Scope: unspecified \u2194 unspecified.",
@@ -2527,9 +2536,9 @@
       ],
       "confidence": 0.45,
       "caveat": "A relationship between documented claims; not an independent verification of truth.",
-      "id": "40a3cc1f08a34c7891fa0a6312663e80",
-      "left_id": "f5b54e00a6b84371bafc8534281dbbfd",
-      "right_id": "3e828420e93e4d139c1f7785aed01a04"
+      "id": "251e473edc5d43f78501f62be42af015",
+      "left_id": "64295dd30b694c49bf0171dc1c6bc28d",
+      "right_id": "c7d71766663a4c95980fd53a9ae2dc92"
     },
     {
       "kind": "uncertain",
@@ -2537,7 +2546,7 @@
       "steps": [
         "Same conservative entity key: india.",
         "Same normalized predicate: real gdp growth.",
-        "6.5 percent \u2192 6.5 %; decimal arithmetic, no currency conversion.",
+        "6.5 per cent \u2192 6.5 %; decimal arithmetic, no currency conversion.",
         "6.5 percent \u2192 6.5 %; decimal arithmetic, no currency conversion.",
         "Period: 2024/25 \u2194 FY2024/25.",
         "Scope: unspecified \u2194 unspecified.",
@@ -2545,9 +2554,9 @@
       ],
       "confidence": 0.45,
       "caveat": "A relationship between documented claims; not an independent verification of truth.",
-      "id": "fe8aca061453497e8c350d7bdf8d7168",
-      "left_id": "07dc55a2168a4d9a849335a3c379fcc5",
-      "right_id": "3e828420e93e4d139c1f7785aed01a04"
+      "id": "f6a074644d4b459b95b7db1c6337c18e",
+      "left_id": "6aea1ffbfdee41139aac8115c7ad5b81",
+      "right_id": "c7d71766663a4c95980fd53a9ae2dc92"
     },
     {
       "kind": "uncertain",
@@ -2555,7 +2564,7 @@
       "steps": [
         "Same conservative entity key: india.",
         "Same normalized predicate: real gdp growth.",
-        "6.5 percent \u2192 6.5 %; decimal arithmetic, no currency conversion.",
+        "6.5 per cent \u2192 6.5 %; decimal arithmetic, no currency conversion.",
         "6.5 percent \u2192 6.5 %; decimal arithmetic, no currency conversion.",
         "Period: 2024/25 \u2194 FY2024/25.",
         "Scope: unspecified \u2194 unspecified.",
@@ -2563,9 +2572,9 @@
       ],
       "confidence": 0.45,
       "caveat": "A relationship between documented claims; not an independent verification of truth.",
-      "id": "948465833f794011a2dcc0dc425416bb",
-      "left_id": "e12ae088a06648c58572aa9a4bd336bf",
-      "right_id": "3e828420e93e4d139c1f7785aed01a04"
+      "id": "374468998eac4048ac7892906e11aa76",
+      "left_id": "a7dc83e04edb4da8a796a72c0537c731",
+      "right_id": "c7d71766663a4c95980fd53a9ae2dc92"
     },
     {
       "kind": "uncertain",
@@ -2573,16 +2582,16 @@
       "steps": [
         "Same conservative entity key: india.",
         "Same normalized predicate: real gdp growth.",
-        "6.4 percent \u2192 6.4 %; decimal arithmetic, no currency conversion.",
+        "6.4 per cent \u2192 6.4 %; decimal arithmetic, no currency conversion.",
         "7.8 percent \u2192 7.8 %; decimal arithmetic, no currency conversion.",
         "Claim qualifications: estimate versus reported.",
         "At least one claim is an estimate or forecast. Publication dates and revision history must be aligned before treating differences as contradictions."
       ],
       "confidence": 0.5,
       "caveat": "A relationship between documented claims; not an independent verification of truth.",
-      "id": "4de912e266134ea68dc6fd8f5574f2d0",
-      "left_id": "c015bcc6719b4de4b0062e21cc4ffa12",
-      "right_id": "766a4c0ee89444e7afee8a73245cebb4"
+      "id": "f9f98a5f565741679baad5cf2a78be11",
+      "left_id": "fbf86b7fbb8d447c8b0fc42d6fd2c01f",
+      "right_id": "f099e01d928e453da1ba2b448a03e752"
     },
     {
       "kind": "uncertain",
@@ -2590,16 +2599,16 @@
       "steps": [
         "Same conservative entity key: india.",
         "Same normalized predicate: real gdp growth.",
-        "6.4 percent \u2192 6.4 %; decimal arithmetic, no currency conversion.",
+        "6.4 per cent \u2192 6.4 %; decimal arithmetic, no currency conversion.",
         "7.8 percent \u2192 7.8 %; decimal arithmetic, no currency conversion.",
         "Claim qualifications: estimate versus reported.",
         "At least one claim is an estimate or forecast. Publication dates and revision history must be aligned before treating differences as contradictions."
       ],
       "confidence": 0.5,
       "caveat": "A relationship between documented claims; not an independent verification of truth.",
-      "id": "4323843e5d854ecf9bc9fbd984e4aea9",
-      "left_id": "7f93a8ec76b247958dc21266a2a1209f",
-      "right_id": "766a4c0ee89444e7afee8a73245cebb4"
+      "id": "44cc4bce26e4405bb081c6fcce23307e",
+      "left_id": "2959fb8a140843eb95a6270763bb2205",
+      "right_id": "f099e01d928e453da1ba2b448a03e752"
     },
     {
       "kind": "uncertain",
@@ -2607,7 +2616,7 @@
       "steps": [
         "Same conservative entity key: india.",
         "Same normalized predicate: real gdp growth.",
-        "6.0 percent \u2192 6 %; decimal arithmetic, no currency conversion.",
+        "6.0 per cent \u2192 6 %; decimal arithmetic, no currency conversion.",
         "7.8 percent \u2192 7.8 %; decimal arithmetic, no currency conversion.",
         "Period: unspecified \u2194 2025Q2.",
         "Scope: unspecified \u2194 unspecified.",
@@ -2615,9 +2624,9 @@
       ],
       "confidence": 0.45,
       "caveat": "A relationship between documented claims; not an independent verification of truth.",
-      "id": "9c255c15e91c4640854c5eac9a9dd7f3",
-      "left_id": "f5b54e00a6b84371bafc8534281dbbfd",
-      "right_id": "766a4c0ee89444e7afee8a73245cebb4"
+      "id": "3a548d8f568249038c1ec6bfdb1a575c",
+      "left_id": "64295dd30b694c49bf0171dc1c6bc28d",
+      "right_id": "f099e01d928e453da1ba2b448a03e752"
     },
     {
       "kind": "uncertain",
@@ -2625,7 +2634,7 @@
       "steps": [
         "Same conservative entity key: india.",
         "Same normalized predicate: real gdp growth.",
-        "6.5 percent \u2192 6.5 %; decimal arithmetic, no currency conversion.",
+        "6.5 per cent \u2192 6.5 %; decimal arithmetic, no currency conversion.",
         "7.8 percent \u2192 7.8 %; decimal arithmetic, no currency conversion.",
         "Period: 2024/25 \u2194 2025Q2.",
         "Scope: unspecified \u2194 unspecified.",
@@ -2633,9 +2642,9 @@
       ],
       "confidence": 0.45,
       "caveat": "A relationship between documented claims; not an independent verification of truth.",
-      "id": "f72607845a1541f6a29186b4f846b730",
-      "left_id": "07dc55a2168a4d9a849335a3c379fcc5",
-      "right_id": "766a4c0ee89444e7afee8a73245cebb4"
+      "id": "0460aedfff0e4292903875a3ef9aa6f3",
+      "left_id": "6aea1ffbfdee41139aac8115c7ad5b81",
+      "right_id": "f099e01d928e453da1ba2b448a03e752"
     },
     {
       "kind": "uncertain",
@@ -2643,7 +2652,7 @@
       "steps": [
         "Same conservative entity key: india.",
         "Same normalized predicate: real gdp growth.",
-        "6.5 percent \u2192 6.5 %; decimal arithmetic, no currency conversion.",
+        "6.5 per cent \u2192 6.5 %; decimal arithmetic, no currency conversion.",
         "7.8 percent \u2192 7.8 %; decimal arithmetic, no currency conversion.",
         "Period: 2024/25 \u2194 2025Q2.",
         "Scope: unspecified \u2194 unspecified.",
@@ -2651,9 +2660,41 @@
       ],
       "confidence": 0.45,
       "caveat": "A relationship between documented claims; not an independent verification of truth.",
-      "id": "ed061dd21a2c4e378bc41d20552e7909",
-      "left_id": "e12ae088a06648c58572aa9a4bd336bf",
-      "right_id": "766a4c0ee89444e7afee8a73245cebb4"
+      "id": "51c1f2924d90455c9a2328972883bda4",
+      "left_id": "a7dc83e04edb4da8a796a72c0537c731",
+      "right_id": "f099e01d928e453da1ba2b448a03e752"
+    }
+  ],
+  "document_connections": [
+    {
+      "document_ids": [
+        "4233a03d64d54a12ae02c77eac7fe878",
+        "d2fc837e185b4feea7e842cfcb904081"
+      ],
+      "count": 10,
+      "kinds": {
+        "uncertain": 10
+      }
+    },
+    {
+      "document_ids": [
+        "0fc1f1f7b7e34232999660e5bc6b263d",
+        "d2fc837e185b4feea7e842cfcb904081"
+      ],
+      "count": 12,
+      "kinds": {
+        "uncertain": 12
+      }
+    },
+    {
+      "document_ids": [
+        "0fc1f1f7b7e34232999660e5bc6b263d",
+        "4233a03d64d54a12ae02c77eac7fe878"
+      ],
+      "count": 8,
+      "kinds": {
+        "uncertain": 8
+      }
     }
   ],
   "issues": [
@@ -2667,8 +2708,8 @@
         503.32098388671875,
         260.0825500488281
       ],
-      "id": "f02807c07de64f6280770b1b89b319a2",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "fa4c363c76dc4490abe671ec216a82bf",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 1
     },
@@ -2682,8 +2723,8 @@
         244.4608917236328,
         276.0525207519531
       ],
-      "id": "900a427f47c04c70821fdebffecef438",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "0961af4a184141d587d1178bd16f88bc",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 1
     },
@@ -2697,8 +2738,8 @@
         498.5309753417969,
         323.9625244140625
       ],
-      "id": "3e6b611058c74522a0ef2fc4b369e2c9",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "76fdcda4522643ca83dbb9bb5a52d155",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 1
     },
@@ -2712,8 +2753,8 @@
         305.01092529296875,
         339.9325256347656
       ],
-      "id": "48892d5a2d2541c1b85de2c16d4ca0ef",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "ef9b028cae7c4d2794a20dbae9ae1599",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 1
     },
@@ -2727,8 +2768,8 @@
         494.6009216308594,
         383.8725280761719
       ],
-      "id": "436f49bf5dd0439abee87979868d9195",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "8a10bf55066640928baac01c1e834877",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 1
     },
@@ -2742,8 +2783,8 @@
         378.3110046386719,
         455.4224853515625
       ],
-      "id": "a9a9254ce2f04306b89a5209c2b19402",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "00e92a4466a94c6b83dd34be0a76e897",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 1
     },
@@ -2757,8 +2798,8 @@
         411.700927734375,
         567.58251953125
       ],
-      "id": "cfd2df9e584f4100966b5327bced395c",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "5d26888280b046559aec2a8fef223e9a",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 1
     },
@@ -2772,8 +2813,8 @@
         515.3409423828125,
         651.7025146484375
       ],
-      "id": "8f743aaee71b48cbbe565ea37cfb5870",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "52f934e961354654b08581f203165547",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 1
     },
@@ -2787,8 +2828,8 @@
         515.6799926757812,
         721.802490234375
       ],
-      "id": "77e1775045a94de3ad93193a61c8d537",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "a56f18cb02664cf7bf19f8e4d2e33b96",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 1
     },
@@ -2802,8 +2843,8 @@
         503.5209045410156,
         110.13455200195312
       ],
-      "id": "b5d706f9886e4c7687addbf245e9a095",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "b79745c75af8466791d251bf111a9b71",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 2
     },
@@ -2817,8 +2858,8 @@
         510.1509094238281,
         278.3747253417969
       ],
-      "id": "91e0089cbd564c60b7c28d822b005d34",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "bf6c9769d33745b4809630443e3b75f5",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 2
     },
@@ -2832,8 +2873,8 @@
         490.9009094238281,
         430.07464599609375
       ],
-      "id": "b262bc8aec66457f94f0fdd6d2a4cf04",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "3ed7677de18148a8af093f68b7fb2915",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 2
     },
@@ -2847,8 +2888,8 @@
         485.2526550292969,
         570.2744750976562
       ],
-      "id": "d99b49e8cff943d6b04a37aba8ac5540",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "f7d5c947d27c4269910d00c0613beb5b",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 2
     },
@@ -2862,8 +2903,8 @@
         517.260986328125,
         719.4544677734375
       ],
-      "id": "928697cd5e25417faa6a37d4bc24773e",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "bf7e543d658d4c798e04dffd98aaa601",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 2
     },
@@ -2877,8 +2918,8 @@
         516.5408935546875,
         279.3747863769531
       ],
-      "id": "d334bf38b52f485ea173e76c967ff55f",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "ce112a5fdb284babb88e9ea2bd443f28",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 3
     },
@@ -2892,8 +2933,8 @@
         473.74090576171875,
         389.0147399902344
       ],
-      "id": "37581ea700c34ae99ddd1ab491f39439",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "45ba1d5c30854644ad770b704abb7f09",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 3
     },
@@ -2907,8 +2948,8 @@
         490.3710021972656,
         510.1546936035156
       ],
-      "id": "214c2b123c874f8184aa21fa2f423358",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "0f0e8c50bb754e6a92bb4633b0b156d4",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 3
     },
@@ -2922,8 +2963,8 @@
         442.120849609375,
         650.354736328125
       ],
-      "id": "cc8bf3a3f1d04c3ca5691868199ba4e6",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "6100ae8fb0ad4bbb9b27bc74702e3aff",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 3
     },
@@ -2937,8 +2978,8 @@
         503.92193603515625,
         394.52685546875
       ],
-      "id": "79cbe04c52324c17bbad8225afd7c003",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "1ec816eadb9c44cbbf614155441fc9d3",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 4
     },
@@ -2952,8 +2993,8 @@
         503.92193603515625,
         394.52685546875
       ],
-      "id": "99176411e4dc47be92edb0eadbd5a5d2",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "5e75f176253c4eeeb1ede581c914a9a1",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 4
     },
@@ -2967,8 +3008,8 @@
         503.8992004394531,
         573.662841796875
       ],
-      "id": "003faf5189e94bc2acdeee1e252428e6",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "26c8e1218f554834b119bb6077e21591",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 4
     },
@@ -2982,8 +3023,8 @@
         503.8992004394531,
         573.662841796875
       ],
-      "id": "de3387d0f981419d84ab7762da98c686",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "7d29a77eaecf4add95a647ddc6867f80",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 4
     },
@@ -2997,8 +3038,8 @@
         503.91131591796875,
         737.2947998046875
       ],
-      "id": "a6ab11c5f67d4b7baeb083adf9148a2c",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "eaf88f5d48c1408daf98188b406d3e4a",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 4
     },
@@ -3012,8 +3053,8 @@
         180.8658905029297,
         49.15282440185547
       ],
-      "id": "86027ef06c2d4d4ea85ea371a052b0f1",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "b710b26ce3fc4a409f55f4538108e780",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 5
     },
@@ -3027,8 +3068,8 @@
         518.8871459960938,
         291.25640869140625
       ],
-      "id": "a3d2a517f7e3455792211e61ff6873dd",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "ee80395b64f44feeba0e809a39795fbf",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 5
     },
@@ -3042,8 +3083,8 @@
         518.8871459960938,
         291.25640869140625
       ],
-      "id": "17c0a19a4a2f42afbbbdb7c6ae4bbe6e",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "231a21ec464b4a289e993cb6cd1024c6",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 5
     },
@@ -3057,8 +3098,8 @@
         518.8871459960938,
         291.25640869140625
       ],
-      "id": "356a554d48c645d591a7044c595ec856",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "6b872f0df5ed4866b4239d677b33cbbb",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 5
     },
@@ -3072,8 +3113,8 @@
         518.8871459960938,
         291.25640869140625
       ],
-      "id": "9358638074c342428e1c270e2507c628",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "efd63f726a7c49b5a9d9ffa5d6a405a8",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 5
     },
@@ -3087,8 +3128,8 @@
         518.8944091796875,
         537.0562744140625
       ],
-      "id": "a9a19df8c9e947708c0636dfc57821e0",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "738aa29cb8a54e4ca7d6bd1e9ac5af87",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 5
     },
@@ -3102,8 +3143,8 @@
         518.8944091796875,
         537.0562744140625
       ],
-      "id": "3572430cc592489e9606c031ec2a762d",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "c9b91fb526dd48eca093a4f1796c84d9",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 5
     },
@@ -3117,8 +3158,8 @@
         518.8944091796875,
         537.0562744140625
       ],
-      "id": "2407a2b708ca4e98ae077c3378fc7711",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "1beb9c6111c9464ea5f4d74790469cd4",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 5
     },
@@ -3132,8 +3173,8 @@
         518.8910522460938,
         651.0562744140625
       ],
-      "id": "dd540afc9c7c4aea8870193516fd08b4",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "f9efe53137514413b867f91f53ef5c03",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 5
     },
@@ -3147,8 +3188,8 @@
         518.8910522460938,
         651.0562744140625
       ],
-      "id": "55b80ce2a7ca4a0a938e9f092d011979",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "fc1756984c134285bb8a50a1206ea91a",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 5
     },
@@ -3162,8 +3203,8 @@
         518.8910522460938,
         651.0562744140625
       ],
-      "id": "34e700ae622f47afa338baa080337aae",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "267e588bf1ac46da8cd72086cd74c31e",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 5
     },
@@ -3177,8 +3218,8 @@
         518.8910522460938,
         651.0562744140625
       ],
-      "id": "ddf815f3551042d78a9ab327d745312f",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "f81b6119d6f744f7b20dd0bd300dc374",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 5
     },
@@ -3192,8 +3233,8 @@
         394.302734375,
         709.6259155273438
       ],
-      "id": "ecea1fa40e5040c99c02abee5761b31e",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "ecb9cce19ca244438920598254fa10cc",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 5
     },
@@ -3207,8 +3248,8 @@
         394.302734375,
         709.6259155273438
       ],
-      "id": "7825ddd61608463f973868212eafc978",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "76d681423ba9491782844c9f577d8f17",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 5
     },
@@ -3222,8 +3263,8 @@
         518.1715698242188,
         734.7268676757812
       ],
-      "id": "a0532a4cdfbd455e95cae290c46689c9",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "45f0619369f7495db727928551642c46",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 5
     },
@@ -3237,8 +3278,8 @@
         518.1715698242188,
         734.7268676757812
       ],
-      "id": "72c16cd84b1c4b72976ee19005465799",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "08bd8521dd9847c7bcbb4a226ef54dab",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 5
     },
@@ -3252,8 +3293,8 @@
         274.9825439453125,
         86.18431854248047
       ],
-      "id": "d0a2872e0a0f40bb96f72e445a0e7436",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "e3b51af4627749c4b759fd280c257204",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 6
     },
@@ -3267,8 +3308,8 @@
         496.9845886230469,
         86.18431854248047
       ],
-      "id": "0d2df911f4834598833cc917dd05ee72",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "cb19e12c916a4db4bc61757ab4f28fae",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 6
     },
@@ -3282,8 +3323,8 @@
         220.16952514648438,
         99.18633270263672
       ],
-      "id": "3cfefce6f87e4e84b07620bc34661ea9",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "b4afb9b92f134f569c03cddd2b8eea0d",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 6
     },
@@ -3297,8 +3338,8 @@
         427.6005554199219,
         133.93194580078125
       ],
-      "id": "2ce31e5318d741bdb5d0bbed75cb709f",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "219cc50c92cb45fba47c11391bc224e0",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 6
     },
@@ -3312,8 +3353,8 @@
         272.3286437988281,
         170.09483337402344
       ],
-      "id": "c5b463c52510431e8f0937435705aa57",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "bca749b55715441d878f70e03dd75e10",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 6
     },
@@ -3327,8 +3368,8 @@
         509.29144287109375,
         327.0728759765625
       ],
-      "id": "b3516861da354b8d92dcb5ae7216ec28",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "57c9993672144187ae5a6c3fdc0b9959",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 6
     },
@@ -3342,8 +3383,8 @@
         264.8667907714844,
         320.67388916015625
       ],
-      "id": "e425c2c80adb4d18bcda58112e01ac93",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "29e4c6c99d554955b6764f4fe361419e",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 6
     },
@@ -3357,8 +3398,8 @@
         518.8826293945312,
         435.48297119140625
       ],
-      "id": "60df788f2b664d3d8b39e99b44c4c882",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "192654394229430099beca34341a3941",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 6
     },
@@ -3372,8 +3413,8 @@
         518.8826293945312,
         435.48297119140625
       ],
-      "id": "0117ea7899b948a4bcea8e8b5613533f",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "b770470404564481a50c9d6e93a3f1fc",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 6
     },
@@ -3387,8 +3428,8 @@
         518.8826293945312,
         435.48297119140625
       ],
-      "id": "024a78ef31244becbf65cd8690860ded",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "1372200ec3744bd78b8fbaa8635a4e0a",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 6
     },
@@ -3402,8 +3443,8 @@
         518.89892578125,
         593.9829711914062
       ],
-      "id": "3b3041e7e06044f8a5fc29060a48276f",
-      "document_id": "07a0e725ba864b449c52cb29be197d16",
+      "id": "88f7877ab68344bca7994ca901d8bb49",
+      "document_id": "d2fc837e185b4feea7e842cfcb904081",
       "document_name": "01-india-economic-survey-2024-25-excerpt.pdf",
       "page": 6
     }

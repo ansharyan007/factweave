@@ -956,3 +956,6 @@ button:disabled {
     flex-direction: column;
   }
 }
+
+#connection-summary { margin-bottom: 24px; }
+#connection-summary [data-pair] { display: block; width: 100%; margin: 8px 0; text-align: left; white-space: normal; overflow-wrap: anywhere; }

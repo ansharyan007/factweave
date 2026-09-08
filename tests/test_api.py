@@ -86,6 +86,34 @@ def test_reprocess_saved_pdf_rebuilds_facts_and_edges(client):
     assert client.post('/api/documents/missing/reprocess').status_code == 404
 
 
+@pytest.mark.parametrize('reverse', [False, True])
+def test_unseen_contextual_documents_connect_in_either_order(client, reverse):
+    contents = [
+        "Cedar Tools Pvt. Ltd. is a software company founded in 2018.\nThe company had 240 employees as of 31 March 2024.\nCedar reported revenue of Rs. 50 crore for the financial year ended 31 March 2024.",
+        "Cedar Tools increased its revenue to Rs. 70 crore in FY2025.\nFY2025 ended on 31 March 2025.\nEmployee strength increased to 280 people by March 2025.\nMira Shah resigned as Chief Executive Officer effective 30 June 2025.",
+        "The filing records 280 employees as of 31 March 2025.\nThe announcement followed the resignation of Mira Shah on 30 June 2025.",
+    ]
+    if reverse:
+        contents.reverse()
+    first = upload(client, pdf(contents[0]), 'unrelated-name-a.pdf')
+    initial = wait(client)
+    initial_ids = {f['id'] for f in initial['facts']}
+    assert initial['documents'][0]['connection_count'] == 0
+    for index, content in enumerate(contents[1:]):
+        upload(client, pdf(content), f'arbitrary-{index}.pdf')
+    data = wait(client)
+    assert initial_ids <= {f['id'] for f in data['facts']}
+    assert {'corroborates','reconciled','uncertain'} <= {r['kind'] for r in data['relationships']}
+    assert all(d['fact_count'] and d['connection_count'] for d in data['documents'])
+    assert sum(p['count'] for p in data['document_connections']) == len(data['relationships'])
+    for f in data['facts']:
+        assert f['quote'] in client.get(f"/api/documents/{f['document_id']}/pages/{f['page']}").json()['text']
+        for span in f.get('evidence_parts', []):
+            assert span['quote'] in client.get(f"/api/documents/{f['document_id']}/pages/{span['page']}").json()['text']
+    assert client.delete(f"/api/documents/{first['id']}").status_code == 200
+    assert not any(first['id'] in pair['document_ids'] for pair in client.get('/api/knowledge').json()['document_connections'])
+
+
 def test_rejects_invalid_and_locked_pdf(client):
     assert client.post('/api/documents', files={'file': ('bad.pdf', b'not a pdf')}).status_code == 400
     assert client.post('/api/documents', files={'file': ('bad.pdf', b'%PDF-corrupt')}).status_code == 422

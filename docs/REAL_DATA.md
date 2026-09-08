@@ -4,8 +4,8 @@ Both local starter datasets were evaluated through the same public PDF-upload AP
 
 | Dataset | PDFs / pages | Extracted claims | Relationships | Measured local evaluation time |
 | --- | --- | --- | --- | --- |
-| Delhivery | 3 / 227 | 212 | 1 corroboration, 1 reconciliation, 10 uncertain | approximately 13 seconds |
-| India macroeconomy | 3 / 284 | 31 | 30 uncertain | approximately 5 seconds |
+| Delhivery | 3 / 227 | 212 | 1 corroboration, 1 reconciliation, 10 uncertain | approximately 15 seconds |
+| India macroeconomy | 3 / 284 | 31 | 30 uncertain | approximately 6 seconds |
 
 These counts are **coverage observations, not accuracy scores**. Every emitted fact quote and inherited grounding span was checked against its stored source page. Lexical grounding does not establish correct semantic interpretation, entity ownership or numerical units. The run includes extraction, storage, comparison and source-span checks; it is not a controlled performance benchmark.
 

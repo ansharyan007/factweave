@@ -40,6 +40,7 @@ def initialize():
           id TEXT PRIMARY KEY, document_id TEXT REFERENCES documents(id), page INTEGER,
           subject_key TEXT, predicate TEXT, payload TEXT NOT NULL);
         CREATE INDEX IF NOT EXISTS fact_match ON facts(subject_key,predicate);
+        CREATE INDEX IF NOT EXISTS fact_predicate ON facts(predicate);
         CREATE TABLE IF NOT EXISTS relationships (
           id TEXT PRIMARY KEY, left_id TEXT REFERENCES facts(id), right_id TEXT REFERENCES facts(id),
           kind TEXT, payload TEXT NOT NULL, UNIQUE(left_id,right_id));
@@ -72,7 +73,23 @@ def snapshot() -> dict:
     facts = [f for f in all_facts if f["document_id"] in complete]
     ids = {f["id"] for f in facts}
     relationships = [r for r in all_relationships if r["left_id"] in ids and r["right_id"] in ids]
+    by_id = {f['id']: f for f in facts}
+    pairs = {}
+    for relation in relationships:
+        pair = tuple(sorted((by_id[relation['left_id']]['document_id'], by_id[relation['right_id']]['document_id'])))
+        item = pairs.setdefault(pair, {'document_ids': list(pair), 'count': 0, 'kinds': {}})
+        item['count'] += 1
+        item['kinds'][relation['kind']] = item['kinds'].get(relation['kind'], 0) + 1
+    for document in documents:
+        document['fact_count'] = sum(f['document_id'] == document['id'] for f in facts)
+        document['connection_count'] = sum(p['count'] for p in pairs.values() if document['id'] in p['document_ids'])
+        document['connection_diagnostic'] = (
+            'Processing; results will appear when extraction finishes.' if document['id'] not in complete else
+            'No supported claims extracted. Review skipped source text; scans need OCR.' if not document['fact_count'] else
+            'Claims extracted, but no comparable cross-document claims found yet.' if not document['connection_count'] else
+            'Open a document pair to inspect the matched claims and uncertainty.')
     return {"documents": documents, "facts": facts, "relationships": relationships,
+            "document_connections": list(pairs.values()),
             "issues": [i for i in all_issues if i["document_id"] in complete],
             "predicates": sorted({f["predicate"] for f in facts}),
             "metadata": {"extractor_version": "1.0.0", "evidence": "Whitespace-normalized exact source spans; enclosing block rectangles.",
